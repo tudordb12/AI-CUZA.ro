@@ -401,7 +401,7 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                                         ),
                                           SizedBox(width: 5,),
                                           _buildHoverContainer(
-                                              viewModel, 6, 'I E Ș I R ',
+                                              viewModel, 6, 'I E Ș I R E',
                                               () {
                                               viewModel.signUserOut();
                                           }),
