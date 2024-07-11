@@ -1,0 +1,1 @@
+ build/web/index.html build/web/favicon.png build/web/main-icon.png:  /Users/Marc/Desktop/aicuzaro/web/index.html /Users/Marc/Desktop/aicuzaro/web/favicon.png /Users/Marc/Desktop/aicuzaro/web/main-icon.png
