@@ -602,7 +602,9 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                            child: Container(
                              
                               height: 850,
+                              //width: 500,
                               child: Column( 
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     SizedBox(height: 10,),
                                      Padding(
@@ -615,7 +617,7 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                                             Color.fromARGB(255, 199, 198, 197)
                                           ],
                                         ),
-                         
+                           
                                      ),
                                      Align(child: Text(" O altfel de rețea socială ", style: TextStyle(),)),
                                      
