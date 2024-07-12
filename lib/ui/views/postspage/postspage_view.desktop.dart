@@ -615,7 +615,44 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                               ],
                             ),
                            ),
-                         )
+                         ),
+                         Expanded(
+                           child: Container(
+                             
+                              height: 850,
+                              child: Column( 
+                                  children: [
+                                    SizedBox(height: 10,),
+                                     Padding(
+                                       padding: const EdgeInsets.all(8.0),
+                                       child: GradientText(
+                                          'ROBO\nSTREAM',
+                                          style: ktsTitleText,
+                                          colors: const [
+                                            Color.fromARGB(255, 232, 231, 230),
+                                            Color.fromARGB(255, 199, 198, 197)
+                                          ],
+                                        ),
+                         
+                                     ),
+                                     Align(child: Text(" O altfel de rețea socială ")),
+                                     Spacer(flex: 2,),
+                                     Padding(
+                                       padding: const EdgeInsets.all(10.0),
+                                       child: Container(
+                                        height: 500,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image:
+                                            AssetImage('lib/assets/social.png'),
+                                            fit: BoxFit.fitWidth,
+                                          ),
+                                        ),),
+                                     )
+                                  ],
+                              ),
+                           ),
+                         ),
                         ],
                       ),
                     ],
