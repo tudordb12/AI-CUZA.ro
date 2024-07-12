@@ -178,18 +178,8 @@ class PostspageViewModel extends BaseViewModel {
         'image': imageUrl,
          'date': formattedDate,
          'Likes': [],
+         'saved': [],
      });
-
-    //Add a new item
-   
-    /*  //Add a new item
-                      _reference2.add(Send);*/
-    // Use the imageUrl as needed (e.g., save it to a database or display it)
-
-    // Update the url variable with the download URL
-
-
-
     notifyListeners();
   }
 }

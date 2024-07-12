@@ -213,25 +213,7 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                                       );
                                         },
                                       ),
-                                      /*Container(
-                                        height: 200,
-                                        width: 200,
-                                       /* child: Icon(
-                                          Icons.person,
-                                          color: Colors.white70,
-                                          size: 100.0,
-                                        ),*/
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Container(
-                                            alignment: Alignment.center,
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                              color: Colors.orange,
-                                            ),
-                                          ),
-                                        ),
-                                      ),*/
+                                     
                                       SizedBox(
                                         height: 20,
                                       ),
@@ -544,13 +526,13 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
         final post = snapshot.data!.docs[index];
         Color buttonColor;
         if (index % 5 == 0) {
-          buttonColor = Color.fromARGB(255, 212, 37, 69);
+          buttonColor = Color.fromARGB(255, 213, 52, 82);
         } else if (index % 5 == 1) {
-          buttonColor = Color.fromARGB(255, 210, 50, 82);
+          buttonColor = Color.fromARGB(255, 221, 77, 106);
         } else if (index % 5 == 2) {
           buttonColor = Color.fromARGB(255, 212, 64, 48);
         } else if (index % 5 == 3) {
-          buttonColor = Color.fromARGB(255, 193, 42, 90);
+          buttonColor = Color.fromARGB(255, 218, 66, 81);
         } else {
           buttonColor = Color.fromARGB(255, 201, 52, 38);
         }
@@ -635,20 +617,27 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                                         ),
                          
                                      ),
-                                     Align(child: Text(" O altfel de rețea socială ")),
-                                     Spacer(flex: 2,),
-                                     Padding(
-                                       padding: const EdgeInsets.all(10.0),
-                                       child: Container(
-                                        height: 500,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image:
-                                            AssetImage('lib/assets/social.png'),
-                                            fit: BoxFit.fitWidth,
-                                          ),
-                                        ),),
-                                     )
+                                     Align(child: Text(" O altfel de rețea socială ", style: TextStyle(),)),
+                                     
+                                     Container(
+                                      height: 200,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image:
+                                          AssetImage('lib/assets/appr.png'),
+                                          fit: BoxFit.fitHeight,
+                                        ),
+                                      ),),
+                                     Container(
+                                      height: 450,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image:
+                                          AssetImage('lib/assets/social.png'),
+                                          fit: BoxFit.fitWidth,
+                                        ),
+                                      ),),
+                                      Spacer(flex: 2,),
                                   ],
                               ),
                            ),
