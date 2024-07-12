@@ -1,3 +1,4 @@
+import 'package:aicuzaro/ui/views/postspage/wall_post_mobile.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,7 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kcBackgroundColor,
-        title: Text(
+        title: const Text(
           'AI.CUZA',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -51,23 +52,23 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
             onSelected: (value) {
               switch (value) {
                 case 'Acasă':
-                  // viewModel.navigateToHomeView();
+                  // Handle navigation to home
                   break;
                 case 'Creează-ți propriul CUZA':
-                  // viewModel.navigateToInfoView();
+                  // Handle navigation to create CUZA
                   break;
                 case 'Descărcări':
-                  // viewModel.navigateToDownloadsView();
+                  // Handle navigation to downloads
                   break;
                 case 'Contul Meu':
-                  // viewModel.navigateToAuthView();
+                  // Handle navigation to my account
                   break;
                 case 'Logout':
-                  // viewModel.signUserOut();
+                  // Handle user logout
                   break;
               }
             },
-            itemBuilder: (context) => [
+            itemBuilder: (context) => const [
               PopupMenuItem(
                 value: 'Acasă',
                 child: Text('Acasă'),
@@ -99,30 +100,26 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
             children: [
               Container(
                 width: double.infinity,
-                color: Color.fromARGB(255, 89, 6, 205),
-                padding: EdgeInsets.all(16.0),
+                color: const Color.fromARGB(255, 89, 6, 205),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
-                    StreamBuilder(
+                    StreamBuilder<DocumentSnapshot>(
                       stream: FirebaseFirestore.instance
                           .collection('usernames')
                           .doc(user.email!)
                           .snapshots(),
-                      builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+                      builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.waiting) {
-                          return CircularProgressIndicator();
+                          return const CircularProgressIndicator();
                         }
-
                         if (!snapshot.hasData) {
-                          return Text('');
+                          return const Text('');
                         }
-
                         if (snapshot.hasError) {
                           return Text('Error: ${snapshot.error}');
                         }
-
                         var fieldValue1 = snapshot.data!['image'];
-
                         return Container(
                           height: 100,
                           width: 100,
@@ -136,30 +133,26 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                         );
                       },
                     ),
-                    SizedBox(height: 10),
-                    StreamBuilder(
+                    const SizedBox(height: 10),
+                    StreamBuilder<DocumentSnapshot>(
                       stream: FirebaseFirestore.instance
                           .collection('usernames')
                           .doc(user.email!)
                           .snapshots(),
-                      builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+                      builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.waiting) {
-                          return CircularProgressIndicator();
+                          return const CircularProgressIndicator();
                         }
-
                         if (!snapshot.hasData) {
-                          return Text('');
+                          return const Text('');
                         }
-
                         if (snapshot.hasError) {
                           return Text('Error: ${snapshot.error}');
                         }
-
                         var fieldValue = snapshot.data!['name'];
-
                         return Text(
                           'Salut, $fieldValue',
-                          style: TextStyle(fontSize: 20),
+                          style: const TextStyle(fontSize: 20),
                         );
                       },
                     ),
@@ -172,25 +165,23 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                   children: [
                     Expanded(
                       child: TextField(
-                        style: TextStyle(color: Color.fromARGB(255, 60, 60, 60)),
+                        style: const TextStyle(color: Color.fromARGB(255, 60, 60, 60)),
                         controller: viewModel.textController,
                         maxLines: null,
                         decoration: InputDecoration(
                           hintText: 'Ce idei noi ai?',
-                          hintStyle: TextStyle(
-                            color: Color.fromARGB(255, 60, 60, 60),
-                          ),
+                          hintStyle: const TextStyle(color: Color.fromARGB(255, 60, 60, 60)),
                           filled: true,
-                          fillColor: Color.fromARGB(255, 229, 222, 235),
+                          fillColor: const Color.fromARGB(255, 229, 222, 235),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50),
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     IconButton(
-                      icon: Icon(Icons.arrow_circle_up),
+                      icon: const Icon(Icons.arrow_circle_up),
                       onPressed: () {
                         if (viewModel.textController.text.isNotEmpty) {
                           viewModel.postOnline();
@@ -198,7 +189,7 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                       },
                     ),
                     IconButton(
-                      icon: Icon(Icons.add_a_photo),
+                      icon: const Icon(Icons.add_a_photo),
                       onPressed: () {
                         if (viewModel.textController.text.isNotEmpty) {
                           viewModel.postAttach();
@@ -208,40 +199,46 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                   ],
                 ),
               ),
-              StreamBuilder(
+              StreamBuilder<QuerySnapshot>(
                 stream: FirebaseFirestore.instance.collection('posts').snapshots(),
-                builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                builder: (context, snapshot) {
                   if (!snapshot.hasData) {
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   }
 
                   return ListView.builder(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: snapshot.data!.docs.length,
                     itemBuilder: (context, index) {
                       final post = snapshot.data!.docs[index];
                       Color buttonColor;
-                      if (index % 5 == 0) {
-                        buttonColor = Color.fromARGB(255, 236, 86, 48);
-                      } else if (index % 5 == 1) {
-                        buttonColor = Color.fromARGB(255, 193, 1, 49);
-                      } else if (index % 5 == 2) {
-                        buttonColor = Color.fromARGB(255, 210, 24, 3);
-                      } else if (index % 5 == 3) {
-                        buttonColor = Color.fromARGB(255, 214, 4, 70);
-                      } else {
-                        buttonColor = Color.fromARGB(255, 234, 51, 0);
+                      switch (index % 5) {
+                        case 0:
+                          buttonColor = const Color.fromARGB(255, 212, 37, 69);
+                          break;
+                        case 1:
+                          buttonColor = const Color.fromARGB(255, 210, 50, 82);
+                          break;
+                        case 2:
+                          buttonColor = const Color.fromARGB(255, 212, 64, 48);
+                          break;
+                        case 3:
+                          buttonColor = const Color.fromARGB(255, 193, 42, 90);
+                          break;
+                        default:
+                          buttonColor = const Color.fromARGB(255, 201, 52, 38);
+                          break;
                       }
 
-                      return FutureBuilder(
+                      return FutureBuilder<DocumentSnapshot>(
                         future: FirebaseFirestore.instance
                             .collection('usernames')
                             .doc(post['name'])
                             .get(),
-                        builder: (context, AsyncSnapshot<DocumentSnapshot> userSnapshot) {
+                        builder: (context, userSnapshot) {
                           if (!userSnapshot.hasData) {
-                            return Center(child: CircularProgressIndicator());
+                            return const Center(child: CircularProgressIndicator());
                           }
 
                           final userDoc = userSnapshot.data!;
@@ -249,20 +246,20 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                           final profilepic = userDoc['image'] ?? post['name'];
                           final photo = post['image'];
 
-                          return FutureBuilder(
+                          return FutureBuilder<DocumentSnapshot>(
                             future: FirebaseFirestore.instance
                                 .collection('following')
                                 .doc(userDoc['email'])
                                 .get(),
-                            builder: (context, AsyncSnapshot<DocumentSnapshot> follSnapshot) {
+                            builder: (context, follSnapshot) {
                               if (!follSnapshot.hasData) {
-                                return Center(child: CircularProgressIndicator());
+                                return const Center(child: CircularProgressIndicator());
                               }
 
                               final follDoc = follSnapshot.data!;
                               List<String> followers2 = List<String>.from(follDoc['followers'] ?? []);
 
-                              return WallPost(
+                              return WallMPost(
                                 message: post['description'],
                                 user: userName,
                                 time: post['date'],
@@ -273,6 +270,7 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                                 email: userDoc['email'],
                                 followers: followers2,
                                 image: photo,
+                                saves: List<String>.from(post['saved'] ?? []),
                               );
                             },
                           );

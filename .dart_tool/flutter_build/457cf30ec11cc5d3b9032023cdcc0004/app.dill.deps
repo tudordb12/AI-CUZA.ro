@@ -1593,6 +1593,7 @@ file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/login/login_view.desktop.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/login/login_view.mobile.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/login/login_view.tablet.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/login/login_viewmodel.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/comment_del_btn.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/comments.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/comments_button.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/follow_button.dart
@@ -1602,7 +1603,9 @@ file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/postspage_view.deskto
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/postspage_view.mobile.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/postspage_view.tablet.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/postspage_viewmodel.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/save_button.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/wall_post.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/wall_post_mobile.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/signup/signup_view.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/signup/signup_view.desktop.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/signup/signup_view.mobile.dart

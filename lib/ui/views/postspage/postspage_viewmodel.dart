@@ -140,6 +140,7 @@ class PostspageViewModel extends BaseViewModel {
         'image': imageUrl,
          'date': formattedDate,
          'Likes': [],
+         'saved': [],
      });
        
         //'date':

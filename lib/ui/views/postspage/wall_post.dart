@@ -2,6 +2,7 @@ import 'package:aicuzaro/ui/views/postspage/comments.dart';
 import 'package:aicuzaro/ui/views/postspage/comments_button.dart';
 import 'package:aicuzaro/ui/views/postspage/follow_button.dart';
 import 'package:aicuzaro/ui/views/postspage/like_button.dart';
+import 'package:aicuzaro/ui/views/postspage/save_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -18,6 +19,8 @@ class WallPost extends StatefulWidget {
   final String email;
   final List<String> followers;
   final String image;
+  final List<String> saves;
+  
 
   const WallPost({
     super.key,
@@ -31,6 +34,7 @@ class WallPost extends StatefulWidget {
     required this.email,
     required this.followers,
     required this.image,
+    required this.saves,
   });
 
   @override
@@ -40,43 +44,74 @@ class WallPost extends StatefulWidget {
 class _WallPostState extends State<WallPost> {
   final currentUser = FirebaseAuth.instance.currentUser!;
   bool isLiked = false;
+  bool isSaved = false;
   bool isFollowed = false;
   String followers = '';
   final TextEditingController commentText = TextEditingController();
-  
+  List<DocumentSnapshot> comments = [];
 
   @override
   void initState() {
     super.initState();
     isLiked = widget.likes.contains(currentUser.email);
+    isSaved = widget.saves.contains(currentUser.email);
     checkIfFollowed();
     checkFollowersLabel();
+    fetchComments();
+  }
+
+  void fetchComments() async {
+    QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+        .collection('posts')
+        .doc(widget.postId)
+        .collection('comments')
+        .get();
+    setState(() {
+      comments = querySnapshot.docs;
+    });
+  }
+
+  void deleteComment(String commentId) {
+    DocumentReference comRef = FirebaseFirestore.instance
+        .collection('posts')
+        .doc(widget.postId)
+        .collection('comments')
+        .doc(commentId);
+
+    comRef.delete().then((_) {
+      print("Comment deleted successfully!");
+      fetchComments(); // Refresh comments after deletion
+    }).catchError((error) {
+      print("Failed to delete comment: $error");
+    });
   }
 
   void addComment(String comment) async {
-   if(commentText.text != ''){
-    try {
-         DateTime now = DateTime.now();
-       String formattedDate = DateFormat('MMM d yyyy').format(now);
-       DocumentReference postRef = FirebaseFirestore.instance.collection('posts').doc(widget.postId);
-                                   
-      
-      await FirebaseFirestore.instance
-          .collection("posts")
-          .doc(widget.postId)
-          .collection("comments")
-          .add({
-        "CommentText": comment,
-        "CommentedBy": currentUser.email!,
-        "CommentTime": formattedDate,
-      });
-      print("Comment added successfully");
-      print(widget.postId);
-    } catch (e) {
-      print("Failed to add comment: $e");
+    if (commentText.text != '') {
+      try {
+        DateTime now = DateTime.now();
+        String formattedDate = DateFormat('MMM d yyyy').format(now);
+        DocumentReference postRef = FirebaseFirestore.instance.collection('posts').doc(widget.postId);
+
+        await FirebaseFirestore.instance
+            .collection("posts")
+            .doc(widget.postId)
+            .collection("comments")
+            .add({
+          "CommentText": comment,
+          "CommentedBy": currentUser.email!,
+          "CommentTime": formattedDate,
+        });
+        print("Comment added successfully");
+        print(widget.postId);
+        commentText.clear();
+        fetchComments();
+      } catch (e) {
+        print("Failed to add comment: $e");
+      }
     }
   }
-  }
+
   void checkIfFollowed() async {
     DocumentSnapshot doc = await FirebaseFirestore.instance.collection('following').doc(currentUser.email).get();
     if (doc.exists) {
@@ -90,7 +125,6 @@ class _WallPostState extends State<WallPost> {
   void checkFollowersLabel() {
     setState(() {
       followers = widget.followers.length > 1 ? 'Urmăritori' : 'Urmăritor';
-
     });
   }
 
@@ -107,6 +141,29 @@ class _WallPostState extends State<WallPost> {
     } else {
       postRef.update({
         'Likes': FieldValue.arrayRemove([currentUser.email!])
+      });
+    }
+  }
+
+  void toggleSave() {
+    setState(() {
+      isSaved = !isSaved;
+    });
+    DocumentReference saveRef = FirebaseFirestore.instance.collection('following').doc(currentUser.email);
+    DocumentReference savRef = FirebaseFirestore.instance.collection('posts').doc(widget.postId);
+    if (isSaved) {
+      saveRef.set({
+        'saved': FieldValue.arrayUnion([widget.postId])
+      }, SetOptions(merge: true));
+      savRef.set({
+        'saved': FieldValue.arrayUnion([currentUser.email])
+      }, SetOptions(merge: true));
+    } else {
+      saveRef.update({
+        'saved': FieldValue.arrayRemove([widget.postId])
+      });
+      savRef.update({
+        'saved': FieldValue.arrayRemove([currentUser.email])
       });
     }
   }
@@ -194,8 +251,8 @@ class _WallPostState extends State<WallPost> {
                                         widget.user,
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontWeight: FontWeight.w100,
-                                          fontSize: 15,
+                                          fontWeight: FontWeight.w900,
+                                          fontSize: 18,
                                         ),
                                       ),
                                       Row(
@@ -203,7 +260,7 @@ class _WallPostState extends State<WallPost> {
                                           Text(
                                             widget.followers.length.toString(),
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: const Color.fromARGB(171, 255, 255, 255),
                                               fontWeight: FontWeight.w100,
                                               fontSize: 15,
                                             ),
@@ -243,8 +300,11 @@ class _WallPostState extends State<WallPost> {
                                 fontSize: 18,
                               ),
                             ),
-                            Text(widget.time),
-                            SizedBox(height: 10,),
+                            Text(
+                              widget.time,
+                              style: TextStyle(color: const Color.fromARGB(167, 255, 255, 255)),
+                            ),
+                            SizedBox(height: 10),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -262,35 +322,46 @@ class _WallPostState extends State<WallPost> {
                                               Row(
                                                 crossAxisAlignment: CrossAxisAlignment.center,
                                                 children: [
-                                                   SizedBox(width: 20,),
+                                                  SizedBox(width: 20),
                                                   Padding(
-                                                    padding: const EdgeInsets.fromLTRB(8.0, 0 ,8.0, 0),
-                                                    child: Text(widget.likes.length.toString(), style: TextStyle(color: Colors.black,),),
+                                                    padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
+                                                    child: Text(
+                                                      widget.likes.length.toString(),
+                                                      style: TextStyle(
+                                                        color: Colors.black,
+                                                      ),
+                                                    ),
                                                   ),
-                                                  SizedBox(width: 10,),
+                                                  SizedBox(width: 10),
                                                   LikeButton(
-                                                       isLiked: isLiked,
-                                                       onTap: toggleLike,
+                                                    isLiked: isLiked,
+                                                    onTap: toggleLike,
                                                   ),
+                                                  SizedBox(width: 10),
                                                 ],
                                               ),
                                             ],
                                           ),
                                         ),
                                       ),
-                                      SizedBox(width: 10,),
+                                      SizedBox(width: 10),
                                       CommentButton(
                                         onPressed: () {
                                           print("Comment text: ${commentText.text}");
                                           addComment(commentText.text);
                                         },
                                       ),
+                                      SizedBox(width: 10),
+                                      SaveButton(
+                                        isSaved: isSaved,
+                                        onTap: toggleSave,
+                                      )
                                     ],
                                   ),
                                 ),
                               ],
                             ),
-                            SizedBox(height: 10,),
+                            SizedBox(height: 10),
                             Row(
                               children: [
                                 Expanded(
@@ -313,61 +384,42 @@ class _WallPostState extends State<WallPost> {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 10,),
-                             StreamBuilder<QuerySnapshot>(
-                              stream: FirebaseFirestore.instance
-                                .collection("posts")
-                                .doc(widget.postId)
-                                .collection("comments")
-                                .orderBy("CommentTime", descending: true)
-                                .snapshots(),
-                              builder: (context, snapshot) {
-                                // show loading circle if no data yet
-                                if (!snapshot.hasData) {
-                                  return const Center(
-                                    child: CircularProgressIndicator(),
-                                  ); // Center
-                                }
-                                return ListView(
-                                  shrinkWrap: true, // for nested lists
-                                  
-                                  children: snapshot.data!.docs.map((doc) {
-                                    // get the comment
-                                    final commentData = doc.data() as Map<String, dynamic>;
-                                    
-                                    // return the comment
-                                    return StreamBuilder(
-                                       
-                                      stream: FirebaseFirestore.instance
-                                          .collection('usernames') // Replace with your collection name
-                                          .doc(commentData['CommentedBy']) // Replace with your document ID
-                                          .snapshots(),
-                                     builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-                                        if (snapshot.connectionState == ConnectionState.waiting) {
-                                          
-                                        }
-                                                              
-                                        if (!snapshot.hasData) {
-                                          return Text('');
-                                        }
-                                                              
-                                        if (snapshot.hasError) {
-                                          return Text('Error: ${snapshot.error}');
-                                        }
-                                                              
-                                        
-                                        var fieldValue = snapshot.data!['name']; 
-                                         
-                                        return Comment(text: commentData['CommentText'], time: commentData['CommentTime'] ,user: '$fieldValue',);
-                                       
-                                        
-                                      }
-                                      
-                                    ); // Comment
-                                  }).toList(), // ListView
-                                ); // StreamBuilder
-                              }
-                            )
+                            SizedBox(height: 10),
+                            ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: comments.length,
+                              itemBuilder: (context, index) {
+                                final commentData = comments[index].data() as Map<String, dynamic>;
+                                return StreamBuilder(
+                                  stream: FirebaseFirestore.instance
+                                      .collection('usernames')
+                                      .doc(commentData['CommentedBy'])
+                                      .snapshots(),
+                                  builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+                                    if (snapshot.connectionState == ConnectionState.waiting) {
+                                      //return Center(child: CircularProgressIndicator());
+                                    }
+                                    if (!snapshot.hasData) {
+                                      return Text('');
+                                    }
+                                    if (snapshot.hasError) {
+                                      return Text('Error: ${snapshot.error}');
+                                    }
+
+                                    var fieldValue = snapshot.data!['name'];
+                                    return Comment(
+                                      text: commentData['CommentText'],
+                                      time: commentData['CommentTime'],
+                                      user: '$fieldValue',
+                                      email: commentData['CommentedBy'],
+                                      postId: widget.postId,
+                                      commentId: comments[index].id, // Pass comment ID
+                                      onDelete: () => deleteComment(comments[index].id), // Handle delete
+                                    );
+                                  },
+                                );
+                              },
+                            ),
                           ],
                         ),
                       ),

@@ -52,8 +52,8 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                                       begin: Alignment.topCenter,
                                       colors: [
                                         Color.fromARGB(255, 89, 6, 205),
-                                        Color.fromARGB(255, 109, 6, 205),
-                                        Color.fromARGB(255, 142, 6, 205),
+                                        Color.fromARGB(255, 92, 6, 205),
+                                        Color.fromARGB(255, 69, 6, 205),
                                       ]),
             ),
             child: Column(
@@ -420,107 +420,111 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                          FadeInLeftBig(
                           duration: Duration(milliseconds: 1500),
                            child: Container(
-                           width:650,
+                           width:750,
                            height: 850,
-                           color: /*Color.fromARGB(255, 232, 39, 0),*/Color.fromARGB(255, 142, 0, 0),
+                           color: /*Color.fromARGB(255, 232, 39, 0),*/Color.fromARGB(255, 219, 42, 11),
                             child: Column(
                               children: [
-                                /*Container(
-                                  width: 650,
-                                  height: 150,
-                                  color: Color.fromARGB(255, 158, 34, 4),
-                                  child: Column(
-                                    children: [
-                                    //  Text(),
-                                    ],
-                                  ),
-                                ),*/
+                                
                                 Padding(
                                  padding: const EdgeInsets.all(25.0),
-                                 child: Row(
-                                   children: [
-                                     // textfield
-                                     Expanded(
-                                       child:  Padding(
-                                         padding: const EdgeInsets.fromLTRB(0.0, 0 ,0.0, 0),
-                                         child: Container(
-                                               
-                                                child: Padding(
-                                                  padding: const EdgeInsets.fromLTRB(10.0, 0 ,10.0, 0),
-                                                  child: SingleChildScrollView(
-                                                    child: IntrinsicHeight(
-                                                      child: Center(
-                                                        child: TextField(
-                                                           style: TextStyle(color: Color.fromARGB(255, 60, 60, 60)),
-                                                          controller:
-                                                             viewModel.textController,
-                                                             maxLines: null,
-                                                          decoration:
-                                                              InputDecoration.collapsed(
-                                                            hintText: 'Ce idei noi ai?',
-                                                            
-                                                            hintStyle: TextStyle(
-                                                              color: Color.fromARGB(255, 60, 60, 60),
+                                 child: Container(
+                                 
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(360),
+                                            color: Color.fromARGB(255, 220, 177, 171),
+                                          ),
+                                   child: Padding(
+                                     padding: const EdgeInsets.all(8.0),
+                                     child: Row(
+                                       children: [
+                                         // textfield
+                                         Expanded(
+                                           child:  Padding(
+                                             padding: const EdgeInsets.fromLTRB(0.0, 0 ,0.0, 0),
+                                             child: Padding(
+                                               padding: const EdgeInsets.all(8.0),
+                                               child: Container(
+                                                     
+                                                      child: Padding(
+                                                        padding: const EdgeInsets.fromLTRB(10.0, 0 ,10.0, 0),
+                                                        child: SingleChildScrollView(
+                                                          child: IntrinsicHeight(
+                                                            child: Center(
+                                                              child: TextField(
+                                                                 style: TextStyle(color: Color.fromARGB(255, 60, 60, 60)),
+                                                                controller:
+                                                                   viewModel.textController,
+                                                                   maxLines: null,
+                                                                decoration:
+                                                                    InputDecoration.collapsed(
+                                                                  hintText: 'Ce idei noi ai?',
+                                                                  
+                                                                  hintStyle: TextStyle(
+                                                                    color: Color.fromARGB(255, 60, 60, 60),
+                                                                  ),
+                                                                  filled: true,
+                                                                  fillColor: Color.fromARGB(255, 229, 222, 235),
+                                                                ),
+                                                              ),
                                                             ),
-                                                            filled: true,
-                                                            fillColor: Color.fromARGB(255, 229, 222, 235),
                                                           ),
                                                         ),
                                                       ),
+                                                      width: 250,
+                                                      padding: const EdgeInsets.symmetric(
+                                                          horizontal: 20, vertical: 20),
+                                                      decoration: BoxDecoration(
+                                                        color: Color.fromARGB(255, 229, 222, 235),
+                                                        borderRadius:
+                                                            BorderRadius.circular(50),
+                                                      ),
                                                     ),
-                                                  ),
-                                                ),
-                                                width: 250,
-                                                padding: const EdgeInsets.symmetric(
-                                                    horizontal: 20, vertical: 20),
-                                                decoration: BoxDecoration(
-                                                  color: Color.fromARGB(255, 229, 222, 235),
-                                                  borderRadius:
-                                                      BorderRadius.circular(50),
-                                                ),
-                                              ),
-                                       ), // MyTextField
-                                     ),
-                                     SizedBox(width: 10,),
-                                     FadeIn(
-                         
-                                       child: Container(
-                                         
-                                         height: 50,
-                                         width: 50,
-                                         decoration: BoxDecoration(
-                                           borderRadius: BorderRadius.circular(100),
-                                           color: Color.fromARGB(255, 234, 229, 229),
+                                             ),
+                                           ), // MyTextField
                                          ),
-                                         child: IconButton(onPressed: () {
-                                 // Call postOnline asynchronously
-                                if(viewModel.textController.text.isNotEmpty)
-                                 {
-                                  viewModel.postOnline();
-                             }
-                             },
-                                                 icon:const Icon(Icons.arrow_circle_up),),
-                                       ),
-                                     ) ,
-                                      SizedBox(width: 10,),
-                                     Container(
-                                       
-                                       height: 50,
-                                       width: 50,
-                                       decoration: BoxDecoration(
-                                         borderRadius: BorderRadius.circular(100),
-                                         color: Color.fromARGB(255, 234, 229, 229),
-                                       ),
-                                       child: IconButton(onPressed: () {
-                               // Call postOnline asynchronously
-                               if(viewModel.textController.text.isNotEmpty)
-                                 {
-                                  viewModel.postAttach();
-                             }
-                           },
-                                               icon:const Icon(Icons.add_a_photo),),
-                                     ) 
-                                   ],
+                                         SizedBox(width: 10,),
+                                         FadeIn(
+                                                            
+                                           child: Container(
+                                             
+                                             height: 50,
+                                             width: 50,
+                                             decoration: BoxDecoration(
+                                               borderRadius: BorderRadius.circular(100),
+                                               color: Color.fromARGB(255, 234, 229, 229),
+                                             ),
+                                             child: IconButton(onPressed: () {
+                                     // Call postOnline asynchronously
+                                                                   if(viewModel.textController.text.isNotEmpty)
+                                     {
+                                      viewModel.postOnline();
+                                                                }
+                                                                },
+                                                     icon:const Icon(Icons.arrow_circle_up),),
+                                           ),
+                                         ) ,
+                                          SizedBox(width: 10,),
+                                         Container(
+                                           
+                                           height: 50,
+                                           width: 50,
+                                           decoration: BoxDecoration(
+                                             borderRadius: BorderRadius.circular(100),
+                                             color: Color.fromARGB(255, 234, 229, 229),
+                                           ),
+                                           child: IconButton(onPressed: () {
+                                                                  // Call postOnline asynchronously
+                                                                  if(viewModel.textController.text.isNotEmpty)
+                                     {
+                                      viewModel.postAttach();
+                                                                }
+                                                              },
+                                                   icon:const Icon(Icons.add_a_photo),),
+                                         ) 
+                                       ],
+                                     ),
+                                   ),
                                  ), // Row
                                     ),
                                     SizedBox(height: 10,),
@@ -528,77 +532,82 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                            child: FadeInUp(
                             delay: Duration(milliseconds: 2000),
                              child: StreamBuilder(
-                               stream: FirebaseFirestore.instance.collection('posts').snapshots(),
-                               builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                                 if (!snapshot.hasData) {
-                                   return Center(child: CircularProgressIndicator());
-                                 }
-                                                    
-                                 return ListView.builder(
-                                   itemCount: snapshot.data!.docs.length,
-                                   itemBuilder: (context, index) {
-                                     final post = snapshot.data!.docs[index];
-                                     Color buttonColor;
-                                     if (index % 5 == 0) {
-                                                   buttonColor = Color.fromARGB(255, 200, 0, 53);
-                                                 } else if (index % 5 == 1) {
-                                                   buttonColor = Color.fromARGB(255, 183, 0, 37);
-                                                 } else if (index % 5 == 2) {
-                                                   buttonColor = Color.fromARGB(255, 210, 24, 3);
-                                                 } else if (index % 5 == 3) {
-                                                   buttonColor = Color.fromARGB(255, 214, 4, 70);
-                                                 } else {
-                                                   buttonColor = Color.fromARGB(255, 216, 20, 2);
-                                                 }
-                                                    
-                                     return FutureBuilder(
-                                       future: FirebaseFirestore.instance
-                                           .collection('usernames')
-                                           .doc(post['name']) // assuming 'name' is the email address
-                                           .get(),
-                                       builder: (context, AsyncSnapshot<DocumentSnapshot> userSnapshot) {
-                                         if (!userSnapshot.hasData) {
-                                           return Center(child: CircularProgressIndicator());
-                                         }
-                                                    
-                                         final userDoc = userSnapshot.data!;
-                                         final userName = userDoc['name'] ?? post['name'];
-                                         final profilepic = userDoc['image'] ?? post['name'];
-                                         final photo  = post['image'];
-                                                    
-                                         return FutureBuilder(
-                                           future: FirebaseFirestore.instance
-                                               .collection('following')
-                                               .doc(userDoc['email'])
-                                               .get(),
-                                           builder: (context, AsyncSnapshot<DocumentSnapshot> follSnapshot) {
-                                             if (!follSnapshot.hasData) {
-                                               return Center(child: CircularProgressIndicator());
-                                             }
-                                                    
-                                             final follDoc = follSnapshot.data!;
-                                             List<String> followers2 = List<String>.from(follDoc['followers'] ?? []);
-                                                    
-                                             return WallPost(
-                                               message: post['description'],
-                                               user: userName,
-                                               time: post['date'],
-                                               profile: profilepic,
-                                               postId: post.id,
-                                               likes: List<String>.from(post['Likes'] ?? []),
-                                               bColor: buttonColor,
-                                               email: userDoc['email'],
-                                               followers: followers2,
-                                               image: photo,
-                                             );
-                                           },
-                                         );
-                                       },
-                                     );
-                                   },
-                                 );
-                               },
-                             ),
+  stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+  builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+    if (!snapshot.hasData) {
+      return Center(child: CircularProgressIndicator());
+    }
+
+    return ListView.builder(
+      itemCount: snapshot.data!.docs.length,
+      itemBuilder: (context, index) {
+        final post = snapshot.data!.docs[index];
+        Color buttonColor;
+        if (index % 5 == 0) {
+          buttonColor = Color.fromARGB(255, 212, 37, 69);
+        } else if (index % 5 == 1) {
+          buttonColor = Color.fromARGB(255, 210, 50, 82);
+        } else if (index % 5 == 2) {
+          buttonColor = Color.fromARGB(255, 212, 64, 48);
+        } else if (index % 5 == 3) {
+          buttonColor = Color.fromARGB(255, 193, 42, 90);
+        } else {
+          buttonColor = Color.fromARGB(255, 201, 52, 38);
+        }
+
+        return FutureBuilder(
+          future: FirebaseFirestore.instance
+              .collection('usernames')
+              .doc(post['name']) // assuming 'name' is the email address
+              .get(),
+          builder: (context, AsyncSnapshot<DocumentSnapshot> userSnapshot) {
+            if (!userSnapshot.hasData) {
+              return Center(child: CircularProgressIndicator());
+            }
+
+            final userDoc = userSnapshot.data!;
+            final userName = userDoc['name'] ?? post['name'];
+            final profilepic = userDoc['image'] ?? post['name'];
+            final photo = post['image'];
+
+            return FutureBuilder(
+              future: FirebaseFirestore.instance
+                  .collection('following')
+                  .doc(userDoc['email'])
+                  .get(),
+              builder: (context, AsyncSnapshot<DocumentSnapshot> follSnapshot) {
+                if (!follSnapshot.hasData) {
+                  return Center(child: CircularProgressIndicator());
+                }
+
+                final follDoc = follSnapshot.data!;
+                List<String> followers2 = List<String>.from(follDoc['followers'] ?? []);
+
+                return WallPost(
+                  message: post['description'],
+                  user: userName,
+                  time: post['date'],
+                  profile: profilepic,
+                  postId: post.id,
+                  likes: List<String>.from(post['Likes'] ?? []),
+                  bColor: buttonColor,
+                  email: userDoc['email'],
+                  followers: followers2,
+                  image: photo,
+                  saves: List<String>.from(post['saved'] ?? []),
+                );
+              },
+            );
+          },
+        );
+      },
+    );
+  },
+)
+
+
+
+
                            ),
                          ),
                          
