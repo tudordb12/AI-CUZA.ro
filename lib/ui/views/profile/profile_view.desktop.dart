@@ -1,3 +1,4 @@
+import 'package:aicuzaro/ui/views/postspage/wall_post.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:stacked/stacked.dart';
@@ -31,7 +32,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
         child: Center(
           child: Container(
             width: double.infinity - 100,
-            height: 1500,
+            height: 950,
             decoration: BoxDecoration(
               gradient: LinearGradient(begin: Alignment.topCenter, colors: [
                 Color.fromARGB(255, 89, 6, 205),
@@ -133,7 +134,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                     children: [
                       FadeInLeftBig(
                         child: Container(
-                          height: 1500,
+                          height: 950,
                           width: 300,
                           decoration: BoxDecoration(
                             color: Color.fromARGB(255, 59, 56, 75),
@@ -354,25 +355,28 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                             height: 1500,
                             decoration: BoxDecoration(
                               color: Color.fromARGB(223, 229, 0, 46),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(0),
                             ),
                             child: Stack(
                               clipBehavior: Clip.none,
                               children: [
-                                Container(
-                                  height: 300,
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: Colors.amber,
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      topRight: Radius.circular(10),
+                                SingleChildScrollView(
+                                  scrollDirection: Axis.vertical,
+                                  child: Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 226, 63, 42),
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(0),
+                                        topRight: Radius.circular(0),
+                                      ),
+                                     /* image: DecorationImage(
+                                        image: NetworkImage(
+                                            'https://your-banner-photo-url.com'),
+                                        fit: BoxFit.cover,
+                                      ),*/
                                     ),
-                                   /* image: DecorationImage(
-                                      image: NetworkImage(
-                                          'https://your-banner-photo-url.com'),
-                                      fit: BoxFit.cover,
-                                    ),*/
                                   ),
                                 ),
                                 Positioned(
@@ -438,6 +442,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                     stream: FirebaseFirestore.instance
                                         .collection('usernames')
                                         .doc(user.email!)
+                                        
                                         .snapshots(),
                                     builder: (context,
                                         AsyncSnapshot<DocumentSnapshot>
@@ -470,9 +475,192 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                           color: Color.fromARGB(133, 255, 255, 255),
                                         ),
                                       ),
+
+                                      
                                     ],
                                   ),
                                 ),
+                                Positioned(
+                                   top: 500, // Adjust the position as needed
+                                  left: 0,
+                                  child: Container(
+                                    height: 950,
+                                    width: 550,
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 77, 77, 146),
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(360.0),
+                                  bottomRight: Radius.circular(360.0),
+                                  
+                                  
+                                ),
+                              ),
+                              // Add your child widget here
+                              //child: /* Your child widget */,
+                            )
+                                
+                                ),
+                                Positioned(
+                                   top: 500, // Adjust the position as needed
+                                  left: 0,
+                                  child: Container(
+                                    height: 950,
+                                    width: 550,
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 77, 77, 146),
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(360.0),
+                                  bottomRight: Radius.circular(360.0),
+                                  
+                                  
+                                ),
+                              ),
+                              // Add your child widget here
+                              //child: /* Your child widget */,
+                            )
+                                
+                                ),
+                                Positioned(
+                                  top: 380,
+                                  left: 600,
+                                  child: Container(height: 850, width: 700, decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 37, 37, 40),
+                                     borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(40.0),
+                                 topLeft: Radius.circular(40.0),
+                                  
+                                  
+                                ),
+                                  ) ,
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                    child: FadeInUp(
+                                        delay: Duration(milliseconds: 2000),
+                                        child: StreamBuilder(
+                                          stream: FirebaseFirestore.instance
+                                              .collection('posts')
+                                              .where('name', isEqualTo: user.email)
+                                              .snapshots(),
+                                          builder: (context,
+                                              AsyncSnapshot<QuerySnapshot>
+                                                  snapshot) {
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                  child:
+                                                      CircularProgressIndicator());
+                                            }
+                                             
+                                            return ListView.builder(
+                                              itemCount:
+                                                  snapshot.data!.docs.length,
+                                              itemBuilder: (context, index) {
+                                                final post =
+                                                    snapshot.data!.docs[index];
+
+                                                Color buttonColor;
+                                                if (index % 5 == 0) {
+                                                  buttonColor = Color.fromARGB(255, 218, 38, 71);
+                                                } else if (index % 5 == 1) {
+                                                  buttonColor = Color.fromARGB(
+                                                      255, 221, 77, 106);
+                                                } else if (index % 5 == 2) {
+                                                  buttonColor = Color.fromARGB(
+                                                      255, 212, 64, 48);
+                                                } else if (index % 5 == 3) {
+                                                  buttonColor = Color.fromARGB(
+                                                      255, 218, 66, 81);
+                                                } else {
+                                                  buttonColor = Color.fromARGB(
+                                                      255, 201, 52, 38);
+                                                }
+
+                                                return FutureBuilder(
+                                                  future: FirebaseFirestore
+                                                      .instance
+                                                      .collection('usernames')
+                                                      .doc(post[
+                                                          'name']) // assuming 'name' is the email address
+                                                      .get(),
+                                                  builder: (context,
+                                                      AsyncSnapshot<
+                                                              DocumentSnapshot>
+                                                          userSnapshot) {
+                                                    if (!userSnapshot.hasData) {
+                                                      return Center(
+                                                          child:
+                                                              CircularProgressIndicator());
+                                                    }
+
+                                                    final userDoc =
+                                                        userSnapshot.data!;
+                                                    final userName =
+                                                        userDoc['name'] ??
+                                                            post['name'];
+                                                    final profilepic =
+                                                        userDoc['image'] ??
+                                                            post['name'];
+                                                    final photo = post['image'];
+
+                                                    return FutureBuilder(
+                                                      future: FirebaseFirestore
+                                                          .instance
+                                                          .collection(
+                                                              'following')
+                                                          .doc(userDoc['email'])
+                                                          .get(),
+                                                      builder: (context,
+                                                          AsyncSnapshot<
+                                                                  DocumentSnapshot>
+                                                              follSnapshot) {
+                                                        if (!follSnapshot
+                                                            .hasData) {
+                                                          return Center(
+                                                              child:
+                                                                  CircularProgressIndicator());
+                                                        }
+
+                                                        final follDoc =
+                                                            follSnapshot.data!;
+                                                        List<String>
+                                                            followers2 =
+                                                            List<String>.from(
+                                                                follDoc['followers'] ??
+                                                                    []);
+
+                                                        return WallPost(
+                                                          message: post[
+                                                              'description'],
+                                                          user: userName,
+                                                          time: post['date'],
+                                                          profile: profilepic,
+                                                          postId: post.id,
+                                                          likes: List<
+                                                                  String>.from(
+                                                              post['Likes'] ??
+                                                                  []),
+                                                          bColor: buttonColor,
+                                                          email:
+                                                              userDoc['email'],
+                                                          followers: followers2,
+                                                          image: photo,
+                                                          saves: List<
+                                                                  String>.from(
+                                                              post['saved'] ??
+                                                                  []),
+                                                        );
+                                                      },
+                                                    );
+                                                  },
+                                                );
+                                              },
+                                            );
+                                          },
+                                        )),
+                                  ),
+                                    ],
+                                    ),
+                                  ))
                               ],
                             ),
                           ),
