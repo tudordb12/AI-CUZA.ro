@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 
-class WallPost extends StatefulWidget {
+class WallPPost extends StatefulWidget {
   final String message;
   final String user;
   final String time;
@@ -19,9 +19,9 @@ class WallPost extends StatefulWidget {
   final String email;
   final List<String> followers;
   final String image;
-  final List<String> saves;
+  //final List<String> saves;
 
-  const WallPost({
+  const WallPPost({
     super.key,
     required this.message,
     required this.user,
@@ -33,14 +33,14 @@ class WallPost extends StatefulWidget {
     required this.email,
     required this.followers,
     required this.image,
-    required this.saves,
+    //required this.saves,
   });
 
   @override
-  State<WallPost> createState() => _WallPostState();
+  State<WallPPost> createState() => _WallPPostState();
 }
 
-class _WallPostState extends State<WallPost> {
+class _WallPPostState extends State<WallPPost> {
   final currentUser = FirebaseAuth.instance.currentUser!;
   bool isLiked = false;
   bool isSaved = false;
@@ -53,7 +53,7 @@ class _WallPostState extends State<WallPost> {
   void initState() {
     super.initState();
     isLiked = widget.likes.contains(currentUser.email);
-    isSaved = widget.saves.contains(currentUser.email);
+    //isSaved = widget.saves.contains(currentUser.email);
     checkIfFollowed();
     checkFollowersLabel();
     fetchComments();
@@ -373,10 +373,10 @@ class _WallPostState extends State<WallPost> {
                                         },
                                       ),
                                       SizedBox(width: 10),
-                                      SaveButton(
+                                     /* SaveButton(
                                         isSaved: isSaved,
                                         onTap: toggleSave,
-                                      )
+                                      )*/
                                     ],
                                   ),
                                 ),
