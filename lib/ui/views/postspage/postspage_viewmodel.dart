@@ -57,6 +57,10 @@ class PostspageViewModel extends BaseViewModel {
     await _routerService.replaceWith(const AuthViewRoute());
   }
 
+  Future<void> navigateToProfileView() async {
+    await _routerService.replaceWith(const ProfileViewRoute());
+  }
+
   Future<void> navigateToHomeView() async {
     await _routerService.replaceWith(const PostspageViewRoute());
   }
@@ -69,13 +73,10 @@ class PostspageViewModel extends BaseViewModel {
     await _routerService.replaceWith(const AicoachViewRoute());
   }
 
-
   void signUserOut() {
     FirebaseAuth.instance.signOut();
     navigateToAuthView();
   }
-
-
 
   final user = FirebaseAuth.instance.currentUser!;
 
@@ -130,24 +131,23 @@ class PostspageViewModel extends BaseViewModel {
 */
       String userName = user.email!;
       String postCaption = textController.text;
-     
-     DateTime now = DateTime.now();
-    String formattedDate = DateFormat('MMM d yyyy').format(now);
+
+      DateTime now = DateTime.now();
+      String formattedDate = DateFormat('MMM d yyyy').format(now);
       //Create a Map of data
-     FirebaseFirestore.instance.collection('posts').add({
-         'name': userName,
+      FirebaseFirestore.instance.collection('posts').add({
+        'name': userName,
         'description': postCaption,
         'image': imageUrl,
-         'date': formattedDate,
-         'Likes': [],
-         'saved': [],
-     });
-       
-        //'date':
-      
+        'date': formattedDate,
+        'Likes': [],
+        'saved': [],
+      });
+
+      //'date':
 
       //Add a new item
-      
+
       /*  //Add a new item
                       _reference2.add(Send);*/
       // Use the imageUrl as needed (e.g., save it to a database or display it)
@@ -162,8 +162,7 @@ class PostspageViewModel extends BaseViewModel {
   }
 
   Future<void> postOnline() async {
-  
-   final imageUrl = '';
+    final imageUrl = '';
 
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('MMM d yyyy').format(now);
@@ -172,14 +171,14 @@ class PostspageViewModel extends BaseViewModel {
     String postCaption = textController.text;
 
     //Create a Map of data
-     FirebaseFirestore.instance.collection('posts').add({
-         'name': userName,
-        'description': postCaption,
-        'image': imageUrl,
-         'date': formattedDate,
-         'Likes': [],
-         'saved': [],
-     });
+    FirebaseFirestore.instance.collection('posts').add({
+      'name': userName,
+      'description': postCaption,
+      'image': imageUrl,
+      'date': formattedDate,
+      'Likes': [],
+      'saved': [],
+    });
     notifyListeners();
   }
 }

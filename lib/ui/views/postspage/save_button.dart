@@ -21,23 +21,26 @@ class SaveButton extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-                 Center(
-                   child: Icon(
-                    size: 25,
-                           isSaved ? Icons.bookmark : Icons.bookmark_add_outlined,
-                           color: isSaved ? Color.fromARGB(255, 255, 157, 0) : Color.fromARGB(255, 255, 157, 0),
-                         ),
-                 ),
-          SizedBox(width: 10,),
-          Text(isSaved ? 'S A V E D' : 'S A V E', style: TextStyle(color: Colors.black),) 
-          ],),
+              Center(
+                child: Icon(
+                  size: 25,
+                  isSaved ? Icons.bookmark : Icons.bookmark_add_outlined,
+                  color: isSaved
+                      ? Color.fromARGB(255, 255, 157, 0)
+                      : Color.fromARGB(255, 255, 157, 0),
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                isSaved ? 'S A V E D' : 'S A V E',
+                style: TextStyle(color: Colors.black),
+              )
+            ],
+          ),
         ),
       ), // Icon
     ); // GestureDetector
   }
 }
-
-
-
-
-

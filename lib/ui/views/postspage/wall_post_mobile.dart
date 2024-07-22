@@ -34,7 +34,6 @@ class WallMPost extends StatefulWidget {
     required this.followers,
     required this.image,
     required this.saves,
-
   });
 
   @override
@@ -91,7 +90,8 @@ class _WallPostState extends State<WallMPost> {
       try {
         DateTime now = DateTime.now();
         String formattedDate = DateFormat('MMM d yyyy').format(now);
-        DocumentReference postRef = FirebaseFirestore.instance.collection('posts').doc(widget.postId);
+        DocumentReference postRef =
+            FirebaseFirestore.instance.collection('posts').doc(widget.postId);
 
         await FirebaseFirestore.instance
             .collection("posts")
@@ -113,7 +113,10 @@ class _WallPostState extends State<WallMPost> {
   }
 
   void checkIfFollowed() async {
-    DocumentSnapshot doc = await FirebaseFirestore.instance.collection('following').doc(currentUser.email).get();
+    DocumentSnapshot doc = await FirebaseFirestore.instance
+        .collection('following')
+        .doc(currentUser.email)
+        .get();
     if (doc.exists) {
       List<dynamic> following = doc['following'] ?? [];
       setState(() {
@@ -132,7 +135,8 @@ class _WallPostState extends State<WallMPost> {
     setState(() {
       isLiked = !isLiked;
     });
-    DocumentReference postRef = FirebaseFirestore.instance.collection('posts').doc(widget.postId);
+    DocumentReference postRef =
+        FirebaseFirestore.instance.collection('posts').doc(widget.postId);
 
     if (isLiked) {
       postRef.update({
@@ -149,8 +153,11 @@ class _WallPostState extends State<WallMPost> {
     setState(() {
       isSaved = !isSaved;
     });
-    DocumentReference saveRef = FirebaseFirestore.instance.collection('following').doc(currentUser.email);
-    DocumentReference savRef = FirebaseFirestore.instance.collection('posts').doc(widget.postId);
+    DocumentReference saveRef = FirebaseFirestore.instance
+        .collection('following')
+        .doc(currentUser.email);
+    DocumentReference savRef =
+        FirebaseFirestore.instance.collection('posts').doc(widget.postId);
     if (isSaved) {
       saveRef.set({
         'saved': FieldValue.arrayUnion([widget.postId])
@@ -169,8 +176,11 @@ class _WallPostState extends State<WallMPost> {
   }
 
   void toggleFollow() async {
-    DocumentReference folRef = FirebaseFirestore.instance.collection('following').doc(currentUser.email);
-    DocumentReference follRef = FirebaseFirestore.instance.collection('following').doc(widget.email);
+    DocumentReference folRef = FirebaseFirestore.instance
+        .collection('following')
+        .doc(currentUser.email);
+    DocumentReference follRef =
+        FirebaseFirestore.instance.collection('following').doc(widget.email);
 
     setState(() {
       isFollowed = !isFollowed;
@@ -346,7 +356,8 @@ class _WallPostState extends State<WallMPost> {
               physics: const NeverScrollableScrollPhysics(),
               itemCount: comments.length,
               itemBuilder: (context, index) {
-                final commentData = comments[index].data() as Map<String, dynamic>;
+                final commentData =
+                    comments[index].data() as Map<String, dynamic>;
                 return StreamBuilder(
                   stream: FirebaseFirestore.instance
                       .collection('usernames')
@@ -371,7 +382,8 @@ class _WallPostState extends State<WallMPost> {
                       email: commentData['CommentedBy'],
                       postId: widget.postId,
                       commentId: comments[index].id, // Pass comment ID
-                      onDelete: () => deleteComment(comments[index].id), // Handle delete
+                      onDelete: () =>
+                          deleteComment(comments[index].id), // Handle delete
                     );
                   },
                 );

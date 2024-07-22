@@ -20,7 +20,6 @@ class WallPost extends StatefulWidget {
   final List<String> followers;
   final String image;
   final List<String> saves;
-  
 
   const WallPost({
     super.key,
@@ -91,7 +90,8 @@ class _WallPostState extends State<WallPost> {
       try {
         DateTime now = DateTime.now();
         String formattedDate = DateFormat('MMM d yyyy').format(now);
-        DocumentReference postRef = FirebaseFirestore.instance.collection('posts').doc(widget.postId);
+        DocumentReference postRef =
+            FirebaseFirestore.instance.collection('posts').doc(widget.postId);
 
         await FirebaseFirestore.instance
             .collection("posts")
@@ -113,7 +113,10 @@ class _WallPostState extends State<WallPost> {
   }
 
   void checkIfFollowed() async {
-    DocumentSnapshot doc = await FirebaseFirestore.instance.collection('following').doc(currentUser.email).get();
+    DocumentSnapshot doc = await FirebaseFirestore.instance
+        .collection('following')
+        .doc(currentUser.email)
+        .get();
     if (doc.exists) {
       List<dynamic> following = doc['following'] ?? [];
       setState(() {
@@ -132,7 +135,8 @@ class _WallPostState extends State<WallPost> {
     setState(() {
       isLiked = !isLiked;
     });
-    DocumentReference postRef = FirebaseFirestore.instance.collection('posts').doc(widget.postId);
+    DocumentReference postRef =
+        FirebaseFirestore.instance.collection('posts').doc(widget.postId);
 
     if (isLiked) {
       postRef.update({
@@ -149,8 +153,11 @@ class _WallPostState extends State<WallPost> {
     setState(() {
       isSaved = !isSaved;
     });
-    DocumentReference saveRef = FirebaseFirestore.instance.collection('following').doc(currentUser.email);
-    DocumentReference savRef = FirebaseFirestore.instance.collection('posts').doc(widget.postId);
+    DocumentReference saveRef = FirebaseFirestore.instance
+        .collection('following')
+        .doc(currentUser.email);
+    DocumentReference savRef =
+        FirebaseFirestore.instance.collection('posts').doc(widget.postId);
     if (isSaved) {
       saveRef.set({
         'saved': FieldValue.arrayUnion([widget.postId])
@@ -169,8 +176,11 @@ class _WallPostState extends State<WallPost> {
   }
 
   void toggleFollow() async {
-    DocumentReference folRef = FirebaseFirestore.instance.collection('following').doc(currentUser.email);
-    DocumentReference follRef = FirebaseFirestore.instance.collection('following').doc(widget.email);
+    DocumentReference folRef = FirebaseFirestore.instance
+        .collection('following')
+        .doc(currentUser.email);
+    DocumentReference follRef =
+        FirebaseFirestore.instance.collection('following').doc(widget.email);
 
     setState(() {
       isFollowed = !isFollowed;
@@ -233,7 +243,8 @@ class _WallPostState extends State<WallPost> {
                                     child: Container(
                                       alignment: Alignment.center,
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(360),
+                                        borderRadius:
+                                            BorderRadius.circular(360),
                                         image: DecorationImage(
                                           image: NetworkImage(widget.profile),
                                           fit: BoxFit.cover,
@@ -245,7 +256,8 @@ class _WallPostState extends State<WallPost> {
                                 SizedBox(width: 20),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         widget.user,
@@ -260,7 +272,8 @@ class _WallPostState extends State<WallPost> {
                                           Text(
                                             widget.followers.length.toString(),
                                             style: TextStyle(
-                                              color: const Color.fromARGB(171, 255, 255, 255),
+                                              color: const Color.fromARGB(
+                                                  171, 255, 255, 255),
                                               fontWeight: FontWeight.w100,
                                               fontSize: 15,
                                             ),
@@ -302,7 +315,9 @@ class _WallPostState extends State<WallPost> {
                             ),
                             Text(
                               widget.time,
-                              style: TextStyle(color: const Color.fromARGB(167, 255, 255, 255)),
+                              style: TextStyle(
+                                  color:
+                                      const Color.fromARGB(167, 255, 255, 255)),
                             ),
                             SizedBox(height: 10),
                             Row(
@@ -314,19 +329,24 @@ class _WallPostState extends State<WallPost> {
                                       Container(
                                         decoration: BoxDecoration(
                                           color: Colors.white,
-                                          borderRadius: BorderRadius.circular(360),
+                                          borderRadius:
+                                              BorderRadius.circular(360),
                                         ),
                                         child: Align(
                                           child: Row(
                                             children: [
                                               Row(
-                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
                                                 children: [
                                                   SizedBox(width: 20),
                                                   Padding(
-                                                    padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
+                                                    padding: const EdgeInsets
+                                                        .fromLTRB(
+                                                        8.0, 0, 8.0, 0),
                                                     child: Text(
-                                                      widget.likes.length.toString(),
+                                                      widget.likes.length
+                                                          .toString(),
                                                       style: TextStyle(
                                                         color: Colors.black,
                                                       ),
@@ -347,7 +367,8 @@ class _WallPostState extends State<WallPost> {
                                       SizedBox(width: 10),
                                       CommentButton(
                                         onPressed: () {
-                                          print("Comment text: ${commentText.text}");
+                                          print(
+                                              "Comment text: ${commentText.text}");
                                           addComment(commentText.text);
                                         },
                                       ),
@@ -366,7 +387,8 @@ class _WallPostState extends State<WallPost> {
                               children: [
                                 Expanded(
                                   child: TextField(
-                                    style: TextStyle(color: Color.fromARGB(255, 60, 60, 60)),
+                                    style: TextStyle(
+                                        color: Color.fromARGB(255, 60, 60, 60)),
                                     controller: commentText,
                                     maxLines: null,
                                     decoration: InputDecoration(
@@ -375,7 +397,8 @@ class _WallPostState extends State<WallPost> {
                                         color: Color.fromARGB(255, 60, 60, 60),
                                       ),
                                       filled: true,
-                                      fillColor: Color.fromARGB(255, 229, 222, 235),
+                                      fillColor:
+                                          Color.fromARGB(255, 229, 222, 235),
                                       border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(50),
                                       ),
@@ -389,14 +412,18 @@ class _WallPostState extends State<WallPost> {
                               shrinkWrap: true,
                               itemCount: comments.length,
                               itemBuilder: (context, index) {
-                                final commentData = comments[index].data() as Map<String, dynamic>;
+                                final commentData = comments[index].data()
+                                    as Map<String, dynamic>;
                                 return StreamBuilder(
                                   stream: FirebaseFirestore.instance
                                       .collection('usernames')
                                       .doc(commentData['CommentedBy'])
                                       .snapshots(),
-                                  builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-                                    if (snapshot.connectionState == ConnectionState.waiting) {
+                                  builder: (context,
+                                      AsyncSnapshot<DocumentSnapshot>
+                                          snapshot) {
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
                                       //return Center(child: CircularProgressIndicator());
                                     }
                                     if (!snapshot.hasData) {
@@ -413,8 +440,10 @@ class _WallPostState extends State<WallPost> {
                                       user: '$fieldValue',
                                       email: commentData['CommentedBy'],
                                       postId: widget.postId,
-                                      commentId: comments[index].id, // Pass comment ID
-                                      onDelete: () => deleteComment(comments[index].id), // Handle delete
+                                      commentId:
+                                          comments[index].id, // Pass comment ID
+                                      onDelete: () => deleteComment(
+                                          comments[index].id), // Handle delete
                                     );
                                   },
                                 );

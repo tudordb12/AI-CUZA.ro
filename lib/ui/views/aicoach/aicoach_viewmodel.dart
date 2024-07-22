@@ -53,7 +53,7 @@ class AicoachViewModel extends BaseViewModel {
   }
 
   Future<void> navigateToPostsView() async {
-     await _routerService.replaceWith(const PostspageViewRoute());
+    await _routerService.replaceWith(const PostspageViewRoute());
   }
 
   void signUserOut() {

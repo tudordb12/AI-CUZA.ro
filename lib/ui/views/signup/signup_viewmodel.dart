@@ -63,7 +63,8 @@ class SignupViewModel extends BaseViewModel {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
 
     final imageUrl = '';
-    final defaultUrl = 'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/onlineres%2F654a4d851561c2f04731f7fb3838f020.png?alt=media&token=bff7b2d9-90bf-4cd1-b219-6fda61c14495';
+    final defaultUrl =
+        'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/onlineres%2F654a4d851561c2f04731f7fb3838f020.png?alt=media&token=bff7b2d9-90bf-4cd1-b219-6fda61c14495';
 
     String itemName = nameController.text;
     String username = emailController.text;
@@ -82,10 +83,11 @@ class SignupViewModel extends BaseViewModel {
     // _reference.add(dataToSend);
     docRef.set(dataToSend);
 
-     DocumentReference followingDocRef = firestore.collection('following').doc(username);
-      await followingDocRef.set({
-        'followers': [],
-      });
+    DocumentReference followingDocRef =
+        firestore.collection('following').doc(username);
+    await followingDocRef.set({
+      'followers': [],
+    });
     /*  //Add a new item
                       _reference2.add(Send);*/
     // Use the imageUrl as needed (e.g., save it to a database or display it)
@@ -98,7 +100,7 @@ class SignupViewModel extends BaseViewModel {
   Future<void> profilepic() async {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-     try {
+    try {
       // Open a file picker to choose an image file
       final result = await FilePicker.platform.pickFiles(type: FileType.image);
 
@@ -133,34 +135,36 @@ class SignupViewModel extends BaseViewModel {
 
       // Get the download URL of the uploaded image
       final imageUrl = await snapshot.ref.getDownloadURL();
-   
-    String itemName = nameController.text;
-    String username = emailController.text;
 
-    DocumentReference docRef = firestore.collection('usernames').doc(username);
+      String itemName = nameController.text;
+      String username = emailController.text;
 
-    //Create a Map of data
-    Map<String, String> dataToSend = {
-      'name': itemName,
-      'email': username,
-      'image': imageUrl,
-    };
+      DocumentReference docRef =
+          firestore.collection('usernames').doc(username);
 
-    //Add a new item
-    // _reference.add(dataToSend);
-    docRef.set(dataToSend);
+      //Create a Map of data
+      Map<String, String> dataToSend = {
+        'name': itemName,
+        'email': username,
+        'image': imageUrl,
+      };
 
-    DocumentReference followingDocRef = firestore.collection('following').doc(username);
+      //Add a new item
+      // _reference.add(dataToSend);
+      docRef.set(dataToSend);
+
+      DocumentReference followingDocRef =
+          firestore.collection('following').doc(username);
       await followingDocRef.set({
         'followers': [],
       });
-    /*  //Add a new item
+      /*  //Add a new item
                       _reference2.add(Send);*/
-    // Use the imageUrl as needed (e.g., save it to a database or display it)
+      // Use the imageUrl as needed (e.g., save it to a database or display it)
 
-    // Update the url variable with the download URL
-    
-    notifyListeners();
+      // Update the url variable with the download URL
+
+      notifyListeners();
     } catch (error) {
       // Handle any errors that occur during the upload process
       print('Error uploading image: $error');
@@ -195,7 +199,7 @@ class SignupViewModel extends BaseViewModel {
       if (passwordController.text == confirmPasswordController.text) {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
             email: emailController.text, password: passwordController.text);
-        
+
         profilepic();
         navigateToLoginView();
       } else {

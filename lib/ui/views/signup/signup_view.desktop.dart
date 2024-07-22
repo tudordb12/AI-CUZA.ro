@@ -240,22 +240,25 @@ class SignupViewDesktop extends ViewModelWidget<SignupViewModel> {
                                         ),
                                       ),
                                       SizedBox(height: 20),
-                                         Container(
-                                        
+                                      Container(
                                         height: 50,
                                         width: 50,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(100),
-                                          color: Color.fromARGB(255, 234, 229, 229),
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          color: Color.fromARGB(
+                                              255, 234, 229, 229),
                                         ),
-                                        child: IconButton(onPressed: () {
-                                                      // Call postOnline asynchronously
-                                                      if(viewModel.emailController.text.isNotEmpty)
-                                                        {
-                                                          viewModel.signUserUp2();
-                                                    }
-                                                  },
-                                                icon:const Icon(Icons.add_a_photo),),
+                                        child: IconButton(
+                                          onPressed: () {
+                                            // Call postOnline asynchronously
+                                            if (viewModel.emailController.text
+                                                .isNotEmpty) {
+                                              viewModel.signUserUp2();
+                                            }
+                                          },
+                                          icon: const Icon(Icons.add_a_photo),
+                                        ),
                                       ),
                                       SizedBox(height: 20),
                                       FadeInUp(

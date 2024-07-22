@@ -18,8 +18,8 @@ class PostspageView extends StackedView<PostspageViewModel> {
   ) {
     return ScreenTypeLayout.builder(
       mobile: (_) => const PostspageViewMobile(),
-     // tablet: (_) => const PostspageViewTablet(),
-      desktop: (_) =>  PostspageViewDesktop(),
+      // tablet: (_) => const PostspageViewTablet(),
+      desktop: (_) => PostspageViewDesktop(),
     );
   }
 

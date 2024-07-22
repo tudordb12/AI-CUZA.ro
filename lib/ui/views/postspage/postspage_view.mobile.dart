@@ -110,7 +110,8 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                           .doc(user.email!)
                           .snapshots(),
                       builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.waiting) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
                           return const CircularProgressIndicator();
                         }
                         if (!snapshot.hasData) {
@@ -140,7 +141,8 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                           .doc(user.email!)
                           .snapshots(),
                       builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.waiting) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
                           return const CircularProgressIndicator();
                         }
                         if (!snapshot.hasData) {
@@ -165,12 +167,14 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                   children: [
                     Expanded(
                       child: TextField(
-                        style: const TextStyle(color: Color.fromARGB(255, 60, 60, 60)),
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 60, 60, 60)),
                         controller: viewModel.textController,
                         maxLines: null,
                         decoration: InputDecoration(
                           hintText: 'Ce idei noi ai?',
-                          hintStyle: const TextStyle(color: Color.fromARGB(255, 60, 60, 60)),
+                          hintStyle: const TextStyle(
+                              color: Color.fromARGB(255, 60, 60, 60)),
                           filled: true,
                           fillColor: const Color.fromARGB(255, 229, 222, 235),
                           border: OutlineInputBorder(
@@ -200,7 +204,8 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                 ),
               ),
               StreamBuilder<QuerySnapshot>(
-                stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+                stream:
+                    FirebaseFirestore.instance.collection('posts').snapshots(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
                     return const Center(child: CircularProgressIndicator());
@@ -238,7 +243,8 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                             .get(),
                         builder: (context, userSnapshot) {
                           if (!userSnapshot.hasData) {
-                            return const Center(child: CircularProgressIndicator());
+                            return const Center(
+                                child: CircularProgressIndicator());
                           }
 
                           final userDoc = userSnapshot.data!;
@@ -253,11 +259,13 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                                 .get(),
                             builder: (context, follSnapshot) {
                               if (!follSnapshot.hasData) {
-                                return const Center(child: CircularProgressIndicator());
+                                return const Center(
+                                    child: CircularProgressIndicator());
                               }
 
                               final follDoc = follSnapshot.data!;
-                              List<String> followers2 = List<String>.from(follDoc['followers'] ?? []);
+                              List<String> followers2 =
+                                  List<String>.from(follDoc['followers'] ?? []);
 
                               return WallMPost(
                                 message: post['description'],

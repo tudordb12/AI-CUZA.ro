@@ -14,7 +14,9 @@ class FollowButton extends StatelessWidget {
         width: isFollowed ? 145 : 125,
         height: 50,
         decoration: BoxDecoration(
-          color: isFollowed ? Color.fromARGB(255, 117, 75, 241) : Color.fromARGB(255, 69, 0, 217),
+          color: isFollowed
+              ? Color.fromARGB(255, 117, 75, 241)
+              : Color.fromARGB(255, 69, 0, 217),
           borderRadius: BorderRadius.circular(360),
         ),
         child: Padding(
@@ -25,10 +27,14 @@ class FollowButton extends StatelessWidget {
                 children: [
                   Icon(
                     size: 20.0,
-                    isFollowed ? Icons.library_add_check_rounded : Icons.add_alert,
+                    isFollowed
+                        ? Icons.library_add_check_rounded
+                        : Icons.add_alert,
                     color: Colors.white,
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(
+                    width: 10,
+                  ),
                   Text(
                     isFollowed ? "F O L L O W I N G" : "F O L L O W",
                     style: TextStyle(

@@ -456,29 +456,32 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                   child: Center(
                                     child: Column(
                                       children: [
-                                        SizedBox(height: 50,),
-                                         Padding(
-                                       padding: const EdgeInsets.all(8.0),
-                                       child: GradientText(
-                                          'ROBO COACH',
-                                          style: ktsTitleText,
-                                          colors: const [
-                                            Color.fromARGB(255, 232, 231, 230),
-                                            Color.fromARGB(255, 199, 198, 197)
-                                          ],
+                                        SizedBox(
+                                          height: 50,
                                         ),
-                           
-                                     ),
-                                     SizedBox(height: 20,),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: GradientText(
+                                            'ROBO COACH',
+                                            style: ktsTitleText,
+                                            colors: const [
+                                              Color.fromARGB(
+                                                  255, 232, 231, 230),
+                                              Color.fromARGB(255, 199, 198, 197)
+                                            ],
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
                                         Padding(
                                           padding: const EdgeInsets.all(10.0),
-                                          
                                           child: Container(
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(60),
-                                              color:
-                                                  Color.fromARGB(255, 48, 46, 63),
+                                              color: Color.fromARGB(
+                                                  255, 48, 46, 63),
                                             ),
                                             height: 500,
                                             width: 1000,
@@ -486,27 +489,30 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                               children: [
                                                 Container(
                                                   decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.only(
-                                                        topLeft:
-                                                            Radius.circular(60),
-                                                        topRight:
-                                                            Radius.circular(60)),
+                                                    borderRadius:
+                                                        BorderRadius.only(
+                                                            topLeft: Radius
+                                                                .circular(60),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    60)),
                                                     color: const Color.fromARGB(
                                                         255, 60, 81, 92),
                                                   ),
                                                   height: 60,
                                                   width: 1000,
                                                   child: Padding(
-                                                    padding:
-                                                        const EdgeInsets.fromLTRB(
-                                                            60.0, 0, 0, 0),
+                                                    padding: const EdgeInsets
+                                                        .fromLTRB(
+                                                        60.0, 0, 0, 0),
                                                     child: Row(
                                                       children: [
                                                         Text(
                                                           "@robotics_coach_",
                                                           style: TextStyle(
                                                               fontWeight:
-                                                                  FontWeight.bold,
+                                                                  FontWeight
+                                                                      .bold,
                                                               fontSize: 20),
                                                         ),
                                                       ],
@@ -517,45 +523,58 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                                     height: 440,
                                                     width: 1000,
                                                     child: Padding(
-                                                      padding: const EdgeInsets.all(
-                                                          20.0),
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              20.0),
                                                       child: DashChat(
-                                                        currentUser: _currentUser,
+                                                        currentUser:
+                                                            _currentUser,
                                                         messageOptions:
                                                             const MessageOptions(
                                                           currentUserContainerColor:
                                                               Colors.black,
                                                           containerColor:
-                                                              Color.fromRGBO(
-                                                                  67, 56, 74, 1),
-                                                          textColor: Colors.white,
+                                                              Color.fromRGBO(67,
+                                                                  56, 74, 1),
+                                                          textColor:
+                                                              Colors.white,
                                                           maxWidth: 400,
                                                         ),
-                                                        onSend: (ChatMessage m) {
+                                                        onSend:
+                                                            (ChatMessage m) {
                                                           viewModel
-                                                              .getChatResponse(m);
+                                                              .getChatResponse(
+                                                                  m);
                                                         },
                                                         messages:
                                                             viewModel.messages,
-                                                        inputOptions: InputOptions(
+                                                        inputOptions:
+                                                            InputOptions(
                                                           inputDecoration:
                                                               InputDecoration(
                                                             hintText:
                                                                 'Întreabă-mă orice',
-                                                            hintStyle: TextStyle(
-                                                              color: Colors.white70,
+                                                            hintStyle:
+                                                                TextStyle(
+                                                              color: Colors
+                                                                  .white70,
                                                             ),
                                                             filled: true,
                                                             fillColor:
-                                                                Color.fromARGB(255,
-                                                                    91, 105, 112),
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    91,
+                                                                    105,
+                                                                    112),
                                                             border:
                                                                 OutlineInputBorder(
                                                               borderRadius:
                                                                   BorderRadius
-                                                                      .circular(40),
+                                                                      .circular(
+                                                                          40),
                                                               borderSide:
-                                                                  BorderSide.none,
+                                                                  BorderSide
+                                                                      .none,
                                                             ),
                                                             contentPadding:
                                                                 EdgeInsets
