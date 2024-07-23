@@ -554,14 +554,14 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                                     },
                                                   ),
                 
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            FadeInUp(
-              delay: Duration(milliseconds: 2000),
-              child: FutureBuilder(
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            FadeInUp(
+                                              delay: Duration(milliseconds: 2000),
+                                              child: FutureBuilder(
                                                     future: FirebaseFirestore
                                                         .instance
                                                         .collection(
@@ -595,19 +595,20 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                                     },
                                                   ),
                 
-            ),
-          ],
-        ),
+                                            ),
+                                          ],
+                                        ),
 
-      ],
-    ),
-  ),
-),
+                                      ],
+                                    ),
+                                  ),
+                                ),
 
                                   Positioned(
                                      top: 500, // Adjust the position as needed
                                     left: 0,
                                     child: Container(
+                                      
                                       height: 500,
                                       width: 450,
                                 decoration: BoxDecoration(
@@ -620,32 +621,87 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                   ),
                                 ),
                                 
-                                child: Container(
-                                 child: FutureBuilder<List<Map<String, dynamic>>>(
-        future: fetchFollowingUsers(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(child: Text('No users found'));
-          } else {
-            return ListView.builder(
-              itemCount: snapshot.data!.length,
-              itemBuilder: (context, index) {
-                var user = snapshot.data![index];
-                return ListTile(
-                  leading: Image.network(user['image']),
-                  title: Text(user['name']),
-                  subtitle: Text(user['email']),
-                );
-              },
-            );
-          }
-        },
-      ),
-    ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                       
+                                        SizedBox(height: 10,),
+                                        Text("Urmăririle tale", style: TextStyle(fontSize: 20, color: const Color.fromARGB(134, 255, 255, 255)),),
+                                        SizedBox(height: 10,),
+                                        Container(
+                                          height: 350,
+                                          width: 300,
+                                         child: FutureBuilder<List<Map<String, dynamic>>>(
+                                              future: fetchFollowingUsers(),
+                                              builder: (context, snapshot) {
+                                                if (snapshot.connectionState == ConnectionState.waiting) {
+                                                  return Center( );
+                                                } else if (snapshot.hasError) {
+                                                  return Center(child: Text('Error: ${snapshot.error}'));
+                                                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                                                  return Center(child: Text('No users found'));
+                                                } else {
+                                                  return ListView.builder(
+                                                    itemCount: snapshot.data!.length,
+                                                    itemBuilder: (context, index) {
+                                                      var user = snapshot.data![index];
+                                                      return Padding(
+                                                        padding: const EdgeInsets.all(2.0),
+                                                        child: Container(
+                                                          child: Row(
+                                                            children: [
+                                                              Padding(
+                                                                padding: const EdgeInsets.all(8.0),
+                                                                child: Container(
+                                                                  height: 75,
+                                                                  width: 75,
+                                                                  decoration: BoxDecoration(color: Colors.white70, borderRadius: BorderRadius.circular(70),
+                                                                  image: DecorationImage(
+                                                                                                        image: NetworkImage(
+                                                                                                            user['image']),
+                                                                                                        fit: BoxFit.cover,
+                                                                                                      ),
+                                                                  ),
+                                                                
+                                                                ),
+                                                              ),
+                                                              Column(
+                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                children: [
+                                                                  Container(
+                                                                    child: Text(user['name'], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
+                                                                  ),
+                                                                  SizedBox(height: 10,),
+                                                                  Container(
+                                                                     child: Text(user['email'], style: TextStyle(fontWeight: FontWeight.w100, color:Color.fromARGB(113, 255, 255, 255)),)
+                                                                  )
+                                                                ],
+                                                              )
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      );
+                                                      
+                                                      return ListTile(
+                                                        leading: Image.network(user['image']),
+                                                        title: Text(user['name']),
+                                                        subtitle: Text(user['email']),
+                                                      );
+                                                    },
+                                                  );
+                                                }
+                                              },
+                                            ),
+                                          ),
+                                          SizedBox(height: 50,)
+                                      ],
+                                    ),
+                                  ),
+                                ),
                                  ),
                               ),
                                   
