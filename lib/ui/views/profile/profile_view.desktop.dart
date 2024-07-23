@@ -1,4 +1,5 @@
 import 'package:aicuzaro/ui/views/postspage/wall_post.dart';
+import 'package:aicuzaro/ui/views/profile/profile_pic_btn.dart';
 import 'package:aicuzaro/ui/views/profile/wall_ppost.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -389,7 +390,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                         child: FadeInRightBig(
                           child: SingleChildScrollView(
                             child: Container(
-                              height: 1500,
+                              height: 2300,
                               decoration: BoxDecoration(
                                 color: Color.fromARGB(199, 52, 51, 51),
                                 borderRadius: BorderRadius.circular(0),
@@ -470,8 +471,17 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                     ),
                                   ),
                                   Positioned(
+                                    top: 400,
+                                    left: 200,
+                                    child: profilePicBtn(
+                                      onTap: (){
+                                       viewModel.changeprofilepic();
+                                      })
+                                  
+                                  ),
+                                  Positioned(
                                     top: 380, // Adjust the position as needed
-                                    left: 290, // Adjust the position as needed
+                                    left: 285, // Adjust the position as needed
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
@@ -501,7 +511,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                           
                                         return Text(
                                           '$fieldValue',
-                                          style: TextStyle(fontSize: 30),
+                                          style: TextStyle(fontSize: 25),
                                         );
                                       },
                                     ),
@@ -510,17 +520,17 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                     ),
                                   ),
                                   Positioned(
-  top: 400,
-  left: 250,
-  child: Padding(
-    padding: const EdgeInsets.all(30.0),
-    child: Row(
-      children: [
-        Column(
-          children: [
-            FadeInUp(
-              delay: Duration(milliseconds: 2000),
-              child: FutureBuilder(
+                              top: 400,
+                              left: 250,
+                              child: Padding(
+                                padding: const EdgeInsets.all(30.0),
+                                child: Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        FadeInUp(
+                                          delay: Duration(milliseconds: 2000),
+                                          child: FutureBuilder(
                                                     future: FirebaseFirestore
                                                         .instance
                                                         .collection(
@@ -605,7 +615,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                 ),
 
                                   Positioned(
-                                     top: 500, // Adjust the position as needed
+                                     top: 500, 
                                     left: 0,
                                     child: Container(
                                       
@@ -686,11 +696,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                                         ),
                                                       );
                                                       
-                                                      return ListTile(
-                                                        leading: Image.network(user['image']),
-                                                        title: Text(user['name']),
-                                                        subtitle: Text(user['email']),
-                                                      );
+                                                      
                                                     },
                                                   );
                                                 }
@@ -704,7 +710,56 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                 ),
                                  ),
                               ),
-                                  
+                                
+                                Positioned(
+                                     top: 1200, 
+                                    left: 0,
+                                    child: Container(
+                                      
+                                      height: 500,
+                                      width: 250,
+                                decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 207, 83, 0),
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(720.0),
+                                    bottomRight: Radius.circular(720.0),
+                                    
+                                    
+                                  ),
+                                ),
+                                
+                                child: Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Container(
+                                    height: 500,
+                                    width: 500,
+                                    child: Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        
+                                      ],
+                                    ),
+                                  ),))
+                              ),
+                              Positioned(
+                                top: 1400,
+                                      left: 75,
+                                child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                             
+                                              SizedBox(height: 10,),
+                                              Text("I D E I  S A L V A T E", style: TextStyle(fontSize: 30, color: Color.fromARGB(195, 255, 255, 255)),),
+                                              SizedBox(height: 10,),
+                                              Icon(
+                                                          size: 30,
+                                                                Icons.lightbulb,
+                                                                color: Color.fromARGB(206, 255, 233, 88),
+                                                        )
+                                            ]),
+                              
+                              ),
                                   
                                   Positioned(
                                     top: 200,
@@ -725,6 +780,14 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                       padding: const EdgeInsets.all(30.0),
                                       child: Column(
                                         children: [
+                                         
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text("P O S T Ă R I L E  M E L E", style: TextStyle(fontSize: 25, color: Color.fromARGB(188, 255, 255, 255)),),
+                                          ],
+                                        ),
+                                        SizedBox(height: 2,),
                                           Expanded(
                                         child: FadeInUp(
                                             delay: Duration(milliseconds: 2000),
@@ -854,6 +917,161 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                     ),
                                     )),
                                     Positioned(
+                                    top: 1250,
+                                    left: 400,
+                                    child: Container(height: 1000, width: 800, decoration: BoxDecoration(
+                                      color: Color.fromARGB(120, 0, 0, 0),
+                                       borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(40.0),
+                                   topLeft: Radius.circular(40.0),
+                                   bottomLeft: Radius.circular(40.0),
+                                   bottomRight: Radius.circular(40.0),
+                                   
+                                    
+                                    
+                                  ),
+                                    ) ,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(30.0),
+                                      child: Column(
+                                        children: [
+                                         
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text("IDEI SALVATE", style: TextStyle(fontSize: 25, color: Color.fromARGB(188, 255, 255, 255)),),
+                                          ],
+                                        ),
+                                        SizedBox(height: 2,),
+                                          Expanded(
+                                        child: FadeInUp(
+                                            delay: Duration(milliseconds: 2000),
+                                            child: StreamBuilder(
+                                              stream: FirebaseFirestore.instance
+                                                  .collection('posts')
+                                                  .where('saved', arrayContains: user.email)
+                                                  .snapshots(),
+                                              builder: (context,
+                                                  AsyncSnapshot<QuerySnapshot>
+                                                      snapshot) {
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                      child:
+                                                          CircularProgressIndicator());
+                                                }
+                                                 
+                                                return ListView.builder(
+                                                  itemCount:
+                                                      snapshot.data!.docs.length,
+                                                  itemBuilder: (context, index) {
+                                                    final post =
+                                                        snapshot.data!.docs[index];
+                                    
+                                                    Color buttonColor;
+                                                    if (index % 5 == 0) {
+                                                      buttonColor = Color.fromARGB(255, 218, 38, 71);
+                                                    } else if (index % 5 == 1) {
+                                                      buttonColor = Color.fromARGB(255, 211, 32, 0);
+                                                    } else if (index % 5 == 2) {
+                                                      buttonColor = Color.fromARGB(
+                                                          255, 212, 64, 48);
+                                                    } else if (index % 5 == 3) {
+                                                      buttonColor = Color.fromARGB(
+                                                          255, 218, 66, 81);
+                                                    } else {
+                                                      buttonColor = Color.fromARGB(
+                                                          255, 201, 52, 38);
+                                                    }
+                                    
+                                                    return FutureBuilder(
+                                                      future: FirebaseFirestore
+                                                          .instance
+                                                          .collection('usernames')
+                                                          .doc(post[
+                                                              'name']) // assuming 'name' is the email address
+                                                          .get(),
+                                                      builder: (context,
+                                                          AsyncSnapshot<
+                                                                  DocumentSnapshot>
+                                                              userSnapshot) {
+                                                        if (!userSnapshot.hasData) {
+                                                          return Center(
+                                                              child:
+                                                                  CircularProgressIndicator());
+                                                        }
+                                    
+                                                        final userDoc =
+                                                            userSnapshot.data!;
+                                                        final userName =
+                                                            userDoc['name'] ??
+                                                                post['name'];
+                                                        final profilepic =
+                                                            userDoc['image'] ??
+                                                                post['name'];
+                                                        final photo = post['image'];
+                                    
+                                                        return FutureBuilder(
+                                                          future: FirebaseFirestore
+                                                              .instance
+                                                              .collection(
+                                                                  'following')
+                                                              .doc(userDoc['email'])
+                                                              .get(),
+                                                          builder: (context,
+                                                              AsyncSnapshot<
+                                                                      DocumentSnapshot>
+                                                                  follSnapshot) {
+                                                            if (!follSnapshot
+                                                                .hasData) {
+                                                              return Center(
+                                                                  child:
+                                                                      CircularProgressIndicator());
+                                                            }
+                                    
+                                                            final follDoc =
+                                                                follSnapshot.data!;
+                                                            List<String>
+                                                                followers2 =
+                                                                List<String>.from(
+                                                                    follDoc['followers'] ??
+                                                                        []);
+                                    
+                                                            
+                                                            return WallPost(
+                                                              message: post[
+                                                                  'description'],
+                                                              user: userName,
+                                                              time: post['date'],
+                                                              profile: profilepic,
+                                                              postId: post.id,
+                                                              likes: List<
+                                                                      String>.from(
+                                                                  post['Likes'] ??
+                                                                      []),
+                                                              bColor: buttonColor,
+                                                              email:
+                                                                  userDoc['email'],
+                                                              followers: followers2,
+                                                              image: photo,
+                                                              saves: List<
+                                                                      String>.from(
+                                                                  post['saved'] ??
+                                                                      []),
+                                                            );
+                                                          },
+                                                        );
+                                                      },
+                                                    );
+                                                  },
+                                                );
+                                              },
+                                            )),
+                                      ),
+                                        ],
+                                        ),
+                                    ),
+                                    )),
+                                   /* Positioned(
                                       top: 1200,
                                       left: 0,
                                       child: SingleChildScrollView(
@@ -998,7 +1216,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                         ),
                                       ),
                                     
-                                    )
+                                    )*/
                                 ],
                               ),
                             ),

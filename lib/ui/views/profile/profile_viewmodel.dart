@@ -183,70 +183,64 @@ class ProfileViewModel extends BaseViewModel {
   }
 
   Future<void> changeprofilepic() async {
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-    try {
-      // Open a file picker to choose an image file
-      final result = await FilePicker.platform.pickFiles(type: FileType.image);
+  try {
+    // Open a file picker to choose an image file
+    final result = await FilePicker.platform.pickFiles(type: FileType.image);
 
-      if (result == null) {
-        // User canceled the picker
-        return;
-      }
-
-      // Get the bytes of the picked image file
-      final bytes = result.files.single.bytes;
-
-      if (bytes == null) {
-        // Unable to read bytes
-        return;
-      }
-
-      // Create a reference to Firebase Storage
-      final storageRef = FirebaseStorage.instance.ref();
-
-      // Specify the destination path for the uploaded image
-      final destinationPath =
-          'images/${DateTime.now().millisecondsSinceEpoch}.jpg';
-
-      // Create a reference to the destination path
-      final imageRef = storageRef.child(destinationPath);
-
-      // Upload the image file
-      final uploadTask = imageRef.putData(bytes);
-
-      // Get the upload task snapshot to track the upload progress
-      final snapshot = await uploadTask;
-
-      // Get the download URL of the uploaded image
-      final imageUrl = await snapshot.ref.getDownloadURL();
-
-      DocumentReference docRef =
-          firestore.collection('usernames').doc(user.email);
-
-      //Create a Map of data
-      Map<String, String> dataToSend = {
-        
-        'image': imageUrl,
-      };
-
-      //Add a new item
-      // _reference.add(dataToSend);
-      docRef.set(dataToSend);
-
-     
-      /*  //Add a new item
-                      _reference2.add(Send);*/
-      // Use the imageUrl as needed (e.g., save it to a database or display it)
-
-      // Update the url variable with the download URL
-
-      notifyListeners();
-    } catch (error) {
-      // Handle any errors that occur during the upload process
-      print('Error uploading image: $error');
+    if (result == null) {
+      // User canceled the picker
+      return;
     }
+
+    // Get the bytes of the picked image file
+    final bytes = result.files.single.bytes;
+
+    if (bytes == null) {
+      // Unable to read bytes
+      return;
+    }
+
+    // Create a reference to Firebase Storage
+    final storageRef = FirebaseStorage.instance.ref();
+
+    // Specify the destination path for the uploaded image
+    final destinationPath =
+        'images/${DateTime.now().millisecondsSinceEpoch}.jpg';
+
+    // Create a reference to the destination path
+    final imageRef = storageRef.child(destinationPath);
+
+    // Upload the image file
+    final uploadTask = imageRef.putData(bytes);
+
+    // Get the upload task snapshot to track the upload progress
+    final snapshot = await uploadTask;
+
+    // Get the download URL of the uploaded image
+    final imageUrl = await snapshot.ref.getDownloadURL();
+
+    DocumentReference docRef =
+        firestore.collection('usernames').doc(user.email);
+
+    // Create a Map of data to send
+    Map<String, String> dataToSend = {
+      'image': imageUrl,
+    };
+
+    // Update the document with the new data
+    await docRef.update(dataToSend);
+
+    // Use the imageUrl as needed (e.g., save it to a database or display it)
+
+    // Notify listeners or update UI
+    notifyListeners();
+  } catch (error) {
+    // Handle any errors that occur during the upload process
+    print('Error uploading image: $error');
   }
+}
 
 
   
