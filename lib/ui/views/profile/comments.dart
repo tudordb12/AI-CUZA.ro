@@ -44,6 +44,38 @@ class _CommentState extends State<Comment> {
     }
   }
 
+  void deletePost() async{
+      
+    final commentDocs = await FirebaseFirestore.instance
+      .collection("User Posts")
+      .doc(widget.postId)
+      .collection("Comments")
+      .get();
+
+    for (var doc in commentDocs.docs) {
+      await FirebaseFirestore.instance
+        .collection("User Posts")
+        .doc(widget.postId)
+        .collection("Comments")
+        .doc(doc.id)
+        .delete();
+    }
+
+    // then delete the post
+    FirebaseFirestore.instance
+      .collection("User Posts")
+      .doc(widget.postId)
+      .delete()
+      .then((value) => print("post deleted"))
+      .catchError(
+        (error) => print("failed to delete post: $error")
+      );
+
+    // dismiss the dialog
+    Navigator.pop(context);
+  
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(

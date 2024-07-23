@@ -3,6 +3,7 @@ import 'package:aicuzaro/ui/views/postspage/comments_button.dart';
 import 'package:aicuzaro/ui/views/postspage/follow_button.dart';
 import 'package:aicuzaro/ui/views/postspage/like_button.dart';
 import 'package:aicuzaro/ui/views/postspage/save_button.dart';
+import 'package:aicuzaro/ui/views/profile/post_del_btn.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -110,6 +111,35 @@ class _WallPPostState extends State<WallPPost> {
         print("Failed to add comment: $e");
       }
     }
+  }
+
+  void deletePost() async {
+    
+    final commentDocs = await FirebaseFirestore.instance
+      .collection("posts")
+      .doc(widget.postId)
+      .collection("comments")
+      .get();
+
+    for (var doc in commentDocs.docs) {
+      await FirebaseFirestore.instance
+        .collection("posts")
+        .doc(widget.postId)
+        .collection("comments")
+        .doc(doc.id)
+        .delete();
+    }
+
+    // then delete the post
+    FirebaseFirestore.instance
+      .collection("posts")
+      .doc(widget.postId)
+      .delete()
+      .then((value) => print("post deleted"))
+      .catchError(
+        (error) => print("failed to delete post: $error")
+      );
+  
   }
 
   void checkIfFollowed() async {
@@ -290,6 +320,9 @@ class _WallPPostState extends State<WallPPost> {
                                     isFollowed: isFollowed,
                                     onTap: toggleFollow,
                                   ),
+                                if (widget.email == currentUser.email)
+                                  postDeleteBtn(onTap: deletePost
+                                 )
                               ],
                             ),
                             SizedBox(height: 10),
