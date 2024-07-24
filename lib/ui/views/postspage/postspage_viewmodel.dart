@@ -61,6 +61,11 @@ class PostspageViewModel extends BaseViewModel {
     await _routerService.replaceWith(const ProfileViewRoute());
   }
 
+  Future<void> navigateToLearnView() async {
+    await _routerService.replaceWith(const LearnViewRoute());
+  }
+
+
   Future<void> navigateToHomeView() async {
     await _routerService.replaceWith(const PostspageViewRoute());
   }

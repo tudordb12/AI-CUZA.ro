@@ -52,6 +52,11 @@ class AicoachViewModel extends BaseViewModel {
     await _routerService.replaceWith(const PostspageViewRoute());
   }
 
+    Future<void> navigateToLearnView() async {
+    await _routerService.replaceWith(const LearnViewRoute());
+  }
+
+
   void signUserOut() {
     FirebaseAuth.instance.signOut();
     navigateToAuthView();
@@ -59,8 +64,10 @@ class AicoachViewModel extends BaseViewModel {
 
   final user = FirebaseAuth.instance.currentUser!;
 
-  final ChatUser _currentUser = ChatUser(id: '1', firstName: 'Robo', lastName: 'User');
-  final ChatUser _gptCurrentUser = ChatUser(id: '2', firstName: 'Robo', lastName: 'Coach');
+  final ChatUser _currentUser =
+      ChatUser(id: '1', firstName: 'Robo', lastName: 'User');
+  final ChatUser _gptCurrentUser =
+      ChatUser(id: '2', firstName: 'Robo', lastName: 'Coach');
   final _bottomSheetService = locator<BottomSheetService>();
 
   // Load the API key from the consts file

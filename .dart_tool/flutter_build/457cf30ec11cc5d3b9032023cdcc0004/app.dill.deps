@@ -603,10 +603,6 @@ file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_animate-4.5.0/lib/src/exten
 file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_animate-4.5.0/lib/src/extensions/offset_copy_with_extensions.dart
 file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_animate-4.5.0/lib/src/flutter_animate.dart
 file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_animate-4.5.0/lib/src/warn.dart
-file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_dotenv-5.1.0/lib/flutter_dotenv.dart
-file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_dotenv-5.1.0/lib/src/dotenv.dart
-file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_dotenv-5.1.0/lib/src/errors.dart
-file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_dotenv-5.1.0/lib/src/parser.dart
 file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_markdown-0.6.19/lib/flutter_markdown.dart
 file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_markdown-0.6.19/lib/src/_functions_web.dart
 file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_markdown-0.6.19/lib/src/builder.dart
@@ -1555,6 +1551,7 @@ file:///Users/Marc/Desktop/aicuzaro/lib/app/app.bottomsheets.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/app/app.dialogs.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/app/app.locator.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/app/app.router.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/consts.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/firebase_options.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/main.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/bottom_sheets/notice/notice_sheet.dart
@@ -1606,6 +1603,14 @@ file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/postspage_viewmodel.d
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/save_button.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/wall_post.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/postspage/wall_post_mobile.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/profile/post_del_btn.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/profile/profile_pic_btn.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/profile/profile_view.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/profile/profile_view.desktop.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/profile/profile_view.mobile.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/profile/profile_view.tablet.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/profile/profile_viewmodel.dart
+file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/profile/wall_ppost.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/signup/signup_view.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/signup/signup_view.desktop.dart
 file:///Users/Marc/Desktop/aicuzaro/lib/ui/views/signup/signup_view.mobile.dart

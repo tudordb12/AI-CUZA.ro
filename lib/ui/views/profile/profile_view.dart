@@ -17,7 +17,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
     Widget? child,
   ) {
     return ScreenTypeLayout.builder(
-      mobile: (_) => const ProfileViewMobile(),
+      mobile: (_) => ProfileViewMobile(),
       tablet: (_) => const ProfileViewTablet(),
       desktop: (_) => const ProfileViewDesktop(),
     );

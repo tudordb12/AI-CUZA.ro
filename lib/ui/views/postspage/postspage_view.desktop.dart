@@ -343,9 +343,9 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                                             width: 5,
                                           ),
                                           _buildHoverContainer(
-                                              viewModel, 3, 'Î N T R E B Ă R I',
+                                              viewModel, 3, 'D E S C O P E R Ă',
                                               () {
-                                            // Action for TEST1 container
+                                                viewModel.navigateToLearnView();
                                           }),
                                           Spacer(
                                             flex: 2,
@@ -396,14 +396,14 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                                           ),
                                           _buildHoverContainer(viewModel, 5,
                                               'P R O F I L U L   M E U', () {
-                                              viewModel.navigateToProfileView();
+                                            viewModel.navigateToProfileView();
                                           }),
                                           Spacer(
                                             flex: 2,
                                           )
                                         ],
                                       ),
-                                     /* Spacer(
+                                      /* Spacer(
                                         flex: 2,
                                       ),*/
                                       Row(

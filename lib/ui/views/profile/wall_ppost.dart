@@ -114,32 +114,28 @@ class _WallPPostState extends State<WallPPost> {
   }
 
   void deletePost() async {
-    
     final commentDocs = await FirebaseFirestore.instance
-      .collection("posts")
-      .doc(widget.postId)
-      .collection("comments")
-      .get();
-
-    for (var doc in commentDocs.docs) {
-      await FirebaseFirestore.instance
         .collection("posts")
         .doc(widget.postId)
         .collection("comments")
-        .doc(doc.id)
-        .delete();
+        .get();
+
+    for (var doc in commentDocs.docs) {
+      await FirebaseFirestore.instance
+          .collection("posts")
+          .doc(widget.postId)
+          .collection("comments")
+          .doc(doc.id)
+          .delete();
     }
 
     // then delete the post
     FirebaseFirestore.instance
-      .collection("posts")
-      .doc(widget.postId)
-      .delete()
-      .then((value) => print("post deleted"))
-      .catchError(
-        (error) => print("failed to delete post: $error")
-      );
-  
+        .collection("posts")
+        .doc(widget.postId)
+        .delete()
+        .then((value) => print("post deleted"))
+        .catchError((error) => print("failed to delete post: $error"));
   }
 
   void checkIfFollowed() async {
@@ -321,8 +317,7 @@ class _WallPPostState extends State<WallPPost> {
                                     onTap: toggleFollow,
                                   ),
                                 if (widget.email == currentUser.email)
-                                  postDeleteBtn(onTap: deletePost
-                                 )
+                                  postDeleteBtn(onTap: deletePost)
                               ],
                             ),
                             SizedBox(height: 10),
@@ -406,7 +401,7 @@ class _WallPPostState extends State<WallPPost> {
                                         },
                                       ),
                                       SizedBox(width: 10),
-                                     /* SaveButton(
+                                      /* SaveButton(
                                         isSaved: isSaved,
                                         onTap: toggleSave,
                                       )*/

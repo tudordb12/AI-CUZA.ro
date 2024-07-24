@@ -10,21 +10,20 @@ class profilePicBtn extends StatelessWidget {
       onTap: onTap,
       child: Container(
           child: Container(
-            height: 60,
-            width: 60,
-            decoration: BoxDecoration(
-               color: Color.fromARGB(184, 255, 8, 49),
-              borderRadius: BorderRadius.circular(360)),
-           
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(
-                    size: 30,
-                    Icons.add_a_photo_outlined,
-                    color: Color.fromARGB(206, 255, 255, 255),
-                  ),
-            ),
-          )),
+        height: 60,
+        width: 60,
+        decoration: BoxDecoration(
+            color: Color.fromARGB(184, 255, 8, 49),
+            borderRadius: BorderRadius.circular(360)),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Icon(
+            size: 30,
+            Icons.add_a_photo_outlined,
+            color: Color.fromARGB(206, 255, 255, 255),
+          ),
+        ),
+      )),
     );
   }
 }

@@ -10,18 +10,17 @@ class postDeleteBtn extends StatelessWidget {
       onTap: onTap,
       child: Container(
           child: Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-               color: Color.fromARGB(58, 255, 255, 255),
-              borderRadius: BorderRadius.circular(360)),
-           
-            child: Icon(
-                  size: 30,
-                  Icons.clear,
-                  color: Color.fromARGB(206, 255, 255, 255),
-                ),
-          )),
+        height: 40,
+        width: 40,
+        decoration: BoxDecoration(
+            color: Color.fromARGB(58, 255, 255, 255),
+            borderRadius: BorderRadius.circular(360)),
+        child: Icon(
+          size: 30,
+          Icons.clear,
+          color: Color.fromARGB(206, 255, 255, 255),
+        ),
+      )),
     );
   }
 }

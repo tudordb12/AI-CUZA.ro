@@ -13,6 +13,7 @@ import 'package:aicuzaro/ui/views/signup/signup_view.dart';
 import 'package:aicuzaro/ui/views/aicoach/aicoach_view.dart';
 import 'package:aicuzaro/ui/views/postspage/postspage_view.dart';
 import 'package:aicuzaro/ui/views/profile/profile_view.dart';
+import 'package:aicuzaro/ui/views/learn/learn_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -27,6 +28,7 @@ import 'package:aicuzaro/ui/views/profile/profile_view.dart';
     CustomRoute(page: AicoachView),
     CustomRoute(page: PostspageView),
     CustomRoute(page: ProfileView),
+    CustomRoute(page: LearnView),
 // @stacked-route
 
     CustomRoute(page: UnknownView, path: '/404'),
