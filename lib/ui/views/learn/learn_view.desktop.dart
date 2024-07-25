@@ -19,6 +19,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:io';
 import 'learn_viewmodel.dart';
+import 'package:webview_flutter_web/webview_flutter_web.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'register_web_webview_stub.dart' if (dart.library.html) 'register_web_webview.dart';
+
 
 class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
   const LearnViewDesktop({super.key});
@@ -398,7 +402,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                       height: 300,
                                       width: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: Color.fromARGB(255, 217, 63, 83),
+                                        color: Color.fromARGB(255, 98, 22, 148),
                                         borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(0),
                                           topRight: Radius.circular(0),
@@ -412,866 +416,124 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                     ),
                                   ),
                                   Positioned(
-                                    top: 220, // Adjust the position as needed
-                                    left: 20, // Adjust the position as needed
-                                    child: StreamBuilder(
-                                      stream: FirebaseFirestore.instance
-                                          .collection('usernames')
-                                          .doc(user.email!)
-                                          .snapshots(),
-                                      builder: (context,
-                                          AsyncSnapshot<DocumentSnapshot>
-                                              snapshot) {
-                                        if (snapshot.connectionState ==
-                                            ConnectionState.waiting) {}
-
-                                        if (!snapshot.hasData) {
-                                          return Text('');
-                                        }
-
-                                        if (snapshot.hasError) {
-                                          return Text(
-                                              'Error: ${snapshot.error}');
-                                        }
-
-                                        var fieldValue1 =
-                                            snapshot.data!['image'];
-
-                                        return Container(
-                                          height: 250,
-                                          width: 250,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(360),
-                                              color: Color.fromARGB(
-                                                  178, 255, 255, 255)),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(15.0),
-                                            child: Container(
-                                              alignment: Alignment.center,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(360),
-                                                image: DecorationImage(
-                                                  image:
-                                                      NetworkImage(fieldValue1),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                  Positioned(
-                                      top: 400,
-                                      left: 200,
-                                      child: profilePicBtn(onTap: () {
-                                        viewModel.changeprofilepic();
-                                      })),
-                                  Positioned(
-                                    top: 380, // Adjust the position as needed
-                                    left: 285, // Adjust the position as needed
+                                    top: 200,
+                                    left: 250,
                                     child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        StreamBuilder(
-                                          stream: FirebaseFirestore.instance
-                                              .collection('usernames')
-                                              .doc(user.email!)
-                                              .snapshots(),
-                                          builder: (context,
-                                              AsyncSnapshot<DocumentSnapshot>
-                                                  snapshot) {
-                                            if (snapshot.connectionState ==
-                                                ConnectionState.waiting) {}
-
-                                            if (!snapshot.hasData) {
-                                              return Text('');
-                                            }
-
-                                            if (snapshot.hasError) {
-                                              return Text(
-                                                  'Error: ${snapshot.error}');
-                                            }
-
-                                            var fieldValue =
-                                                snapshot.data!['name'];
-
-                                            return Text(
-                                              '$fieldValue',
-                                              style: TextStyle(fontSize: 25),
-                                            );
-                                          },
+                                        Row(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: [
+                                            Column(
+                                              children: [
+                                                Container(
+                                                      height: 250,
+                                                      width: 250,
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.circular(360),
+                                                          color: Color.fromARGB(86, 255, 255, 255)),
+                                                      child: Padding(
+                                                        padding: const EdgeInsets.all(15.0),
+                                                        child: Container(
+                                                          alignment: Alignment.center,
+                                                          decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius.circular(360),
+                                                           
+                                                            ),
+                                                             child: Icon(
+                                                               Icons.design_services_outlined,
+                                                              size: 150,
+                                                              color: Colors.white
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(height: 20,),
+                                                    Text('D E S I G N', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w100),)
+                                              ],
+                                            ),
+                                                SizedBox(width: 20,),
+                                            Column(
+                                              children: [
+                                                Container(
+                                                      height: 250,
+                                                      width: 250,
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.circular(360),
+                                                          color: Color.fromARGB(86, 255, 255, 255)),
+                                                      child: Padding(
+                                                        padding: const EdgeInsets.all(15.0),
+                                                        child: Container(
+                                                          alignment: Alignment.center,
+                                                          decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius.circular(360),
+                                                           
+                                                            ),
+                                                             child: Icon(
+                                                               Icons.computer,
+                                                              size: 150,
+                                                              color: Colors.white
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(height: 20,),
+                                                    Text('P R O G R A M A R E', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w100),)
+                                            
+                                              ],
+                                            ),
+                                                SizedBox(width: 20,),
+                                            Column(
+                                              children: [
+                                                Container(
+                                                      height: 250,
+                                                      width: 250,
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.circular(360),
+                                                          color: Color.fromARGB(86, 255, 255, 255)),
+                                                      child: Padding(
+                                                        padding: const EdgeInsets.all(15.0),
+                                                        child: Container(
+                                                          alignment: Alignment.center,
+                                                          decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius.circular(360),
+                                                           
+                                                            ),
+                                                             child: Icon(
+                                                               Icons.settings_input_composite_outlined,
+                                                              size: 150,
+                                                              color: Colors.white
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(height: 20,),
+                                                    Text('R O B O T I C Ă', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w100),)
+                                            
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 20,),
+                                        Container(
+                                          width: 700,
+                                          height: 800,
+                                          child:  WebView(
+                                            initialUrl: 'https://flutter.dev',
+                                            javascriptMode: JavascriptMode.unrestricted,
+                                          ),
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Positioned(
-                                    top: 400,
-                                    left: 250,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(30.0),
-                                      child: Row(
-                                        children: [
-                                          Column(
-                                            children: [
-                                              FadeInUp(
-                                                delay: Duration(
-                                                    milliseconds: 2000),
-                                                child: FutureBuilder(
-                                                  future: FirebaseFirestore
-                                                      .instance
-                                                      .collection('following')
-                                                      .doc(user.email)
-                                                      .get(),
-                                                  builder: (context,
-                                                      AsyncSnapshot<
-                                                              DocumentSnapshot>
-                                                          follSnapshot) {
-                                                    if (!follSnapshot.hasData) {
-                                                      return Center(
-                                                          child:
-                                                              CircularProgressIndicator());
-                                                    }
-
-                                                    final follDoc =
-                                                        follSnapshot.data!;
-                                                    List<String> followers2 =
-                                                        List<
-                                                            String>.from(follDoc[
-                                                                'followers'] ??
-                                                            []);
-
-                                                    return Text(
-                                                      followers2.length
-                                                              .toString() +
-                                                          ' Urmăritori  | ',
-                                                      style: TextStyle(
-                                                        fontSize: 16,
-                                                        color: Color.fromARGB(
-                                                            133, 255, 255, 255),
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              FadeInUp(
-                                                delay: Duration(
-                                                    milliseconds: 2000),
-                                                child: FutureBuilder(
-                                                  future: FirebaseFirestore
-                                                      .instance
-                                                      .collection('following')
-                                                      .doc(user.email)
-                                                      .get(),
-                                                  builder: (context,
-                                                      AsyncSnapshot<
-                                                              DocumentSnapshot>
-                                                          follSnapshot) {
-                                                    if (!follSnapshot.hasData) {
-                                                      return Center(
-                                                          child:
-                                                              CircularProgressIndicator());
-                                                    }
-
-                                                    final follDoc =
-                                                        follSnapshot.data!;
-                                                    List<String> following2 =
-                                                        List<
-                                                            String>.from(follDoc[
-                                                                'following'] ??
-                                                            []);
-
-                                                    return Text(
-                                                      following2.length
-                                                              .toString() +
-                                                          ' Urmărești ',
-                                                      style: TextStyle(
-                                                        fontSize: 16,
-                                                        color: Color.fromARGB(
-                                                            133, 255, 255, 255),
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned(
-                                    top: 500,
-                                    left: 0,
-                                    child: Container(
-                                      height: 500,
-                                      width: 450,
-                                      decoration: BoxDecoration(
-                                        color: Color.fromARGB(255, 77, 77, 146),
-                                        borderRadius: BorderRadius.only(
-                                          topRight: Radius.circular(720.0),
-                                          bottomRight: Radius.circular(720.0),
-                                        ),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(20.0),
-                                        child: SingleChildScrollView(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              SizedBox(
-                                                height: 10,
-                                              ),
-                                              Text(
-                                                "Urmăririle tale",
-                                                style: TextStyle(
-                                                    fontSize: 20,
-                                                    color: const Color.fromARGB(
-                                                        134, 255, 255, 255)),
-                                              ),
-                                              SizedBox(
-                                                height: 10,
-                                              ),
-                                              Container(
-                                                height: 350,
-                                                width: 300,
-                                                child: FutureBuilder<
-                                                    List<Map<String, dynamic>>>(
-                                                  future: fetchFollowingUsers(),
-                                                  builder: (context, snapshot) {
-                                                    if (snapshot
-                                                            .connectionState ==
-                                                        ConnectionState
-                                                            .waiting) {
-                                                      return Center();
-                                                    } else if (snapshot
-                                                        .hasError) {
-                                                      return Center(
-                                                          child: Text(
-                                                              'Error: ${snapshot.error}'));
-                                                    } else if (!snapshot
-                                                            .hasData ||
-                                                        snapshot
-                                                            .data!.isEmpty) {
-                                                      return Center(
-                                                          child: Text(
-                                                              'No users found'));
-                                                    } else {
-                                                      return ListView.builder(
-                                                        itemCount: snapshot
-                                                            .data!.length,
-                                                        itemBuilder:
-                                                            (context, index) {
-                                                          var user = snapshot
-                                                              .data![index];
-                                                          return Padding(
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .all(2.0),
-                                                            child: Container(
-                                                              child: Row(
-                                                                children: [
-                                                                  Padding(
-                                                                    padding:
-                                                                        const EdgeInsets
-                                                                            .all(
-                                                                            8.0),
-                                                                    child:
-                                                                        Container(
-                                                                      height:
-                                                                          75,
-                                                                      width: 75,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Colors
-                                                                            .white70,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(70),
-                                                                        image:
-                                                                            DecorationImage(
-                                                                          image:
-                                                                              NetworkImage(user['image']),
-                                                                          fit: BoxFit
-                                                                              .cover,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Column(
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Container(
-                                                                          child:
-                                                                              Text(
-                                                                        user[
-                                                                            'name'],
-                                                                        style: TextStyle(
-                                                                            fontWeight:
-                                                                                FontWeight.bold,
-                                                                            fontSize: 20),
-                                                                      )),
-                                                                      SizedBox(
-                                                                        height:
-                                                                            10,
-                                                                      ),
-                                                                      Container(
-                                                                          child:
-                                                                              Text(
-                                                                        user[
-                                                                            'email'],
-                                                                        style: TextStyle(
-                                                                            fontWeight: FontWeight
-                                                                                .w100,
-                                                                            color: Color.fromARGB(
-                                                                                113,
-                                                                                255,
-                                                                                255,
-                                                                                255)),
-                                                                      ))
-                                                                    ],
-                                                                  )
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          );
-                                                        },
-                                                      );
-                                                    }
-                                                  },
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                height: 50,
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned(
-                                      top: 1200,
-                                      left: 0,
-                                      child: Container(
-                                          height: 500,
-                                          width: 250,
-                                          decoration: BoxDecoration(
-                                            color:
-                                                Color.fromARGB(255, 207, 83, 0),
-                                            borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(720.0),
-                                              bottomRight:
-                                                  Radius.circular(720.0),
-                                            ),
-                                          ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(20.0),
-                                            child: Container(
-                                              height: 500,
-                                              width: 500,
-                                              child: Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [],
-                                              ),
-                                            ),
-                                          ))),
-                                  Positioned(
-                                    top: 1400,
-                                    left: 75,
-                                    child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            "I D E I  S A L V A T E",
-                                            style: TextStyle(
-                                                fontSize: 30,
-                                                color: Color.fromARGB(
-                                                    195, 255, 255, 255)),
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Icon(
-                                            size: 30,
-                                            Icons.lightbulb,
-                                            color: Color.fromARGB(
-                                                206, 255, 233, 88),
-                                          )
-                                        ]),
-                                  ),
-                                  Positioned(
-                                      top: 200,
-                                      left: 500,
-                                      child: Container(
-                                        height: 1000,
-                                        width: 700,
-                                        decoration: BoxDecoration(
-                                          color:
-                                              Color.fromARGB(120, 242, 69, 17),
-                                          borderRadius: BorderRadius.only(
-                                            topRight: Radius.circular(40.0),
-                                            topLeft: Radius.circular(40.0),
-                                            bottomLeft: Radius.circular(40.0),
-                                            bottomRight: Radius.circular(40.0),
-                                          ),
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(30.0),
-                                          child: Column(
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "P O S T Ă R I L E  M E L E",
-                                                    style: TextStyle(
-                                                        fontSize: 25,
-                                                        color: Color.fromARGB(
-                                                            188,
-                                                            255,
-                                                            255,
-                                                            255)),
-                                                  ),
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 2,
-                                              ),
-                                              Expanded(
-                                                child: FadeInUp(
-                                                    delay: Duration(
-                                                        milliseconds: 2000),
-                                                    child: StreamBuilder(
-                                                      stream: FirebaseFirestore
-                                                          .instance
-                                                          .collection('posts')
-                                                          .where('name',
-                                                              isEqualTo:
-                                                                  user.email)
-                                                          .snapshots(),
-                                                      builder: (context,
-                                                          AsyncSnapshot<
-                                                                  QuerySnapshot>
-                                                              snapshot) {
-                                                        if (!snapshot.hasData) {
-                                                          return Center(
-                                                              child:
-                                                                  CircularProgressIndicator());
-                                                        }
-
-                                                        return ListView.builder(
-                                                          itemCount: snapshot
-                                                              .data!
-                                                              .docs
-                                                              .length,
-                                                          itemBuilder:
-                                                              (context, index) {
-                                                            final post =
-                                                                snapshot.data!
-                                                                        .docs[
-                                                                    index];
-
-                                                            Color buttonColor;
-                                                            if (index % 5 ==
-                                                                0) {
-                                                              buttonColor =
-                                                                  Color
-                                                                      .fromARGB(
-                                                                          255,
-                                                                          218,
-                                                                          38,
-                                                                          71);
-                                                            } else if (index %
-                                                                    5 ==
-                                                                1) {
-                                                              buttonColor =
-                                                                  Color
-                                                                      .fromARGB(
-                                                                          255,
-                                                                          211,
-                                                                          32,
-                                                                          0);
-                                                            } else if (index %
-                                                                    5 ==
-                                                                2) {
-                                                              buttonColor =
-                                                                  Color
-                                                                      .fromARGB(
-                                                                          255,
-                                                                          212,
-                                                                          64,
-                                                                          48);
-                                                            } else if (index %
-                                                                    5 ==
-                                                                3) {
-                                                              buttonColor =
-                                                                  Color
-                                                                      .fromARGB(
-                                                                          255,
-                                                                          218,
-                                                                          66,
-                                                                          81);
-                                                            } else {
-                                                              buttonColor =
-                                                                  Color
-                                                                      .fromARGB(
-                                                                          255,
-                                                                          201,
-                                                                          52,
-                                                                          38);
-                                                            }
-
-                                                            return FutureBuilder(
-                                                              future: FirebaseFirestore
-                                                                  .instance
-                                                                  .collection(
-                                                                      'usernames')
-                                                                  .doc(post[
-                                                                      'name']) // assuming 'name' is the email address
-                                                                  .get(),
-                                                              builder: (context,
-                                                                  AsyncSnapshot<
-                                                                          DocumentSnapshot>
-                                                                      userSnapshot) {
-                                                                if (!userSnapshot
-                                                                    .hasData) {
-                                                                  return Center(
-                                                                      child:
-                                                                          CircularProgressIndicator());
-                                                                }
-
-                                                                final userDoc =
-                                                                    userSnapshot
-                                                                        .data!;
-                                                                final userName =
-                                                                    userDoc['name'] ??
-                                                                        post[
-                                                                            'name'];
-                                                                final profilepic =
-                                                                    userDoc['image'] ??
-                                                                        post[
-                                                                            'name'];
-                                                                final photo =
-                                                                    post[
-                                                                        'image'];
-
-                                                                return FutureBuilder(
-                                                                  future: FirebaseFirestore
-                                                                      .instance
-                                                                      .collection(
-                                                                          'following')
-                                                                      .doc(userDoc[
-                                                                          'email'])
-                                                                      .get(),
-                                                                  builder: (context,
-                                                                      AsyncSnapshot<
-                                                                              DocumentSnapshot>
-                                                                          follSnapshot) {
-                                                                    if (!follSnapshot
-                                                                        .hasData) {
-                                                                      return Center(
-                                                                          child:
-                                                                              CircularProgressIndicator());
-                                                                    }
-
-                                                                    final follDoc =
-                                                                        follSnapshot
-                                                                            .data!;
-                                                                    List<String>
-                                                                        followers2 =
-                                                                        List<
-                                                                            String>.from(follDoc[
-                                                                                'followers'] ??
-                                                                            []);
-
-                                                                    return WallPPost(
-                                                                      message: post[
-                                                                          'description'],
-                                                                      user:
-                                                                          userName,
-                                                                      time: post[
-                                                                          'date'],
-                                                                      profile:
-                                                                          profilepic,
-                                                                      postId:
-                                                                          post.id,
-                                                                      likes: List<
-                                                                          String>.from(post[
-                                                                              'Likes'] ??
-                                                                          []),
-                                                                      bColor:
-                                                                          buttonColor,
-                                                                      email: userDoc[
-                                                                          'email'],
-                                                                      followers:
-                                                                          followers2,
-                                                                      image:
-                                                                          photo,
-                                                                      /* saves: List<
-                                                                      String>.from(
-                                                                  post['saved'] ??
-                                                                      []),*/
-                                                                    );
-                                                                  },
-                                                                );
-                                                              },
-                                                            );
-                                                          },
-                                                        );
-                                                      },
-                                                    )),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      )),
-                                  Positioned(
-                                      top: 1250,
-                                      left: 400,
-                                      child: Container(
-                                        height: 1000,
-                                        width: 800,
-                                        decoration: BoxDecoration(
-                                          color: Color.fromARGB(120, 0, 0, 0),
-                                          borderRadius: BorderRadius.only(
-                                            topRight: Radius.circular(40.0),
-                                            topLeft: Radius.circular(40.0),
-                                            bottomLeft: Radius.circular(40.0),
-                                            bottomRight: Radius.circular(40.0),
-                                          ),
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(30.0),
-                                          child: Column(
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "IDEI SALVATE",
-                                                    style: TextStyle(
-                                                        fontSize: 25,
-                                                        color: Color.fromARGB(
-                                                            188,
-                                                            255,
-                                                            255,
-                                                            255)),
-                                                  ),
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 2,
-                                              ),
-                                              Expanded(
-                                                child: FadeInUp(
-                                                    delay: Duration(
-                                                        milliseconds: 2000),
-                                                    child: StreamBuilder(
-                                                      stream: FirebaseFirestore
-                                                          .instance
-                                                          .collection('posts')
-                                                          .where('saved',
-                                                              arrayContains:
-                                                                  user.email)
-                                                          .snapshots(),
-                                                      builder: (context,
-                                                          AsyncSnapshot<
-                                                                  QuerySnapshot>
-                                                              snapshot) {
-                                                        if (!snapshot.hasData) {
-                                                          return Center(
-                                                              child:
-                                                                  CircularProgressIndicator());
-                                                        }
-
-                                                        return ListView.builder(
-                                                          itemCount: snapshot
-                                                              .data!
-                                                              .docs
-                                                              .length,
-                                                          itemBuilder:
-                                                              (context, index) {
-                                                            final post =
-                                                                snapshot.data!
-                                                                        .docs[
-                                                                    index];
-
-                                                            Color buttonColor;
-                                                            if (index % 5 ==
-                                                                0) {
-                                                              buttonColor =
-                                                                  Color
-                                                                      .fromARGB(
-                                                                          255,
-                                                                          218,
-                                                                          38,
-                                                                          71);
-                                                            } else if (index %
-                                                                    5 ==
-                                                                1) {
-                                                              buttonColor =
-                                                                  Color
-                                                                      .fromARGB(
-                                                                          255,
-                                                                          211,
-                                                                          32,
-                                                                          0);
-                                                            } else if (index %
-                                                                    5 ==
-                                                                2) {
-                                                              buttonColor =
-                                                                  Color
-                                                                      .fromARGB(
-                                                                          255,
-                                                                          212,
-                                                                          64,
-                                                                          48);
-                                                            } else if (index %
-                                                                    5 ==
-                                                                3) {
-                                                              buttonColor =
-                                                                  Color
-                                                                      .fromARGB(
-                                                                          255,
-                                                                          218,
-                                                                          66,
-                                                                          81);
-                                                            } else {
-                                                              buttonColor =
-                                                                  Color
-                                                                      .fromARGB(
-                                                                          255,
-                                                                          201,
-                                                                          52,
-                                                                          38);
-                                                            }
-
-                                                            return FutureBuilder(
-                                                              future: FirebaseFirestore
-                                                                  .instance
-                                                                  .collection(
-                                                                      'usernames')
-                                                                  .doc(post[
-                                                                      'name']) // assuming 'name' is the email address
-                                                                  .get(),
-                                                              builder: (context,
-                                                                  AsyncSnapshot<
-                                                                          DocumentSnapshot>
-                                                                      userSnapshot) {
-                                                                if (!userSnapshot
-                                                                    .hasData) {
-                                                                  return Center(
-                                                                      child:
-                                                                          CircularProgressIndicator());
-                                                                }
-
-                                                                final userDoc =
-                                                                    userSnapshot
-                                                                        .data!;
-                                                                final userName =
-                                                                    userDoc['name'] ??
-                                                                        post[
-                                                                            'name'];
-                                                                final profilepic =
-                                                                    userDoc['image'] ??
-                                                                        post[
-                                                                            'name'];
-                                                                final photo =
-                                                                    post[
-                                                                        'image'];
-
-                                                                return FutureBuilder(
-                                                                  future: FirebaseFirestore
-                                                                      .instance
-                                                                      .collection(
-                                                                          'following')
-                                                                      .doc(userDoc[
-                                                                          'email'])
-                                                                      .get(),
-                                                                  builder: (context,
-                                                                      AsyncSnapshot<
-                                                                              DocumentSnapshot>
-                                                                          follSnapshot) {
-                                                                    if (!follSnapshot
-                                                                        .hasData) {
-                                                                      return Center(
-                                                                          child:
-                                                                              CircularProgressIndicator());
-                                                                    }
-
-                                                                    final follDoc =
-                                                                        follSnapshot
-                                                                            .data!;
-                                                                    List<String>
-                                                                        followers2 =
-                                                                        List<
-                                                                            String>.from(follDoc[
-                                                                                'followers'] ??
-                                                                            []);
-
-                                                                    return WallPost(
-                                                                      message: post[
-                                                                          'description'],
-                                                                      user:
-                                                                          userName,
-                                                                      time: post[
-                                                                          'date'],
-                                                                      profile:
-                                                                          profilepic,
-                                                                      postId:
-                                                                          post.id,
-                                                                      likes: List<
-                                                                          String>.from(post[
-                                                                              'Likes'] ??
-                                                                          []),
-                                                                      bColor:
-                                                                          buttonColor,
-                                                                      email: userDoc[
-                                                                          'email'],
-                                                                      followers:
-                                                                          followers2,
-                                                                      image:
-                                                                          photo,
-                                                                      saves: List<
-                                                                          String>.from(post[
-                                                                              'saved'] ??
-                                                                          []),
-                                                                    );
-                                                                  },
-                                                                );
-                                                              },
-                                                            );
-                                                          },
-                                                        );
-                                                      },
-                                                    )),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      )),
+                                 
+                                  
                                 ],
                               ),
                             ),

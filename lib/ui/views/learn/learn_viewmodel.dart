@@ -20,6 +20,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:webview_flutter_web/webview_flutter_web.dart';
+import 'package:webview_flutter_web/webview_flutter_web.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'register_web_webview_stub.dart' if (dart.library.html) 'register_web_webview.dart';
 
 class LearnViewModel extends BaseViewModel {
   Map<int, bool> _isHovering = {};
@@ -240,5 +244,10 @@ class LearnViewModel extends BaseViewModel {
       // Handle any errors that occur during the upload process
       print('Error uploading image: $error');
     }
+
+   
+
   }
+
+  
 }
