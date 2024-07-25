@@ -34,6 +34,8 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
     final String currentUserEmail =
         user.email!; // Replace with the actual current user email
 
+   final GlobalKey section1Key = GlobalKey();
+
     Future<List<Map<String, dynamic>>> fetchFollowingUsers() async {
       List<Map<String, dynamic>> followingUsers = [];
 
@@ -75,9 +77,9 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
             height: 950,
             decoration: BoxDecoration(
               gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-                Color.fromARGB(255, 89, 6, 205),
-                Color.fromARGB(255, 92, 6, 205),
-                Color.fromARGB(255, 69, 6, 205),
+                Color.fromARGB(255, 51, 13, 105),
+                Color.fromARGB(255, 51, 21, 91),
+                Color.fromARGB(255, 45, 41, 55),
               ]),
             ),
             child: Column(
@@ -388,7 +390,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                         child: FadeInRightBig(
                           child: SingleChildScrollView(
                             child: Container(
-                              height: 2300,
+                              height: 3000,
                               decoration: BoxDecoration(
                                 color: Color.fromARGB(199, 52, 51, 51),
                                 borderRadius: BorderRadius.circular(0),
@@ -426,30 +428,33 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                           children: [
                                             Column(
                                               children: [
-                                                Container(
-                                                      height: 250,
-                                                      width: 250,
-                                                      decoration: BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius.circular(360),
-                                                          color: Color.fromARGB(86, 255, 255, 255)),
-                                                      child: Padding(
-                                                        padding: const EdgeInsets.all(15.0),
-                                                        child: Container(
-                                                          alignment: Alignment.center,
-                                                          decoration: BoxDecoration(
+                                                GestureDetector(
+                                                  onTap: () => viewModel.scrollToSection(section1Key),
+                                                  child: Container(
+                                                        height: 250,
+                                                        width: 250,
+                                                        decoration: BoxDecoration(
                                                             borderRadius:
                                                                 BorderRadius.circular(360),
-                                                           
+                                                            color: Color.fromARGB(86, 255, 255, 255)),
+                                                        child: Padding(
+                                                          padding: const EdgeInsets.all(15.0),
+                                                          child: Container(
+                                                            alignment: Alignment.center,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius.circular(360),
+                                                             
+                                                              ),
+                                                               child: Icon(
+                                                                 Icons.design_services_outlined,
+                                                                size: 150,
+                                                                color: Color.fromARGB(255, 255, 196, 0)
                                                             ),
-                                                             child: Icon(
-                                                               Icons.design_services_outlined,
-                                                              size: 150,
-                                                              color: Colors.white
                                                           ),
                                                         ),
                                                       ),
-                                                    ),
+                                                ),
                                                     SizedBox(height: 20,),
                                                     Text('D E S I G N', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w100),)
                                               ],
@@ -520,15 +525,48 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                             ),
                                           ],
                                         ),
-                                        SizedBox(height: 20,),
-                                        Container(
-                                          width: 700,
-                                          height: 800,
-                                          child:  WebView(
-                                            initialUrl: 'https://flutter.dev',
-                                            javascriptMode: JavascriptMode.unrestricted,
+                                        SizedBox(height: 50,),
+                                        ClipRRect(
+                                          //key: section1Key ,
+                                           borderRadius: BorderRadius.circular(40.0),
+                                          child: SizedBox(
+                                            width: 900,
+                                            height: 700,
+                                            
+                                            child:  WebView(
+                                              
+                                              initialUrl: 'https://www.photopea.com',
+                                              javascriptMode: JavascriptMode.unrestricted,
+                                            ),
                                           ),
                                         ),
+                                         SizedBox(height: 20,),
+                                        ClipRRect(
+                                          key: section1Key,
+                                          borderRadius: BorderRadius.circular(40.0),
+                                          child: SizedBox(
+                                            width: 900,
+                                            height: 700,
+                                            child:  WebView(
+                                              initialUrl: 'https://pixlr.com/ro/',
+                                              javascriptMode: JavascriptMode.unrestricted,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(height: 20,),
+                                         /*ClipRRect(
+                                           borderRadius: BorderRadius.circular(40.0),
+                                          child: SizedBox(
+                                            width: 900,
+                                            height: 700,
+                                            
+                                            child:  WebView(
+                                              
+                                              initialUrl: 'https://www.programiz.com/python-programming/online-compiler/',
+                                              javascriptMode: JavascriptMode.unrestricted,
+                                            ),
+                                          ),
+                                        ),*/
                                       ],
                                     ),
                                   ),

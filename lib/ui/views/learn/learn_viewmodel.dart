@@ -249,5 +249,24 @@ class LearnViewModel extends BaseViewModel {
 
   }
 
+  ScrollController scrollController = ScrollController();
+
+  void scrollToSection(GlobalKey key) {
+    final context = key.currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: Duration(milliseconds: 700),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
+
   
 }
