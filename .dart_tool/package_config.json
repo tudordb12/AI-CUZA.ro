@@ -183,7 +183,7 @@
     },
     {
       "name": "csslib",
-      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/csslib-1.0.0",
+      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/csslib-0.17.3",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -360,6 +360,48 @@
       "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_dotenv-5.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_inappwebview",
+      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_inappwebview-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_inappwebview_android",
+      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_inappwebview_android-1.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_inappwebview_internal_annotations",
+      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_inappwebview_internal_annotations-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "flutter_inappwebview_ios",
+      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_inappwebview_ios-1.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_inappwebview_macos",
+      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_inappwebview_macos-1.0.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_inappwebview_platform_interface",
+      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_inappwebview_platform_interface-1.0.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_inappwebview_web",
+      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/flutter_inappwebview_web-1.0.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_lints",
@@ -1011,7 +1053,7 @@
     },
     {
       "name": "webview_flutter",
-      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/webview_flutter-3.0.4",
+      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/webview_flutter-2.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -1064,13 +1106,19 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "youtube_player_flutter",
+      "rootUri": "file:///Users/Marc/.pub-cache/hosted/pub.dev/youtube_player_flutter-9.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "aicuzaro",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-07-25T18:52:29.113315Z",
+  "generated": "2024-07-25T21:41:57.538059Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }

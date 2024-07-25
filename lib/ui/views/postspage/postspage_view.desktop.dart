@@ -443,7 +443,7 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                               width: 750,
                               height: 850,
                               color: /*Color.fromARGB(255, 232, 39, 0),*/
-                                  Color.fromARGB(255, 219, 42, 11),
+                                  Color.fromARGB(184, 159, 24, 0),
                               child: Column(
                                 children: [
                                   Padding(
@@ -717,57 +717,55 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                               ),
                             ),
                           ),
-                          Expanded(
-                            child: Container(
-                              height: 850,
-                              //width: 500,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    height: 10,
+                          Container(
+                            height: 850,
+                            width: 500,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: GradientText(
+                                    'ROBO\nSTREAM',
+                                    style: ktsTitleText,
+                                    colors: const [
+                                      Color.fromARGB(255, 232, 231, 230),
+                                      Color.fromARGB(255, 199, 198, 197)
+                                    ],
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: GradientText(
-                                      'ROBO\nSTREAM',
-                                      style: ktsTitleText,
-                                      colors: const [
-                                        Color.fromARGB(255, 232, 231, 230),
-                                        Color.fromARGB(255, 199, 198, 197)
-                                      ],
+                                ),
+                                Align(
+                                    child: Text(
+                                  " O altfel de rețea socială ",
+                                  style: TextStyle(),
+                                )),
+                                Container(
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image:
+                                          AssetImage('lib/assets/appr.png'),
+                                      fit: BoxFit.fitHeight,
                                     ),
                                   ),
-                                  Align(
-                                      child: Text(
-                                    " O altfel de rețea socială ",
-                                    style: TextStyle(),
-                                  )),
-                                  Container(
-                                    height: 200,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image:
-                                            AssetImage('lib/assets/appr.png'),
-                                        fit: BoxFit.fitHeight,
-                                      ),
+                                ),
+                                Container(
+                                  height: 450,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image:
+                                          AssetImage('lib/assets/social.png'),
+                                      fit: BoxFit.fitWidth,
                                     ),
                                   ),
-                                  Container(
-                                    height: 450,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image:
-                                            AssetImage('lib/assets/social.png'),
-                                        fit: BoxFit.fitWidth,
-                                      ),
-                                    ),
-                                  ),
-                                  Spacer(
-                                    flex: 2,
-                                  ),
-                                ],
-                              ),
+                                ),
+                                Spacer(
+                                  flex: 2,
+                                ),
+                              ],
                             ),
                           ),
                         ],

@@ -554,19 +554,19 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                           ),
                                         ),
                                         SizedBox(height: 20,),
-                                         /*ClipRRect(
+                                         ClipRRect(
                                            borderRadius: BorderRadius.circular(40.0),
                                           child: SizedBox(
-                                            width: 900,
-                                            height: 700,
+                                            width: 600,
+                                            height: 330,
                                             
                                             child:  WebView(
                                               
-                                              initialUrl: 'https://www.programiz.com/python-programming/online-compiler/',
+                                              initialUrl: 'https://66a2c95f2aa1fdc2b392bb1e--ornate-moxie-c85727.netlify.app',
                                               javascriptMode: JavascriptMode.unrestricted,
                                             ),
                                           ),
-                                        ),*/
+                                        ),
                                       ],
                                     ),
                                   ),
