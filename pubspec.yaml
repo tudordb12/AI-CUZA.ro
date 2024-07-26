@@ -71,4 +71,8 @@ flutter:
     - lib/assets/11.png
     - lib/assets/social.png
     - lib/assets/appr.png
+    - lib/assets/tinkercad.png
+    - lib/assets/blender.jpg
+    - lib/assets/3ds.jpg
+    #- lib/.env
 

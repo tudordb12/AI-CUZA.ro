@@ -14,11 +14,18 @@ import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'dart:ui_web' as ui_web;
+import 'dart:html' as html;
 
 // Import the consts file
 import 'package:aicuzaro/consts.dart';
 
 class AicoachViewModel extends BaseViewModel {
+
+   Future<void> initializeData() async {
+    await fetchDocumentFieldContent('apiKey'); // Replace with your document ID
+  }
   Map<int, bool> _isHovering = {};
   bool _isMenuVisible = true;
 
@@ -26,6 +33,7 @@ class AicoachViewModel extends BaseViewModel {
     for (int i = 1; i <= 6; i++) {
       _isHovering[i] = false;
     }
+    
   }
 
   bool isHovering(int index) => _isHovering[index] ?? false;
@@ -52,17 +60,51 @@ class AicoachViewModel extends BaseViewModel {
     await _routerService.replaceWith(const PostspageViewRoute());
   }
 
-    Future<void> navigateToLearnView() async {
+  Future<void> navigateToLearnView() async {
     await _routerService.replaceWith(const LearnViewRoute());
   }
-
 
   void signUserOut() {
     FirebaseAuth.instance.signOut();
     navigateToAuthView();
   }
 
-  final user = FirebaseAuth.instance.currentUser!;
+   Future<void> fetchDocumentFieldContent(String documentId) async {
+    try {
+      // Get a reference to the Firestore collection and document
+      DocumentReference docRef = FirebaseFirestore.instance
+          .collection('API_KEY') // Replace with your collection name
+          .doc('apiKeys');
+
+      // Fetch the document snapshot
+      DocumentSnapshot docSnapshot = await docRef.get();
+
+      if (docSnapshot.exists) {
+        // Extract data from the document
+        Map<String, dynamic>? data = docSnapshot.data() as Map<String, dynamic>?;
+        
+        // Access specific fields
+        String field1 = data?['openAI'] ?? 'No data'; // Replace 'field1' with your actual field name
+
+
+        // Use the data as needed
+        print('Field 1: $field1');
+     
+
+        // You can update a property in your ViewModel with the retrieved data if needed
+        // For example:
+        // _field1 = field1;
+        // _field2 = field2;
+        // notifyListeners(); // Notify listeners if you are updating properties that affect the UI
+      } else {
+        print('Document does not exist');
+      }
+    } catch (e) {
+      // Handle errors appropriately
+      print('Error fetching document: $e');
+    }
+  }
+ final user = FirebaseAuth.instance.currentUser!;
 
   final ChatUser _currentUser =
       ChatUser(id: '1', firstName: 'Robo', lastName: 'User');

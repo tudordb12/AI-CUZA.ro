@@ -10,6 +10,7 @@ import 'package:url_strategy/url_strategy.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'register_web_webview_stub.dart'
     if (dart.library.html) 'register_web_webview.dart';
 //import 'firebase_options.dart';
@@ -20,7 +21,7 @@ Future<void> main() async {
   );
 
   registerWebViewWebImplementation();
-
+  //await dotenv.load(fileName: ".env");
   WidgetsFlutterBinding.ensureInitialized();
   setPathUrlStrategy();
   await setupLocator(stackedRouter: stackedRouter);
