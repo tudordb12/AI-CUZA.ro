@@ -1,8 +1,54 @@
-2024/07/26-13:20:04.914 2d03 Reusing MANIFEST /private/var/folders/_8/2f406m5s7ybdtq1pydpmpkjw0000gp/T/flutter_tools.BXFRjz/flutter_tools_chrome_device.Go3xD8/Default/Session Storage/MANIFEST-000001
-2024/07/26-13:20:04.918 2d03 Recovering log #7
-2024/07/26-13:20:04.920 2d03 Reusing old log /private/var/folders/_8/2f406m5s7ybdtq1pydpmpkjw0000gp/T/flutter_tools.BXFRjz/flutter_tools_chrome_device.Go3xD8/Default/Session Storage/000007.log 
-2024/07/26-13:20:04.921 2d03 Delete type=0 #4
-2024/07/26-13:20:04.922 2d03 Delete type=0 #3
-2024/07/26-13:21:22.661 3003 Level-0 table #11: started
-2024/07/26-13:21:22.669 3003 Level-0 table #11: 25374 bytes OK
-2024/07/26-13:21:22.688 3003 Delete type=0 #7
+2024/07/26-14:07:33.746 2d03 Reusing MANIFEST /private/var/folders/_8/2f406m5s7ybdtq1pydpmpkjw0000gp/T/flutter_tools.85eElH/flutter_tools_chrome_device.nqwEd2/Default/Session Storage/MANIFEST-000001
+2024/07/26-14:07:33.749 2d03 Recovering log #10
+2024/07/26-14:07:33.749 2d03 Reusing old log /private/var/folders/_8/2f406m5s7ybdtq1pydpmpkjw0000gp/T/flutter_tools.85eElH/flutter_tools_chrome_device.nqwEd2/Default/Session Storage/000010.log 
+2024/07/26-14:07:33.751 2d03 Delete type=0 #7
+2024/07/26-14:07:33.751 2d03 Delete type=0 #4
+2024/07/26-14:07:33.751 2d03 Delete type=0 #3
+2024/07/26-14:47:12.390 3003 Level-0 table #14: started
+2024/07/26-14:47:12.397 3003 Level-0 table #14: 23094 bytes OK
+2024/07/26-14:47:12.415 3003 Delete type=0 #10
+2024/07/26-15:25:56.869 3003 Level-0 table #16: started
+2024/07/26-15:25:56.881 3003 Level-0 table #16: 20485 bytes OK
+2024/07/26-15:25:56.898 3003 Delete type=0 #13
+2024/07/26-15:47:59.184 3003 Level-0 table #18: started
+2024/07/26-15:47:59.189 3003 Level-0 table #18: 20202 bytes OK
+2024/07/26-15:47:59.202 3003 Delete type=0 #15
+2024/07/26-15:47:59.203 3003 Compacting 4@0 + 1@1 files
+2024/07/26-15:47:59.210 3003 Generated table #19@0: 282 keys, 36560 bytes
+2024/07/26-15:47:59.210 3003 Compacted 4@0 + 1@1 files => 36560 bytes
+2024/07/26-15:47:59.225 3003 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/07/26-15:47:59.226 3003 Delete type=2 #14
+2024/07/26-15:47:59.227 3003 Delete type=2 #16
+2024/07/26-15:47:59.227 3003 Delete type=2 #11
+2024/07/26-15:47:59.227 3003 Delete type=2 #8
+2024/07/26-15:47:59.227 3003 Delete type=2 #18
+2024/07/26-16:00:50.556 3003 Level-0 table #21: started
+2024/07/26-16:00:50.562 3003 Level-0 table #21: 18881 bytes OK
+2024/07/26-16:00:50.583 3003 Delete type=0 #17
+2024/07/26-16:25:23.402 3003 Level-0 table #23: started
+2024/07/26-16:25:24.652 3003 Level-0 table #23: 17995 bytes OK
+2024/07/26-16:25:24.685 3003 Delete type=0 #20
+2024/07/26-17:01:28.159 3003 Level-0 table #25: started
+2024/07/26-17:01:28.167 3003 Level-0 table #25: 18634 bytes OK
+2024/07/26-17:01:28.182 3003 Delete type=0 #22
+2024/07/26-17:12:28.356 3003 Level-0 table #27: started
+2024/07/26-17:12:28.363 3003 Level-0 table #27: 26009 bytes OK
+2024/07/26-17:12:28.376 3003 Delete type=0 #24
+2024/07/26-17:12:28.385 3003 Compacting 4@0 + 1@1 files
+2024/07/26-17:12:28.392 3003 Generated table #28@0: 335 keys, 62267 bytes
+2024/07/26-17:12:28.392 3003 Compacted 4@0 + 1@1 files => 62267 bytes
+2024/07/26-17:12:28.409 3003 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/07/26-17:12:28.410 3003 Delete type=2 #21
+2024/07/26-17:12:28.410 3003 Delete type=2 #23
+2024/07/26-17:12:28.411 3003 Delete type=2 #27
+2024/07/26-17:12:28.411 3003 Delete type=2 #25
+2024/07/26-17:12:28.411 3003 Delete type=2 #19
+2024/07/26-17:24:22.494 3003 Level-0 table #30: started
+2024/07/26-17:24:22.507 3003 Level-0 table #30: 25296 bytes OK
+2024/07/26-17:24:22.524 3003 Delete type=0 #26
+2024/07/26-17:43:30.588 3003 Level-0 table #32: started
+2024/07/26-17:43:30.599 3003 Level-0 table #32: 24705 bytes OK
+2024/07/26-17:43:30.620 3003 Delete type=0 #29
+2024/07/26-18:11:52.923 3003 Level-0 table #34: started
+2024/07/26-18:11:52.931 3003 Level-0 table #34: 25538 bytes OK
+2024/07/26-18:11:52.949 3003 Delete type=0 #31

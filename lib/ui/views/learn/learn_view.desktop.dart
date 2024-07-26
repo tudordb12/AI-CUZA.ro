@@ -746,231 +746,14 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                           ),
                                         ),
                                         SizedBox(height: 20,),
-                                        Row(
-                                          
-                                          children: [
-                                         Container(
-                                             height: 400,
-                                             width: 400,
-                                             decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fcoding-svg-clipart-xl.png?alt=media&token=21244ae0-57f7-4289-a2b0-3dd3d426daaa',
-                                             )
-                                            
-                                            ),
-                                            )
-                                         ),
-
-                                         ///SizedBox(height: 20,),
-                                         Column(
-                                           children: [
-                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children:[ FadeInUp(
-                              duration: Duration(milliseconds: 1000),
-                              child: Container(
-                                width: 600,
-                                child: GradientText(
-                                  '  CODARE ',
-                                  style: ktsTitleText,
-                                  colors: const [
-                                    Color.fromARGB(255, 255, 188, 3),
-                                    Color.fromARGB(255, 223, 90, 2)
-                                  ],
-                                ),
-                              ),
-                            ),
-                             FadeInUp(
-                              duration: Duration(milliseconds: 1500),
-                              child: Text(
-                                '  CU CUZA',
-                                style: ktsTitleText,
-                              ),
-                            ),
-                            SizedBox(height: 15,),
-                            Center(
-              child: Column(
-                children: [
-                  
-                 Container(
-                  width: 450,
-                   child: Text(
-           'Programarea îți permite să creezi site-uri web interactive, jocuri captivante și aplicații mobile utile. Este o abilitate esențială pentru a dezvolta tehnologii inovatoare, automatiza sarcini repetitive și analiza date complexe. Prin programare, poți transforma idei abstracte în soluții practice și impactante în viața de zi cu zi.',
-                   style: ktsBodyLarge.copyWith(
-                     fontWeight: FontWeight.w600,
-                     fontSize: 15,
-                   ),
-                   textAlign: TextAlign.start, // Aligns text to the start (left).
-                   softWrap: true, // Enables soft wrapping.
-                   overflow: TextOverflow.visible, // Makes overflow text visible (default behavior).
-                   maxLines: null, // Allows text to use as many lines as necessary.
-                 ),
-                 ),
-                 SizedBox(height: 10,),
-                  Row(
-                              children: [
-                                // Input Field
-                                Container(
-                                  child:  TextField(
-                                    decoration: InputDecoration.collapsed(
-                                      hintText: 'Introduceți Adresa de Email',
-                                      hintStyle: TextStyle(
-                                        color: Color(0xff989898),
-                                      ),
-                                      filled: true,
-                                      fillColor: Color(0xFF232323),
-                                    ),
-                                  ),
-                                  width: kdDesktopMaxContentWidth * 0.3,
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 20),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF232323),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                ),
-
-                                horizontalSpaceSmall,
-
-                                // Notify Button
-                                InkWell(
-                                  onTap: () {
-                                   // viewModel.navigateToLoginView();
-                                  },
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 20,
-                                      vertical: 16,
-                                    ),
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                        begin: Alignment.topCenter,
-                                        colors: [
-                                              Color.fromARGB(255, 224, 60, 5),
-                                              Color.fromARGB(255, 207, 29, 1),
-                                              Color.fromARGB(255, 211, 14, 67)
-                                        ]),
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child: const Text(
-                                      'Mai Multe',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 20),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                            SizedBox(height: 20,),
-                             Row(children: [
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2FJavaScript.jpg?alt=media&token=e2fcf53d-5fbb-4b04-8990-970ca50f5a3a',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                              SizedBox(width: 10,),
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fchatgpt-logo-chat-gpt-icon-on-black-background-free-vector.jpg?alt=media&token=a152f875-6121-418c-bb6a-7ae4e8e15a90',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                              SizedBox(width: 10,),
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2FHTML5_logo_and_wordmark.svg.png?alt=media&token=62765f71-2ebf-4959-8bfc-0cef46d356a0',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                              SizedBox(width: 10,),
-                                             Container(
-                                              
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              color: Colors.black,
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fpython-programming-language.webp?alt=media&token=2c51b760-14a3-4996-9e4a-b406179c2602',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                              
-                                              
-                                              SizedBox(width: 10,),
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2FC_Sharp_Logo_2023.svg.png?alt=media&token=df541fc9-f8da-4721-b7d2-5b628886a5cc',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                              SizedBox(width: 10,),
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fimages-2.png?alt=media&token=2671a1d1-91ac-4215-a1c6-3cf6bfdf2008',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                            ],)
-                ],
-              ),
-            ),
-                            ]
-                                             ),
-
-                                           ],
-                                         ),
-                                         
-                                //SizedBox(height: 10,),
-                                
-                                        ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            Row(
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color: const Color.fromARGB(64, 0, 0, 0),
+                                            borderRadius: BorderRadius.circular(20)
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(20.0),
+                                            child: Row(
                                               
                                               children: [
                                              Container(
@@ -979,237 +762,454 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                                  decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                  image: NetworkImage(
-                                                   'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fimage.png?alt=media&token=f3afad3a-6b85-4ef2-9eaf-41e06c8617a6',
+                                                   'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fcoding-svg-clipart-xl.png?alt=media&token=21244ae0-57f7-4289-a2b0-3dd3d426daaa',
                                                  )
                                                 
                                                 ),
                                                 )
                                              ),
-                                             SizedBox(width: 0,),
-                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children:[ FadeInUp(
-                              duration: Duration(milliseconds: 1000),
-                              child: Container(
-                                width: 500,
-                                child: GradientText(
-                                  'ROBOTICA',
-                                  style: ktsTitleText,
-                                  colors: const [
-                                    Color.fromARGB(255, 98, 0, 255),
-                                    Color.fromARGB(255, 2, 194, 223)
-                                  ],
-                                ),
-                              ),
-                            ),
-                             FadeInUp(
-                              duration: Duration(milliseconds: 1500),
-                              child: Text(
-                                'CU CUZA',
-                                style: ktsTitleText,
-                              ),
-                            ),
-                            SizedBox(height: 15,),
-                            Center(
-              child: Column(
-                children: [
-                  
-                 Container(
-                  width: 450,
-                   child: Text(
-                   'Designul joacă un rol crucial în informatică și robotică, transformând ideile tehnice în realități accesibile și eficiente. Imaginați-vă un robot care nu doar că funcționează impecabil, dar este și intuitiv de utilizat și plăcut vizual! Un software bine proiectat nu doar rezolvă probleme, ci oferă o experiență fluidă și satisfăcătoare utilizatorilor.',
-                   style: ktsBodyLarge.copyWith(
-                     fontWeight: FontWeight.w600,
-                     fontSize: 15,
-                   ),
-                   textAlign: TextAlign.start, // Aligns text to the start (left).
-                   softWrap: true, // Enables soft wrapping.
-                   overflow: TextOverflow.visible, // Makes overflow text visible (default behavior).
-                   maxLines: null, // Allows text to use as many lines as necessary.
-                 ),
-                 ),
-                 SizedBox(height: 10,),
-                  Row(
-                              children: [
-                                // Input Field
-                                Container(
-                                  child:  TextField(
-                                    decoration: InputDecoration.collapsed(
-                                      hintText: 'Introduceți Adresa de Email',
-                                      hintStyle: TextStyle(
-                                            color: Color(0xff989898),
-                                      ),
-                                      filled: true,
-                                      fillColor: Color(0xFF232323),
-                                    ),
-                                  ),
-                                  width: kdDesktopMaxContentWidth * 0.3,
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 20),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF232323),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                ),
-
-                                horizontalSpaceSmall,
-
-                                // Notify Button
-                                InkWell(
-                                  onTap: () {
-                                   // viewModel.navigateToLoginView();
-                                  },
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 20,
-                                      vertical: 16,
-                                    ),
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                            begin: Alignment.topCenter,
-                                            colors: [
-                                              Color.fromARGB(255, 224, 60, 5),
-                                              Color.fromARGB(255, 207, 29, 1),
-                                              Color.fromARGB(255, 211, 14, 67)
-                                            ]),
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child: const Text(
-                                      'Mai Multe',
-                                      style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 20),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                ],
-              ),
-            ),
-                            ]
+                                          
+                                             ///SizedBox(height: 20,),
+                                             Padding(
+                                               padding: const EdgeInsets.all(8.0),
+                                               child: Column(
+                                                 children: [
+                                                   Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children:[ FadeInUp(
+                                                                           duration: Duration(milliseconds: 1000),
+                                                                           child: Container(
+                                                                             width: 600,
+                                                                             child: GradientText(
+                                                                               '  CODARE ',
+                                                                               style: ktsTitleText,
+                                                                               colors: const [
+                                                                                 Color.fromARGB(255, 255, 188, 3),
+                                                                                 Color.fromARGB(255, 223, 90, 2)
+                                                                               ],
+                                                                             ),
+                                                                           ),
+                                                                         ),
+                                                                          FadeInUp(
+                                                                           duration: Duration(milliseconds: 1500),
+                                                                           child: Text(
+                                                                             '  CU CUZA',
+                                                                             style: ktsTitleText,
+                                                                           ),
+                                                                         ),
+                                                                         SizedBox(height: 15,),
+                                                                         Center(
+                                                           child: Column(
+                                                             children: [
+                                                               
+                                                              Container(
+                                                               width: 450,
+                                                                child: Text(
+                                                        'Programarea îți permite să creezi site-uri web interactive, jocuri captivante și aplicații mobile utile. Este o abilitate esențială pentru a dezvolta tehnologii inovatoare, automatiza sarcini repetitive și analiza date complexe. Prin programare, poți transforma idei abstracte în soluții practice și impactante în viața de zi cu zi.',
+                                                                style: ktsBodyLarge.copyWith(
+                                                                  fontWeight: FontWeight.w600,
+                                                                  fontSize: 15,
+                                                                ),
+                                                                textAlign: TextAlign.start, // Aligns text to the start (left).
+                                                                softWrap: true, // Enables soft wrapping.
+                                                                overflow: TextOverflow.visible, // Makes overflow text visible (default behavior).
+                                                                maxLines: null, // Allows text to use as many lines as necessary.
+                                                              ),
+                                                              ),
+                                                              SizedBox(height: 10,),
+                                                               Row(
+                                                                           children: [
+                                                                             // Input Field
+                                                                             Container(
+                                                                               child:  TextField(
+                                                                                 decoration: InputDecoration.collapsed(
+                                                                                   hintText: 'Introduceți Adresa de Email',
+                                                                                   hintStyle: TextStyle(
+                                                                                     color: Color(0xff989898),
+                                                                                   ),
+                                                                                   filled: true,
+                                                                                   fillColor: Color(0xFF232323),
+                                                                                 ),
+                                                                               ),
+                                                                               width: kdDesktopMaxContentWidth * 0.3,
+                                                                               padding: const EdgeInsets.symmetric(
+                                                                                   horizontal: 20, vertical: 20),
+                                                                               decoration: BoxDecoration(
+                                                                                 color: const Color(0xFF232323),
+                                                                                 borderRadius: BorderRadius.circular(8),
+                                                                               ),
+                                                                             ),
+                                                                                      
+                                                                             horizontalSpaceSmall,
+                                                                                      
+                                                                             // Notify Button
+                                                                             InkWell(
+                                                                               onTap: () {
+                                                                                // viewModel.navigateToLoginView();
+                                                                               },
+                                                                               child: Container(
+                                                                                 padding: const EdgeInsets.symmetric(
+                                                                                   horizontal: 20,
+                                                                                   vertical: 16,
+                                                                                 ),
+                                                                                 alignment: Alignment.center,
+                                                                                 decoration: BoxDecoration(
+                                                                                   gradient: LinearGradient(
+                                                                                     begin: Alignment.topCenter,
+                                                                                     colors: [
+                                                    Color.fromARGB(255, 224, 60, 5),
+                                                    Color.fromARGB(255, 207, 29, 1),
+                                                    Color.fromARGB(255, 211, 14, 67)
+                                                                                     ]),
+                                                                                   borderRadius: BorderRadius.circular(8),
+                                                                                 ),
+                                                                                 child: const Text(
+                                                                                   'Mai Multe',
+                                                                                   style: TextStyle(
+                                                                                     color: Colors.white,
+                                                                                     fontWeight: FontWeight.w700,
+                                                                                     fontSize: 20),
+                                                                                 ),
+                                                                               ),
+                                                                             )
+                                                                           ],
+                                                                         ),
+                                                                         SizedBox(height: 20,),
+                                                                          Row(children: [
+                                                    Container(
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2FJavaScript.jpg?alt=media&token=e2fcf53d-5fbb-4b04-8990-970ca50f5a3a',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    SizedBox(width: 10,),
+                                                    Container(
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fchatgpt-logo-chat-gpt-icon-on-black-background-free-vector.jpg?alt=media&token=a152f875-6121-418c-bb6a-7ae4e8e15a90',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    SizedBox(width: 10,),
+                                                    Container(
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2FHTML5_logo_and_wordmark.svg.png?alt=media&token=62765f71-2ebf-4959-8bfc-0cef46d356a0',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    SizedBox(width: 10,),
+                                                   Container(
+                                                    
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    color: Colors.black,
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fpython-programming-language.webp?alt=media&token=2c51b760-14a3-4996-9e4a-b406179c2602',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    
+                                                    
+                                                    SizedBox(width: 10,),
+                                                    Container(
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2FC_Sharp_Logo_2023.svg.png?alt=media&token=df541fc9-f8da-4721-b7d2-5b628886a5cc',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    SizedBox(width: 10,),
+                                                    Container(
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fimages-2.png?alt=media&token=2671a1d1-91ac-4215-a1c6-3cf6bfdf2008',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                  ],)
+                                                             ],
+                                                           ),
+                                                         ),
+                                                                         ]
+                                                   ),
+                                                                                      
+                                                 ],
+                                               ),
                                              ),
-                                SizedBox(height: 10,),
-                                Column(children: [
-                                    Container(
-                                                 height: 250,
-                                                 width: 250,
-                                                 decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                 image: NetworkImage(
-                                                   'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2FC_Sharp_Logo_2023.svg.png?alt=media&token=df541fc9-f8da-4721-b7d2-5b628886a5cc',
-                                                 )
-                                                
-                                                ),
+                                             
+                                                                          //SizedBox(height: 10,),
+                                                                          
+                                            ],
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(height: 20,),
+
+                                        Container(
+
+
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(20.0),
+                                            child: Column(
+                                              children: [
+                                                Row(
+                                                  
+                                                  children: [
+                                                 Container(
+                                                     height: 400,
+                                                     width: 400,
+                                                     decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                     image: NetworkImage(
+                                                       'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fimage.png?alt=media&token=f3afad3a-6b85-4ef2-9eaf-41e06c8617a6',
+                                                     )
+                                                    
+                                                    ),
+                                                    )
+                                                 ),
+                                                 SizedBox(width: 0,),
+                                                 Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children:[ FadeInUp(
+                                                                        duration: Duration(milliseconds: 1000),
+                                                                        child: Container(
+                                                                          width: 600,
+                                                                          child: GradientText(
+                                                                            'ROBOTICA',
+                                                                            style: ktsTitleText2,
+                                                                            colors: const [
+                                                                              Color.fromARGB(255, 98, 0, 255),
+                                                                              Color.fromARGB(255, 2, 194, 223)
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                       FadeInUp(
+                                                                        duration: Duration(milliseconds: 1500),
+                                                                        child: Text(
+                                                                          'CU CUZA',
+                                                                          style: ktsTitleText,
+                                                                        ),
+                                                                      ),
+                                                                      SizedBox(height: 15,),
+                                                                      Center(
+                                                        child: Column(
+                                                          children: [
+                                                            
+                                                           Container(
+                                                            width: 450,
+                                                             child: Text(
+                                                             'Robotica combină designul creativ și programarea avansată pentru a construi soluții tehnologice remarcabile. Designul se concentrează pe aspectele fizice și estetice ale roboților, iar programarea se ocupă de funcționalitatea și inteligența acestora. Această fuziune permite realizarea unor proiecte complexe și inovatoare, cum ar fi umanoidul CUZA, care demonstrează abilități avansate de interacțiune și performanță în diverse domenii.',
+                                                             style: ktsBodyLarge.copyWith(
+                                                               fontWeight: FontWeight.w600,
+                                                               fontSize: 15,
+                                                             ),
+                                                             textAlign: TextAlign.start, // Aligns text to the start (left).
+                                                             softWrap: true, // Enables soft wrapping.
+                                                             overflow: TextOverflow.visible, // Makes overflow text visible (default behavior).
+                                                             maxLines: null, // Allows text to use as many lines as necessary.
+                                                           ),
+                                                           ),
+                                                           SizedBox(height: 10,),
+                                                            Row(
+                                                                        children: [
+                                                                          // Input Field
+                                                                          Container(
+                                                                            child:  TextField(
+                                                                              decoration: InputDecoration.collapsed(
+                                                                                hintText: 'Introduceți Adresa de Email',
+                                                                                hintStyle: TextStyle(
+                                                color: Color(0xff989898),
+                                                                                ),
+                                                                                filled: true,
+                                                                                fillColor: Color(0xFF232323),
+                                                                              ),
+                                                                            ),
+                                                                            width: kdDesktopMaxContentWidth * 0.3,
+                                                                            padding: const EdgeInsets.symmetric(
+                                                                                horizontal: 20, vertical: 20),
+                                                                            decoration: BoxDecoration(
+                                                                              color: const Color(0xFF232323),
+                                                                              borderRadius: BorderRadius.circular(8),
+                                                                            ),
+                                                                          ),
+                                          
+                                                                          horizontalSpaceSmall,
+                                          
+                                                                          // Notify Button
+                                                                          InkWell(
+                                                                            onTap: () {
+                                                                             // viewModel.navigateToLoginView();
+                                                                            },
+                                                                            child: Container(
+                                                                              padding: const EdgeInsets.symmetric(
+                                                                                horizontal: 20,
+                                                                                vertical: 16,
+                                                                              ),
+                                                                              alignment: Alignment.center,
+                                                                              decoration: BoxDecoration(
+                                                                                gradient: LinearGradient(
+                                                begin: Alignment.topCenter,
+                                                colors: [
+                                                  Color.fromARGB(255, 224, 60, 5),
+                                                  Color.fromARGB(255, 207, 29, 1),
+                                                  Color.fromARGB(255, 211, 14, 67)
+                                                ]),
+                                                                                borderRadius: BorderRadius.circular(8),
+                                                                              ),
+                                                                              child: const Text(
+                                                                                'Mai Multe',
+                                                                                style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 20),
+                                                                              ),
+                                                                            ),
+                                                                          )
+                                                                        ],
+                                                                      ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                                      ]
+                                                 ),
+                                                                          SizedBox(height: 10,),
+                                                                          Column(children: [
+                                                                            
+                                                                          ],),
+                                          
+                                                ],),
+                                                Padding(
+                                                  padding: const EdgeInsets.all(10.0),
+                                                  child: Row(children: [
+                                                    Container(
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/robot%2Fapps.12858.14445162896371762.45441340-1f2e-485b-a59c-8b88b4bceb1e.png?alt=media&token=feb6ae26-39d2-42d3-a873-49b7bfda9fdb',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    SizedBox(width: 10,),
+                                                    Container(
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/robot%2Fpng-transparent-arduino-hd-logo-thumbnail.png?alt=media&token=3bdd1aa0-0403-4fe0-857c-496f853f681c',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    SizedBox(width: 10,),
+                                                    Container(
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fimages-2.png?alt=media&token=2671a1d1-91ac-4215-a1c6-3cf6bfdf2008',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    SizedBox(width: 10,),
+                                                   Container(
+                                                    
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    color: Colors.black,
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/robot%2Fraspberry-pi-icon-2048x2048-p0y4r07x.png?alt=media&token=1d8754f0-255d-4b63-91e0-37d0bdcdcb8b',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    SizedBox(width: 10,),
+                                                    Container(
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/robot%2Fimages-4.png?alt=media&token=d4eac269-d32d-43a1-b602-118cdf7ffe5f',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    SizedBox(width: 10,),
+                                                    Container(
+                                                      height: 70,
+                                                   width: 70,
+                                                   decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(360),
+                                                  image: DecorationImage(
+                                                   image: NetworkImage(
+                                                     'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/robot%2Fimages-5.png?alt=media&token=ec4a8630-60dd-4c0d-87ea-07b5d0f1bde1',
+                                                   )
+                                                  
+                                                  ),
+                                                  )
+                                                    ),
+                                                    
+                                                  ],),
                                                 )
-                                             ),
-                                ],),
-
-                                            ],),
-                                            Row(children: [
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2FJavaScript.jpg?alt=media&token=e2fcf53d-5fbb-4b04-8990-970ca50f5a3a',
-                                             )
-                                            
+                                              ],
                                             ),
-                                            )
-                                              ),
-                                              SizedBox(width: 10,),
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fflutter5786-1.jpg?alt=media&token=7162cfab-0e48-47c8-a923-050ce8ee1103',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                              SizedBox(width: 10,),
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fimages-2.png?alt=media&token=2671a1d1-91ac-4215-a1c6-3cf6bfdf2008',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                              SizedBox(width: 10,),
-                                             Container(
-                                              
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              color: Colors.black,
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fpython-programming-language.webp?alt=media&token=2c51b760-14a3-4996-9e4a-b406179c2602',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                              SizedBox(width: 10,),
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2F1dbRCWDq_400x400.jpg?alt=media&token=b880f055-df0e-4862-9976-0bf5fa875365',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                              SizedBox(width: 10,),
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2F1dbRCWDq_400x400.jpg?alt=media&token=b880f055-df0e-4862-9976-0bf5fa875365',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                              SizedBox(width: 10,),
-                                              Container(
-                                                height: 70,
-                                             width: 70,
-                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(360),
-                                            image: DecorationImage(
-                                             image: NetworkImage(
-                                               'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2F1dbRCWDq_400x400.jpg?alt=media&token=b880f055-df0e-4862-9976-0bf5fa875365',
-                                             )
-                                            
-                                            ),
-                                            )
-                                              ),
-                                            ],)
-                                          ],
+                                          ),
                                         ),
                                         ClipRRect(
                                           //key: section1Key ,
