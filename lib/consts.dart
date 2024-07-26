@@ -1,1 +1,1 @@
-const OPENAI_API_KEY = "sk-proj-ROURp1X3amCGI8KMWXA6T3BlbkFJ9MvYGNvj04ALo8hMZDP6";
+const OPENAI_API_KEY = "sk-proj-RIJBXmqykqDByw9DLNgRT3BlbkFJTvLY3GvbkNGbTm6llIzp";
