@@ -18,22 +18,21 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:ui_web' as ui_web;
 import 'dart:html' as html;
 
-// Import the consts file
-import 'package:aicuzaro/consts.dart';
-
 class AicoachViewModel extends BaseViewModel {
+  String? _openAiApiKey;
+  OpenAI? _openAI;
+  Future<void>? _initializationFuture;
+
+  AicoachViewModel() {
+    _initializationFuture = initializeData();
+  }
+
   Future<void> initializeData() async {
-    await fetchDocumentFieldContent('apiKey'); // Replace with your document ID
+    await fetchDocumentFieldContent('apiKeys'); // Replace with your document ID
   }
 
   Map<int, bool> _isHovering = {};
   bool _isMenuVisible = true;
-
-  AicoachViewModel() {
-    for (int i = 1; i <= 6; i++) {
-      _isHovering[i] = false;
-    }
-  }
 
   bool isHovering(int index) => _isHovering[index] ?? false;
 
@@ -73,7 +72,7 @@ class AicoachViewModel extends BaseViewModel {
       // Get a reference to the Firestore collection and document
       DocumentReference docRef = FirebaseFirestore.instance
           .collection('API_KEY') // Replace with your collection name
-          .doc('apiKeys');
+          .doc(documentId);
 
       // Fetch the document snapshot
       DocumentSnapshot docSnapshot = await docRef.get();
@@ -84,17 +83,20 @@ class AicoachViewModel extends BaseViewModel {
             docSnapshot.data() as Map<String, dynamic>?;
 
         // Access specific fields
-        String field1 = data?['openAI'] ??
-            'No data'; // Replace 'field1' with your actual field name
+        _openAiApiKey = data?['openAI'];
 
-        // Use the data as needed
-        print('Field 1: $field1');
+        // Initialize OpenAI instance with the fetched API key
+        if (_openAiApiKey != null) {
+          _openAI = OpenAI.instance.build(
+            token: _openAiApiKey!,
+            baseOption: HttpSetup(
+              receiveTimeout: const Duration(seconds: 5),
+            ),
+            enableLog: true,
+          );
+        }
 
-        // You can update a property in your ViewModel with the retrieved data if needed
-        // For example:
-        // _field1 = field1;
-        // _field2 = field2;
-        // notifyListeners(); // Notify listeners if you are updating properties that affect the UI
+        notifyListeners();
       } else {
         print('Document does not exist');
       }
@@ -112,15 +114,6 @@ class AicoachViewModel extends BaseViewModel {
       ChatUser(id: '2', firstName: 'Robo', lastName: 'Coach');
   final _bottomSheetService = locator<BottomSheetService>();
 
-  // Load the API key from the consts file
-  final _openAI = OpenAI.instance.build(
-    token: OPENAI_API_KEY, // Load from consts
-    baseOption: HttpSetup(
-      receiveTimeout: const Duration(seconds: 5),
-    ),
-    enableLog: true,
-  );
-
   List<ChatMessage> messages = <ChatMessage>[];
 
   void addMessage(ChatMessage message) {
@@ -129,6 +122,16 @@ class AicoachViewModel extends BaseViewModel {
   }
 
   Future<void> getChatResponse(ChatMessage message) async {
+    // Wait for initialization to complete
+    if (_initializationFuture != null) {
+      await _initializationFuture;
+    }
+
+    if (_openAI == null) {
+      print('OpenAI is not initialized');
+      return;
+    }
+
     addMessage(message);
     List<Messages> messagesHistory = messages.reversed.map((m) {
       return Messages(
@@ -144,7 +147,7 @@ class AicoachViewModel extends BaseViewModel {
     );
 
     try {
-      final response = await _openAI.onChatCompletion(request: request);
+      final response = await _openAI!.onChatCompletion(request: request);
       if (response != null && response.choices.isNotEmpty) {
         for (var element in response.choices) {
           if (element.message != null) {

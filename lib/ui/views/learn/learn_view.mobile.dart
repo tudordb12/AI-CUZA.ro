@@ -270,16 +270,52 @@ class LearnViewMobile extends ViewModelWidget<LearnViewModel> {
                       ],
                     )),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            GestureDetector(
-                              onTap: () {},
-                              child: Container(
+                  Container(
+                   
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Column(
+                            children: [
+                              GestureDetector(
+                                onTap: () {},
+                                child: Container(
+                                  height: 200,
+                                  width: 200,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(360),
+                                      color: Color.fromARGB(86, 255, 255, 255)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(15.0),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(360),
+                                      ),
+                                      child: Icon(Icons.design_services_outlined,
+                                          size: 150, color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                'D E S I G N',
+                                style: TextStyle(
+                                    fontSize: 25, fontWeight: FontWeight.w100),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Column(
+                            children: [
+                              Container(
                                 height: 200,
                                 width: 200,
                                 decoration: BoxDecoration(
@@ -292,91 +328,58 @@ class LearnViewMobile extends ViewModelWidget<LearnViewModel> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(360),
                                     ),
-                                    child: Icon(Icons.design_services_outlined,
+                                    child: Icon(Icons.computer,
                                         size: 150, color: Colors.white),
                                   ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              'D E S I G N',
-                              style: TextStyle(
-                                  fontSize: 25, fontWeight: FontWeight.w100),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(360),
-                                  color: Color.fromARGB(86, 255, 255, 255)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(15.0),
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                'P R O G R A M A R E',
+                                style: TextStyle(
+                                    fontSize: 25, fontWeight: FontWeight.w100),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                height: 200,
+                                width: 200,
+                                decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(360),
+                                    color: Color.fromARGB(86, 255, 255, 255)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(360),
+                                    ),
+                                    child: Icon(
+                                        Icons.settings_input_composite_outlined,
+                                        size: 150,
+                                        color: Colors.white),
                                   ),
-                                  child: Icon(Icons.computer,
-                                      size: 150, color: Colors.white),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              'P R O G R A M A R E',
-                              style: TextStyle(
-                                  fontSize: 25, fontWeight: FontWeight.w100),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(360),
-                                  color: Color.fromARGB(86, 255, 255, 255)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(15.0),
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(360),
-                                  ),
-                                  child: Icon(
-                                      Icons.settings_input_composite_outlined,
-                                      size: 150,
-                                      color: Colors.white),
-                                ),
+                              SizedBox(
+                                height: 20,
                               ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              'R O B O T I C Ă',
-                              style: TextStyle(
-                                  fontSize: 25, fontWeight: FontWeight.w100),
-                            )
-                          ],
-                        ),
-                      ],
+                              Text(
+                                'R O B O T I C Ă',
+                                style: TextStyle(
+                                    fontSize: 25, fontWeight: FontWeight.w100),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
