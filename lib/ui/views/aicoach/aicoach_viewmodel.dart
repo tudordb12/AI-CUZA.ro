@@ -29,6 +29,7 @@ class AicoachViewModel extends BaseViewModel {
 
   Future<void> initializeData() async {
     await fetchDocumentFieldContent('apiKeys'); // Replace with your document ID
+    _addInitialMessage(); // Add the initial message
   }
 
   Map<int, bool> _isHovering = {};
@@ -119,6 +120,15 @@ class AicoachViewModel extends BaseViewModel {
   void addMessage(ChatMessage message) {
     messages.insert(0, message);
     notifyListeners();
+  }
+
+  void _addInitialMessage() {
+    final initialMessage = ChatMessage(
+      user: _gptCurrentUser,
+      createdAt: DateTime.now(),
+      text: 'Salut, Jill Kendall! Cum te pot ajuta?',
+    );
+    addMessage(initialMessage);
   }
 
   Future<void> getChatResponse(ChatMessage message) async {

@@ -18,7 +18,7 @@ class AicoachView extends StackedView<AicoachViewModel> {
   ) {
     return ScreenTypeLayout.builder(
       mobile: (_) => const AicoachViewMobile(),
-      tablet: (_) => const AicoachViewTablet(),
+     // tablet: (_) => const AicoachViewTablet(),
       desktop: (_) => const AicoachViewDesktop(),
     );
   }

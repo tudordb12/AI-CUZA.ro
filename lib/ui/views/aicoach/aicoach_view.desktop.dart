@@ -48,7 +48,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
           child: Container(
             width: double.infinity - 100,
             height: 950,
-            color: Color.fromARGB(255, 89, 6, 205),
+            color: Color.fromARGB(255, 21, 127, 165),
             child: Column(
               children: [
                 Container(
@@ -463,7 +463,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                           padding: const EdgeInsets.all(8.0),
                                           child: GradientText(
                                             'ROBO COACH',
-                                            style: ktsTitleText,
+                                            style: ktsTitleText2,
                                             colors: const [
                                               Color.fromARGB(
                                                   255, 232, 231, 230),
@@ -480,8 +480,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(60),
-                                              color: Color.fromARGB(
-                                                  255, 48, 46, 63),
+                                              color: Color.fromARGB(207, 24, 24, 24),
                                             ),
                                             height: 500,
                                             width: 1000,
@@ -520,7 +519,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                                   ),
                                                 ),
                                                 Container(
-                                                    height: 440,
+                                                     height: 440,
                                                     width: 1000,
                                                     child: Padding(
                                                       padding:
@@ -532,10 +531,9 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                                         messageOptions:
                                                             const MessageOptions(
                                                           currentUserContainerColor:
-                                                              Colors.black,
+                                                              Color.fromARGB(192, 202, 63, 3),
                                                           containerColor:
-                                                              Color.fromRGBO(67,
-                                                                  56, 74, 1),
+                                                              Color.fromRGBO(216, 3, 46, 0.75),
                                                           textColor:
                                                               Colors.white,
                                                           maxWidth: 400,

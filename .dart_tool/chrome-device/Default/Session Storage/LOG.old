@@ -1,9 +1,21 @@
-2024/07/27-11:10:56.527 2b03 Reusing MANIFEST /private/var/folders/3n/jh7zpn291gg_53gvk8zh9s3r0000gn/T/flutter_tools.oBEoRo/flutter_tools_chrome_device.uP8yrG/Default/Session Storage/MANIFEST-000001
-2024/07/27-11:10:56.528 2b03 Recovering log #33
-2024/07/27-11:10:56.528 2b03 Reusing old log /private/var/folders/3n/jh7zpn291gg_53gvk8zh9s3r0000gn/T/flutter_tools.oBEoRo/flutter_tools_chrome_device.uP8yrG/Default/Session Storage/000033.log 
-2024/07/27-11:10:56.528 2b03 Delete type=0 #7
-2024/07/27-11:10:56.528 2b03 Delete type=0 #4
-2024/07/27-11:10:56.528 2b03 Delete type=0 #10
-2024/07/27-11:10:56.528 2b03 Delete type=0 #3
-2024/07/27-11:10:56.528 2b03 Delete type=2 #11
-2024/07/27-11:10:56.528 2b03 Delete type=2 #8
+2024/07/27-11:16:31.594 2a07 Reusing MANIFEST /private/var/folders/3n/jh7zpn291gg_53gvk8zh9s3r0000gn/T/flutter_tools.B6JXLe/flutter_tools_chrome_device.Rgju3N/Default/Session Storage/MANIFEST-000001
+2024/07/27-11:16:31.595 2a07 Recovering log #33
+2024/07/27-11:16:31.595 2a07 Reusing old log /private/var/folders/3n/jh7zpn291gg_53gvk8zh9s3r0000gn/T/flutter_tools.B6JXLe/flutter_tools_chrome_device.Rgju3N/Default/Session Storage/000033.log 
+2024/07/27-11:16:31.595 2a07 Delete type=0 #7
+2024/07/27-11:16:31.595 2a07 Delete type=0 #4
+2024/07/27-11:16:31.595 2a07 Delete type=0 #10
+2024/07/27-11:16:31.595 2a07 Delete type=0 #3
+2024/07/27-11:16:31.595 2a07 Delete type=2 #11
+2024/07/27-11:16:31.595 2a07 Delete type=2 #8
+2024/07/27-11:40:33.791 3903 Level-0 table #37: started
+2024/07/27-11:40:33.815 3903 Level-0 table #37: 23371 bytes OK
+2024/07/27-11:40:33.854 3903 Delete type=0 #33
+2024/07/27-11:40:33.861 3903 Compacting 4@0 + 1@1 files
+2024/07/27-11:40:33.866 3903 Generated table #38@0: 390 keys, 7969 bytes
+2024/07/27-11:40:33.867 3903 Compacted 4@0 + 1@1 files => 7969 bytes
+2024/07/27-11:40:33.873 3903 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/07/27-11:40:33.875 3903 Delete type=2 #28
+2024/07/27-11:40:33.875 3903 Delete type=2 #34
+2024/07/27-11:40:33.875 3903 Delete type=2 #37
+2024/07/27-11:40:33.875 3903 Delete type=2 #32
+2024/07/27-11:40:33.875 3903 Delete type=2 #30
