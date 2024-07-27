@@ -23,7 +23,8 @@ import 'package:intl/intl.dart';
 import 'package:webview_flutter_web/webview_flutter_web.dart';
 import 'package:webview_flutter_web/webview_flutter_web.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'register_web_webview_stub.dart' if (dart.library.html) 'register_web_webview.dart';
+import 'register_web_webview_stub.dart'
+    if (dart.library.html) 'register_web_webview.dart';
 
 class LearnViewModel extends BaseViewModel {
   Map<int, bool> _isHovering = {};
@@ -66,16 +67,26 @@ class LearnViewModel extends BaseViewModel {
   }
 
   Future<void> navigateToHomeView() async {
-    await _routerService.replaceWith(const PostspageViewRoute());
-  }
-
-  Future<void> navigateToHome() async {
     await _routerService.replaceWith(const HomeViewRoute());
   }
 
   Future<void> navigateToAICOACH() async {
     await _routerService.replaceWith(const AicoachViewRoute());
   }
+
+   Future<void> navigateToDesign() async {
+    await _routerService.replaceWith(const DesignViewRoute());
+  }
+
+   Future<void> navigateToCode() async {
+    await _routerService.replaceWith(const CodeViewRoute());
+  }
+
+   Future<void> navigateToRobotics() async {
+    await _routerService.replaceWith(const RoboticsViewRoute());
+  }
+
+
 
   void signUserOut() {
     FirebaseAuth.instance.signOut();
@@ -102,6 +113,4 @@ class LearnViewModel extends BaseViewModel {
     scrollController.dispose();
     super.dispose();
   }
-
-  
 }

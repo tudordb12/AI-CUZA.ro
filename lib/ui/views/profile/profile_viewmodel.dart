@@ -73,10 +73,9 @@ class ProfileViewModel extends BaseViewModel {
     await _routerService.replaceWith(const AicoachViewRoute());
   }
 
-    Future<void> navigateToLearnView() async {
+  Future<void> navigateToLearnView() async {
     await _routerService.replaceWith(const LearnViewRoute());
   }
-
 
   void signUserOut() {
     FirebaseAuth.instance.signOut();

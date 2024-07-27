@@ -345,7 +345,7 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                                           _buildHoverContainer(
                                               viewModel, 3, 'D E S C O P E R Ă',
                                               () {
-                                                viewModel.navigateToLearnView();
+                                            viewModel.navigateToLearnView();
                                           }),
                                           Spacer(
                                             flex: 2,
@@ -746,8 +746,7 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                                   height: 200,
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                      image:
-                                          AssetImage('lib/assets/appr.png'),
+                                      image: AssetImage('lib/assets/appr.png'),
                                       fit: BoxFit.fitHeight,
                                     ),
                                   ),

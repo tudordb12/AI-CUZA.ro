@@ -1,3 +1,4 @@
+import 'package:aicuzaro/ui/views/postspage/mobile_menu.dart';
 import 'package:aicuzaro/ui/views/postspage/wall_post_mobile.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -161,8 +162,83 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                   ],
                 ),
               ),
+              Container(
+                color: Color.fromARGB(255, 59, 56, 75),
+                width: double.infinity,
+                height: 80,
+                child: Center(
+                    child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Spacer(
+                      flex: 2,
+                    ),
+                    Container(
+                        child: IconButton(
+                            onPressed: () {
+                              viewModel.navigateToHome();
+                            },
+                            icon: Icon(
+                              Icons.home,
+                              color: Colors.white70,
+                              size: 30.0,
+                            ))),
+                    Container(
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.batch_prediction_rounded,
+                              color: Colors.white70,
+                              size: 30.0,
+                            ))),
+                    Container(
+                        child: IconButton(
+                            onPressed: () {
+                              viewModel.navigateToLearnView();
+                            },
+                            icon: Icon(
+                              Icons.question_mark,
+                              color: Colors.white70,
+                              size: 30.0,
+                            ))),
+                    Container(
+                        child: IconButton(
+                            onPressed: () {
+                              viewModel.navigateToAICOACH();
+                            },
+                            icon: Icon(
+                              Icons.alternate_email_sharp,
+                              color: Colors.white70,
+                              size: 30.0,
+                            ))),
+                    Container(
+                        child: IconButton(
+                            onPressed: () {
+                              viewModel.navigateToProfileView();
+                            },
+                            icon: Icon(
+                              Icons.person_pin_rounded,
+                              color: Colors.white70,
+                              size: 30.0,
+                            ))),
+                    Container(
+                        child: IconButton(
+                            onPressed: () {
+                              viewModel.signUserOut();
+                            },
+                            icon: Icon(
+                              Icons.exit_to_app_rounded,
+                              color: Colors.white70,
+                              size: 30.0,
+                            ))),
+                    Spacer(
+                      flex: 2,
+                    ),
+                  ],
+                )),
+              ),
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(25.0),
                 child: Row(
                   children: [
                     Expanded(
@@ -203,90 +279,99 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                   ],
                 ),
               ),
-              StreamBuilder<QuerySnapshot>(
-                stream:
-                    FirebaseFirestore.instance.collection('posts').snapshots(),
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('posts')
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
 
-                  return ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: snapshot.data!.docs.length,
-                    itemBuilder: (context, index) {
-                      final post = snapshot.data!.docs[index];
-                      Color buttonColor;
-                      switch (index % 5) {
-                        case 0:
-                          buttonColor = const Color.fromARGB(255, 212, 37, 69);
-                          break;
-                        case 1:
-                          buttonColor = const Color.fromARGB(255, 210, 50, 82);
-                          break;
-                        case 2:
-                          buttonColor = const Color.fromARGB(255, 212, 64, 48);
-                          break;
-                        case 3:
-                          buttonColor = const Color.fromARGB(255, 193, 42, 90);
-                          break;
-                        default:
-                          buttonColor = const Color.fromARGB(255, 201, 52, 38);
-                          break;
-                      }
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: snapshot.data!.docs.length,
+                      itemBuilder: (context, index) {
+                        final post = snapshot.data!.docs[index];
+                        Color buttonColor;
+                        switch (index % 5) {
+                          case 0:
+                            buttonColor =
+                                const Color.fromARGB(255, 212, 37, 69);
+                            break;
+                          case 1:
+                            buttonColor =
+                                const Color.fromARGB(255, 210, 50, 82);
+                            break;
+                          case 2:
+                            buttonColor =
+                                const Color.fromARGB(255, 212, 64, 48);
+                            break;
+                          case 3:
+                            buttonColor =
+                                const Color.fromARGB(255, 193, 42, 90);
+                            break;
+                          default:
+                            buttonColor =
+                                const Color.fromARGB(255, 201, 52, 38);
+                            break;
+                        }
 
-                      return FutureBuilder<DocumentSnapshot>(
-                        future: FirebaseFirestore.instance
-                            .collection('usernames')
-                            .doc(post['name'])
-                            .get(),
-                        builder: (context, userSnapshot) {
-                          if (!userSnapshot.hasData) {
-                            return const Center(
-                                child: CircularProgressIndicator());
-                          }
+                        return FutureBuilder<DocumentSnapshot>(
+                          future: FirebaseFirestore.instance
+                              .collection('usernames')
+                              .doc(post['name'])
+                              .get(),
+                          builder: (context, userSnapshot) {
+                            if (!userSnapshot.hasData) {
+                              return const Center(
+                                  child: CircularProgressIndicator());
+                            }
 
-                          final userDoc = userSnapshot.data!;
-                          final userName = userDoc['name'] ?? post['name'];
-                          final profilepic = userDoc['image'] ?? post['name'];
-                          final photo = post['image'];
+                            final userDoc = userSnapshot.data!;
+                            final userName = userDoc['name'] ?? post['name'];
+                            final profilepic = userDoc['image'] ?? post['name'];
+                            final photo = post['image'];
 
-                          return FutureBuilder<DocumentSnapshot>(
-                            future: FirebaseFirestore.instance
-                                .collection('following')
-                                .doc(userDoc['email'])
-                                .get(),
-                            builder: (context, follSnapshot) {
-                              if (!follSnapshot.hasData) {
-                                return const Center(
-                                    child: CircularProgressIndicator());
-                              }
+                            return FutureBuilder<DocumentSnapshot>(
+                              future: FirebaseFirestore.instance
+                                  .collection('following')
+                                  .doc(userDoc['email'])
+                                  .get(),
+                              builder: (context, follSnapshot) {
+                                if (!follSnapshot.hasData) {
+                                  return const Center(
+                                      child: CircularProgressIndicator());
+                                }
 
-                              final follDoc = follSnapshot.data!;
-                              List<String> followers2 =
-                                  List<String>.from(follDoc['followers'] ?? []);
+                                final follDoc = follSnapshot.data!;
+                                List<String> followers2 = List<String>.from(
+                                    follDoc['followers'] ?? []);
 
-                              return WallMPost(
-                                message: post['description'],
-                                user: userName,
-                                time: post['date'],
-                                profile: profilepic,
-                                postId: post.id,
-                                likes: List<String>.from(post['Likes'] ?? []),
-                                bColor: buttonColor,
-                                email: userDoc['email'],
-                                followers: followers2,
-                                image: photo,
-                                saves: List<String>.from(post['saved'] ?? []),
-                              );
-                            },
-                          );
-                        },
-                      );
-                    },
-                  );
-                },
+                                return WallMPost(
+                                  message: post['description'],
+                                  user: userName,
+                                  time: post['date'],
+                                  profile: profilepic,
+                                  postId: post.id,
+                                  likes: List<String>.from(post['Likes'] ?? []),
+                                  bColor: buttonColor,
+                                  email: userDoc['email'],
+                                  followers: followers2,
+                                  image: photo,
+                                  saves: List<String>.from(post['saved'] ?? []),
+                                );
+                              },
+                            );
+                          },
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
             ],
           ),

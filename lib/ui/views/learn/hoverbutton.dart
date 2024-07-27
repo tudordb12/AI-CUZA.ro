@@ -32,7 +32,9 @@ class HoverableButton extends StatelessWidget {
               width: 250,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(360),
-                color: isHovered ? Colors.yellow : Color.fromARGB(86, 255, 255, 255),
+                color: isHovered
+                    ? Colors.yellow
+                    : Color.fromARGB(86, 255, 255, 255),
                 boxShadow: isHovered
                     ? [
                         BoxShadow(

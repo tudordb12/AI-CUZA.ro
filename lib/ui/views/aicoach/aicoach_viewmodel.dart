@@ -22,10 +22,10 @@ import 'dart:html' as html;
 import 'package:aicuzaro/consts.dart';
 
 class AicoachViewModel extends BaseViewModel {
-
-   Future<void> initializeData() async {
+  Future<void> initializeData() async {
     await fetchDocumentFieldContent('apiKey'); // Replace with your document ID
   }
+
   Map<int, bool> _isHovering = {};
   bool _isMenuVisible = true;
 
@@ -33,7 +33,6 @@ class AicoachViewModel extends BaseViewModel {
     for (int i = 1; i <= 6; i++) {
       _isHovering[i] = false;
     }
-    
   }
 
   bool isHovering(int index) => _isHovering[index] ?? false;
@@ -69,7 +68,7 @@ class AicoachViewModel extends BaseViewModel {
     navigateToAuthView();
   }
 
-   Future<void> fetchDocumentFieldContent(String documentId) async {
+  Future<void> fetchDocumentFieldContent(String documentId) async {
     try {
       // Get a reference to the Firestore collection and document
       DocumentReference docRef = FirebaseFirestore.instance
@@ -81,15 +80,15 @@ class AicoachViewModel extends BaseViewModel {
 
       if (docSnapshot.exists) {
         // Extract data from the document
-        Map<String, dynamic>? data = docSnapshot.data() as Map<String, dynamic>?;
-        
-        // Access specific fields
-        String field1 = data?['openAI'] ?? 'No data'; // Replace 'field1' with your actual field name
+        Map<String, dynamic>? data =
+            docSnapshot.data() as Map<String, dynamic>?;
 
+        // Access specific fields
+        String field1 = data?['openAI'] ??
+            'No data'; // Replace 'field1' with your actual field name
 
         // Use the data as needed
         print('Field 1: $field1');
-     
 
         // You can update a property in your ViewModel with the retrieved data if needed
         // For example:
@@ -104,7 +103,8 @@ class AicoachViewModel extends BaseViewModel {
       print('Error fetching document: $e');
     }
   }
- final user = FirebaseAuth.instance.currentUser!;
+
+  final user = FirebaseAuth.instance.currentUser!;
 
   final ChatUser _currentUser =
       ChatUser(id: '1', firstName: 'Robo', lastName: 'User');
