@@ -134,7 +134,7 @@ class LoginViewMobile extends ViewModelWidget<LoginViewModel> {
                       verticalSpaceLarge,
                       FadeInUp(
                         child: Container(
-                          height: 450,
+                          height: 470,
                           width: 470,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 20,
@@ -155,6 +155,17 @@ class LoginViewMobile extends ViewModelWidget<LoginViewModel> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                 SizedBox(height: 20,),
+                                   Container(
+                                                      height: 100,
+                                                      width: 100,
+                                                      decoration: BoxDecoration(
+                                                        image: DecorationImage(
+                                                            image: NetworkImage(
+                                                          'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%202%2F8792047.png?alt=media&token=e552350c-a59e-44fd-90e3-004383485329',
+                                                        )),
+                                                      )),
+                                  SizedBox(height: 10,),
                                 Padding(
                                   padding:
                                       const EdgeInsets.fromLTRB(20, 0, 20, 0),

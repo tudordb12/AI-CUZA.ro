@@ -614,8 +614,7 @@ class PostspageViewDesktop extends ViewModelWidget<PostspageViewModel> {
                                                     snapshot.data!.docs[index];
                                                 Color buttonColor;
                                                 if (index % 5 == 0) {
-                                                  buttonColor = Color.fromARGB(
-                                                      255, 213, 52, 82);
+                                                  buttonColor = Color.fromARGB(255, 212, 37, 69);
                                                 } else if (index % 5 == 1) {
                                                   buttonColor = Color.fromARGB(
                                                       255, 221, 77, 106);

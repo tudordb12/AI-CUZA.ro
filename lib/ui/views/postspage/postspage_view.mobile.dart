@@ -1,5 +1,6 @@
 import 'package:aicuzaro/ui/views/postspage/mobile_menu.dart';
 import 'package:aicuzaro/ui/views/postspage/wall_post_mobile.dart';
+import 'package:aicuzaro/ui/views/profile/wall_ppost.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
@@ -42,63 +43,89 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
     final user = FirebaseAuth.instance.currentUser!;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: kcBackgroundColor,
-        title: const Text(
-          'AI.CUZA',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        actions: [
-          PopupMenuButton<String>(
-            onSelected: (value) {
-              switch (value) {
-                case 'Acasă':
-                  // Handle navigation to home
-                  break;
-                case 'Creează-ți propriul CUZA':
-                  // Handle navigation to create CUZA
-                  break;
-                case 'Descărcări':
-                  // Handle navigation to downloads
-                  break;
-                case 'Contul Meu':
-                  // Handle navigation to my account
-                  break;
-                case 'Logout':
-                  // Handle user logout
-                  break;
-              }
-            },
-            itemBuilder: (context) => const [
-              PopupMenuItem(
-                value: 'Acasă',
-                child: Text('Acasă'),
-              ),
-              PopupMenuItem(
-                value: 'Creează-ți propriul CUZA',
-                child: Text('Creează-ți propriul CUZA'),
-              ),
-              PopupMenuItem(
-                value: 'Descărcări',
-                child: Text('Descărcări'),
-              ),
-              PopupMenuItem(
-                value: 'Contul Meu',
-                child: Text('Contul Meu'),
-              ),
-              PopupMenuItem(
-                value: 'Logout',
-                child: Text('Logout'),
-              ),
-            ],
-          ),
-        ],
-      ),
+      
       backgroundColor: kcBackgroundColor,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InkWell(
+                          child: Text(
+                            'AI.CUZA',
+                            style: ktsBodyLarge.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              viewModel.navigateToHomeView();
+                            },
+                            child: Text(
+                              'Acasă',
+                              style: ktsBodyRegular.copyWith(
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          InkWell(
+                            onTap: () {
+                              //viewModel.navigateToInfoView();
+                            },
+                            child: Text(
+                              'Creează-ți propriul CUZA',
+                              style: ktsBodyRegular.copyWith(
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          InkWell(
+                            onTap: () {
+                              //viewModel.navigateToDownloadsView();
+                            },
+                            child: Text(
+                              'Descărcări',
+                              style: ktsBodyRegular.copyWith(
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                          ),
+                         
+                        ],
+                      ),
+                    ),
+                                ],
+                              ),
+                  ],
+                ),
+              ),
               Container(
                 width: double.infinity,
                 color: const Color.fromARGB(255, 89, 6, 205),
@@ -237,140 +264,148 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                   ],
                 )),
               ),
-              Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: Row(
+              Container(
+                width: double.infinity,
+                color: Color.fromARGB(196, 190, 38, 73),
+                child: Column(
                   children: [
-                    Expanded(
-                      child: TextField(
-                        style: const TextStyle(
-                            color: Color.fromARGB(255, 60, 60, 60)),
-                        controller: viewModel.textController,
-                        maxLines: null,
-                        decoration: InputDecoration(
-                          hintText: 'Ce idei noi ai?',
-                          hintStyle: const TextStyle(
-                              color: Color.fromARGB(255, 60, 60, 60)),
-                          filled: true,
-                          fillColor: const Color.fromARGB(255, 229, 222, 235),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50),
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              style: const TextStyle(
+                                  color: Color.fromARGB(255, 60, 60, 60)),
+                              controller: viewModel.textController,
+                              maxLines: null,
+                              decoration: InputDecoration(
+                                hintText: 'Ce idei noi ai?',
+                                hintStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 60, 60, 60)),
+                                filled: true,
+                                fillColor: const Color.fromARGB(255, 229, 222, 235),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                          const SizedBox(width: 10),
+                          IconButton(
+                            icon: const Icon(Icons.arrow_circle_up, color: Colors.white,),
+                            onPressed: () {
+                              if (viewModel.textController.text.isNotEmpty) {
+                                viewModel.postOnline();
+                              }
+                            },
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.add_a_photo, color: Colors.white,),
+                            onPressed: () {
+                              if (viewModel.textController.text.isNotEmpty) {
+                                viewModel.postAttach();
+                              }
+                            },
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(width: 10),
-                    IconButton(
-                      icon: const Icon(Icons.arrow_circle_up),
-                      onPressed: () {
-                        if (viewModel.textController.text.isNotEmpty) {
-                          viewModel.postOnline();
-                        }
-                      },
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.add_a_photo),
-                      onPressed: () {
-                        if (viewModel.textController.text.isNotEmpty) {
-                          viewModel.postAttach();
-                        }
-                      },
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: StreamBuilder<QuerySnapshot>(
+                        stream: FirebaseFirestore.instance
+                            .collection('posts')
+                            .snapshots(),
+                        builder: (context, snapshot) {
+                          if (!snapshot.hasData) {
+                            return const Center(child: CircularProgressIndicator());
+                          }
+                    
+                          return ListView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: snapshot.data!.docs.length,
+                            itemBuilder: (context, index) {
+                              final post = snapshot.data!.docs[index];
+                              Color buttonColor;
+                              switch (index % 5) {
+                                case 0:
+                                  buttonColor =
+                                      const Color.fromARGB(255, 212, 37, 69);
+                                  break;
+                                case 1:
+                                  buttonColor =
+                                      const Color.fromARGB(255, 210, 50, 82);
+                                  break;
+                                case 2:
+                                  buttonColor =
+                                      const Color.fromARGB(255, 212, 64, 48);
+                                  break;
+                                case 3:
+                                  buttonColor =
+                                      const Color.fromARGB(255, 193, 42, 90);
+                                  break;
+                                default:
+                                  buttonColor =
+                                      const Color.fromARGB(255, 201, 52, 38);
+                                  break;
+                              }
+                    
+                              return FutureBuilder<DocumentSnapshot>(
+                                future: FirebaseFirestore.instance
+                                    .collection('usernames')
+                                    .doc(post['name'])
+                                    .get(),
+                                builder: (context, userSnapshot) {
+                                  if (!userSnapshot.hasData) {
+                                    return const Center(
+                                        child: CircularProgressIndicator());
+                                  }
+                    
+                                  final userDoc = userSnapshot.data!;
+                                  final userName = userDoc['name'] ?? post['name'];
+                                  final profilepic = userDoc['image'] ?? post['name'];
+                                  final photo = post['image'];
+                    
+                                  return FutureBuilder<DocumentSnapshot>(
+                                    future: FirebaseFirestore.instance
+                                        .collection('following')
+                                        .doc(userDoc['email'])
+                                        .get(),
+                                    builder: (context, follSnapshot) {
+                                      if (!follSnapshot.hasData) {
+                                        return const Center(
+                                            child: CircularProgressIndicator());
+                                      }
+                    
+                                      final follDoc = follSnapshot.data!;
+                                      List<String> followers2 = List<String>.from(
+                                          follDoc['followers'] ?? []);
+                    
+                                      return WallPPost(
+                                        message: post['description'],
+                                        user: userName,
+                                        time: post['date'],
+                                        profile: profilepic,
+                                        postId: post.id,
+                                        likes: List<String>.from(post['Likes'] ?? []),
+                                        bColor: buttonColor,
+                                        email: userDoc['email'],
+                                        followers: followers2,
+                                        image: photo,
+                                       // saves: List<String>.from(post['saved'] ?? []),
+                                      );
+                                    },
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        },
+                      ),
                     ),
                   ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: StreamBuilder<QuerySnapshot>(
-                  stream: FirebaseFirestore.instance
-                      .collection('posts')
-                      .snapshots(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-
-                    return ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: snapshot.data!.docs.length,
-                      itemBuilder: (context, index) {
-                        final post = snapshot.data!.docs[index];
-                        Color buttonColor;
-                        switch (index % 5) {
-                          case 0:
-                            buttonColor =
-                                const Color.fromARGB(255, 212, 37, 69);
-                            break;
-                          case 1:
-                            buttonColor =
-                                const Color.fromARGB(255, 210, 50, 82);
-                            break;
-                          case 2:
-                            buttonColor =
-                                const Color.fromARGB(255, 212, 64, 48);
-                            break;
-                          case 3:
-                            buttonColor =
-                                const Color.fromARGB(255, 193, 42, 90);
-                            break;
-                          default:
-                            buttonColor =
-                                const Color.fromARGB(255, 201, 52, 38);
-                            break;
-                        }
-
-                        return FutureBuilder<DocumentSnapshot>(
-                          future: FirebaseFirestore.instance
-                              .collection('usernames')
-                              .doc(post['name'])
-                              .get(),
-                          builder: (context, userSnapshot) {
-                            if (!userSnapshot.hasData) {
-                              return const Center(
-                                  child: CircularProgressIndicator());
-                            }
-
-                            final userDoc = userSnapshot.data!;
-                            final userName = userDoc['name'] ?? post['name'];
-                            final profilepic = userDoc['image'] ?? post['name'];
-                            final photo = post['image'];
-
-                            return FutureBuilder<DocumentSnapshot>(
-                              future: FirebaseFirestore.instance
-                                  .collection('following')
-                                  .doc(userDoc['email'])
-                                  .get(),
-                              builder: (context, follSnapshot) {
-                                if (!follSnapshot.hasData) {
-                                  return const Center(
-                                      child: CircularProgressIndicator());
-                                }
-
-                                final follDoc = follSnapshot.data!;
-                                List<String> followers2 = List<String>.from(
-                                    follDoc['followers'] ?? []);
-
-                                return WallMPost(
-                                  message: post['description'],
-                                  user: userName,
-                                  time: post['date'],
-                                  profile: profilepic,
-                                  postId: post.id,
-                                  likes: List<String>.from(post['Likes'] ?? []),
-                                  bColor: buttonColor,
-                                  email: userDoc['email'],
-                                  followers: followers2,
-                                  image: photo,
-                                  saves: List<String>.from(post['saved'] ?? []),
-                                );
-                              },
-                            );
-                          },
-                        );
-                      },
-                    );
-                  },
                 ),
               ),
             ],

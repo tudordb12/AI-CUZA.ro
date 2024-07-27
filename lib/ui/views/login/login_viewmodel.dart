@@ -35,6 +35,7 @@ class LoginViewModel extends BaseViewModel {
 
   Future<void> _showAlertDialog() async {
     message = Text('Acest utilizator nu există!');
+    notifyListeners();
   }
 
   Future<void> navigateToHomeView() async {
@@ -69,5 +70,6 @@ class LoginViewModel extends BaseViewModel {
 
   void errorMessage() {
     message = Text('Nu v-am putut conecta!');
+    notifyListeners();
   }
 }

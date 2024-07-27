@@ -120,7 +120,7 @@ class LoginViewDesktop extends ViewModelWidget<LoginViewModel> {
                         verticalSpaceLarge,
                         FadeInUp(
                           child: Container(
-                            height: 450,
+                            height: 530,
                             width: 470,
                             padding: const EdgeInsets.symmetric(
                               horizontal: 20,
@@ -141,6 +141,17 @@ class LoginViewDesktop extends ViewModelWidget<LoginViewModel> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
+                                  SizedBox(height: 20,),
+                                   Container(
+                                                      height: 130,
+                                                      width: 130,
+                                                      decoration: BoxDecoration(
+                                                        image: DecorationImage(
+                                                            image: NetworkImage(
+                                                          'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%202%2F8792047.png?alt=media&token=e552350c-a59e-44fd-90e3-004383485329',
+                                                        )),
+                                                      )),
+                                  SizedBox(height: 10,),
                                   Container(
                                     child: TextField(
                                       controller: viewModel.emailController,
@@ -161,7 +172,7 @@ class LoginViewDesktop extends ViewModelWidget<LoginViewModel> {
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                   ),
-                                  verticalSpaceMedium,
+                                  verticalSpaceSmall,
                                   Container(
                                     child: TextField(
                                       controller: viewModel.passwordController,

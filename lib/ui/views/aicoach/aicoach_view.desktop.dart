@@ -447,154 +447,194 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                             width: 1150,
                             height: 850,
                             color: Color.fromARGB(255, 21, 127, 165),
-                            child: Column(children: [
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                child: SizedBox(
-                                  height: 850,
-                                  width: 850,
-                                  child: Center(
-                                    child: Column(
-                                      children: [
-                                        SizedBox(
-                                          height: 50,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: GradientText(
-                                            'ROBO COACH',
-                                            style: ktsTitleText2,
-                                            colors: const [
-                                              Color.fromARGB(
-                                                  255, 232, 231, 230),
-                                              Color.fromARGB(255, 199, 198, 197)
-                                            ],
+                            child: Container(
+                              width: 1000,
+                              height: 850,
+                              child: Column(children: [
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                  child: SizedBox(
+                                    height: 850,
+                                    width: 850,
+                                    child: Center(
+                                      child: Column(
+                                        children: [
+                                          SizedBox(
+                                            height: 50,
                                           ),
-                                        ),
-                                        SizedBox(
-                                          height: 20,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(10.0),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(60),
-                                              color: Color.fromARGB(207, 24, 24, 24),
-                                            ),
-                                            height: 500,
-                                            width: 1000,
-                                            child: Column(
-                                              children: [
-                                                Container(
-                                                  decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                            topLeft: Radius
-                                                                .circular(60),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    60)),
-                                                    color: const Color.fromARGB(
-                                                        255, 60, 81, 92),
-                                                  ),
-                                                  height: 60,
-                                                  width: 1000,
-                                                  child: Padding(
-                                                    padding: const EdgeInsets
-                                                        .fromLTRB(
-                                                        60.0, 0, 0, 0),
-                                                    child: Row(
-                                                      children: [
-                                                        Text(
-                                                          "@robotics_coach_",
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                              fontSize: 20),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                                Container(
-                                                     height: 440,
-                                                    width: 1000,
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.all(
-                                                              20.0),
-                                                      child: DashChat(
-                                                        currentUser:
-                                                            _currentUser,
-                                                        messageOptions:
-                                                            const MessageOptions(
-                                                          currentUserContainerColor:
-                                                              Color.fromARGB(192, 202, 63, 3),
-                                                          containerColor:
-                                                              Color.fromRGBO(216, 3, 46, 0.75),
-                                                          textColor:
-                                                              Colors.white,
-                                                          maxWidth: 400,
-                                                        ),
-                                                        onSend:
-                                                            (ChatMessage m) {
-                                                          viewModel
-                                                              .getChatResponse(
-                                                                  m);
-                                                        },
-                                                        messages:
-                                                            viewModel.messages,
-                                                        inputOptions:
-                                                            InputOptions(
-                                                          inputDecoration:
-                                                              InputDecoration(
-                                                            hintText:
-                                                                'Întreabă-mă orice',
-                                                            hintStyle:
-                                                                TextStyle(
-                                                              color: Colors
-                                                                  .white70,
-                                                            ),
-                                                            filled: true,
-                                                            fillColor:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    91,
-                                                                    105,
-                                                                    112),
-                                                            border:
-                                                                OutlineInputBorder(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          40),
-                                                              borderSide:
-                                                                  BorderSide
-                                                                      .none,
-                                                            ),
-                                                            contentPadding:
-                                                                EdgeInsets
-                                                                    .symmetric(
-                                                                        horizontal:
-                                                                            20,
-                                                                        vertical:
-                                                                            8),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ))
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: GradientText(
+                                              'ROBO COACH',
+                                              style: ktsTitleText,
+                                              colors: const [
+                                                Color.fromARGB(
+                                                    255, 232, 231, 230),
+                                                Color.fromARGB(255, 199, 198, 197)
                                               ],
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          Container(
+                                            height: 130,
+                                            width: 800,
+                                            decoration: BoxDecoration(
+                                              color: Color.fromARGB(196, 247, 245, 240),
+                                              borderRadius: BorderRadius.circular(20)
+                                            ),
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(10.0),
+                                              child: Row(children: [
+                                                 Padding(
+                                                   padding: const EdgeInsets.all(5.0),
+                                                   child: Container(
+                                                        height: 100,
+                                                        width: 100,
+                                                        decoration: BoxDecoration(
+                                                          borderRadius: BorderRadius.circular(20),
+                                                          image: DecorationImage(
+                                                              image: NetworkImage(
+                                                            'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fchatgpt-logo-chat-gpt-icon-on-black-background-free-vector.jpg?alt=media&token=a152f875-6121-418c-bb6a-7ae4e8e15a90',
+                                                          )),
+                                                        )),
+                                                 ),
+                                                 SizedBox(width: 20,),
+                                                 Container(
+                                                  width: 500,
+                                                   child: Text(
+                                                    'Întâlnește AI Coach-ul nostru powered by OpenAI! Când Robostream nu are soluția, noi oferim răspunsuri rapide și precise la orice întrebare. Descoperă claritatea și succesul cu asistența noastră avansată!'
+                                                    , style: TextStyle(color: const Color.fromARGB(191, 0, 0, 0), fontWeight: FontWeight.bold, fontSize: 15),                                               ),
+                                                 )
+                                              ]),
+                                            ),
+                                            ),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(10.0),
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(60),
+                                                color: Color.fromARGB(207, 24, 24, 24),
+                                              ),
+                                              height: 500,
+                                              width: 1000,
+                                              child: Column(
+                                                children: [
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.only(
+                                                              topLeft: Radius
+                                                                  .circular(60),
+                                                              topRight:
+                                                                  Radius.circular(
+                                                                      60)),
+                                                      color: const Color.fromARGB(
+                                                          255, 60, 81, 92),
+                                                    ),
+                                                    height: 60,
+                                                    width: 1000,
+                                                    child: Padding(
+                                                      padding: const EdgeInsets
+                                                          .fromLTRB(
+                                                          60.0, 0, 0, 0),
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            "@robotics_coach_",
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                fontSize: 20),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                       height: 440,
+                                                      width: 1000,
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets.all(
+                                                                20.0),
+                                                        child: DashChat(
+                                                          currentUser:
+                                                              _currentUser,
+                                                          messageOptions:
+                                                              const MessageOptions(
+                                                            currentUserContainerColor:
+                                                                Color.fromARGB(192, 202, 63, 3),
+                                                            containerColor:
+                                                                Color.fromRGBO(216, 3, 46, 0.75),
+                                                            textColor:
+                                                                Colors.white,
+                                                            maxWidth: 400,
+                                                          ),
+                                                          onSend:
+                                                              (ChatMessage m) {
+                                                            viewModel
+                                                                .getChatResponse(
+                                                                    m);
+                                                          },
+                                                          messages:
+                                                              viewModel.messages,
+                                                          inputOptions:
+                                                              InputOptions(
+                                                            inputDecoration:
+                                                                InputDecoration(
+                                                              hintText:
+                                                                  'Întreabă-mă orice',
+                                                              hintStyle:
+                                                                  TextStyle(
+                                                                color: Colors
+                                                                    .white70,
+                                                              ),
+                                                              filled: true,
+                                                              fillColor:
+                                                                  Color.fromARGB(
+                                                                      255,
+                                                                      91,
+                                                                      105,
+                                                                      112),
+                                                              border:
+                                                                  OutlineInputBorder(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            40),
+                                                                borderSide:
+                                                                    BorderSide
+                                                                        .none,
+                                                              ),
+                                                              contentPadding:
+                                                                  EdgeInsets
+                                                                      .symmetric(
+                                                                          horizontal:
+                                                                              20,
+                                                                          vertical:
+                                                                              8),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ))
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              )
-                            ]),
+                                )
+                              ]),
+                            ),
                           )
                         ],
                       ),
