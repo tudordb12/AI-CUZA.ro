@@ -1,4 +1,5 @@
 import 'package:aicuzaro/ui/views/postspage/wall_post.dart';
+import 'package:aicuzaro/ui/views/postspage/wall_post_mobile.dart';
 import 'package:aicuzaro/ui/views/profile/profile_pic_btn.dart';
 import 'package:aicuzaro/ui/views/profile/wall_ppost.dart';
 import 'package:flutter/material.dart';
@@ -1028,7 +1029,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                                                           followers2,
                                                                       image:
                                                                           photo,
-                                                                      /* saves: List<
+                                                                       /*saves: List<
                                                                       String>.from(
                                                                   post['saved'] ??
                                                                       []),*/

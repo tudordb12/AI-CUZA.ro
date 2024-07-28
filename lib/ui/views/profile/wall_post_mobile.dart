@@ -2,6 +2,7 @@ import 'package:aicuzaro/ui/views/postspage/comments.dart';
 import 'package:aicuzaro/ui/views/postspage/comments_button.dart';
 import 'package:aicuzaro/ui/views/postspage/follow_button.dart';
 import 'package:aicuzaro/ui/views/postspage/like_button.dart';
+import 'package:aicuzaro/ui/views/postspage/like_button_mobile.dart';
 import 'package:aicuzaro/ui/views/postspage/save_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -212,7 +213,7 @@ class _WallPostState extends State<WallMPost> {
           color: widget.bColor,
           borderRadius: BorderRadius.circular(20),
         ),
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.all(30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -304,32 +305,40 @@ class _WallPostState extends State<WallMPost> {
             ),
             const SizedBox(height: 10),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
-                  children: [
-                    Text(
-                      widget.likes.length.toString(),
-                      style: const TextStyle(
-                        color: Colors.white,
+                Center(
+                  child: Row(
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            widget.likes.length.toString(),
+                            style: const TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          LikeButtonMobile(
+                            isLiked: isLiked,
+                            onTap: toggleLike,
+                          ),
+                        ],
                       ),
-                    ),
-                    LikeButton(
-                      isLiked: isLiked,
-                      onTap: toggleLike,
-                    ),
-                  ],
-                ),
-                const SizedBox(width: 10),
-                CommentButton(
-                  onPressed: () {
-                    print("Comment text: ${commentText.text}");
-                    addComment(commentText.text);
-                  },
-                ),
-                const SizedBox(width: 10),
-                SaveButton(
-                  isSaved: isSaved,
-                  onTap: toggleSave,
+                      const SizedBox(width: 10),
+                      CommentButton(
+                        onPressed: () {
+                          print("Comment text: ${commentText.text}");
+                          addComment(commentText.text);
+                        },
+                      ),
+                      const SizedBox(width: 10),
+                      SaveButton(
+                        isSaved: isSaved,
+                        onTap: toggleSave,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

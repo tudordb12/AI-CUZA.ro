@@ -383,7 +383,7 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                                       List<String> followers2 = List<String>.from(
                                           follDoc['followers'] ?? []);
                     
-                                      return WallPPost(
+                                      return WallMPost(
                                         message: post['description'],
                                         user: userName,
                                         time: post['date'],
@@ -394,7 +394,7 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                                         email: userDoc['email'],
                                         followers: followers2,
                                         image: photo,
-                                       // saves: List<String>.from(post['saved'] ?? []),
+                                        saves: List<String>.from(post['saved'] ?? []),
                                       );
                                     },
                                   );

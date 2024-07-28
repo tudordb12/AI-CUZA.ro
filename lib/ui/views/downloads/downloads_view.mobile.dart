@@ -171,7 +171,7 @@ class DownloadsViewMobile extends ViewModelWidget<DownloadsViewModel> {
             InkWell(
               onTap: () async {
                 const url =
-                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/CUZZAppInstaller.zip?alt=media&token=468808fc-9eac-4bec-95f0-e48cc7be4fd4';
+                    'https://www.dropbox.com/scl/fi/syogbyyftu5hatig7pepp/CuzzApp.apk?rlkey=og39pz2wbts2auz3n3hv56mmg&st=d41eelun&dl=1';
                 if (await canLaunch(url)) {
                   await launch(url);
                 } else {
