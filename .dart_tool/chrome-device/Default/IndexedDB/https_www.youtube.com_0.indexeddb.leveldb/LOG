@@ -1,6 +1,15 @@
-2024/07/26-00:55:42.990 8307 Creating DB /private/var/folders/_8/2f406m5s7ybdtq1pydpmpkjw0000gp/T/flutter_tools.WtYc0O/flutter_tools_chrome_device.jifnZo/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb since it was missing.
-2024/07/26-00:55:43.017 8307 Reusing MANIFEST /private/var/folders/_8/2f406m5s7ybdtq1pydpmpkjw0000gp/T/flutter_tools.WtYc0O/flutter_tools_chrome_device.jifnZo/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/07/26-00:55:45.754 8603 Level-0 table #5: started
-2024/07/26-00:55:45.761 8603 Level-0 table #5: 842 bytes OK
-2024/07/26-00:55:45.774 8603 Delete type=0 #3
-2024/07/26-00:55:45.776 8603 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/07/28-13:18:50.851 a003 Reusing MANIFEST /private/var/folders/3n/jh7zpn291gg_53gvk8zh9s3r0000gn/T/flutter_tools.9AZl8B/flutter_tools_chrome_device.C7Eqv4/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/28-13:18:50.852 a003 Recovering log #4
+2024/07/28-13:18:50.852 a003 Reusing old log /private/var/folders/3n/jh7zpn291gg_53gvk8zh9s3r0000gn/T/flutter_tools.9AZl8B/flutter_tools_chrome_device.C7Eqv4/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000004.log 
+2024/07/28-13:18:54.409 a003 Level-0 table #8: started
+2024/07/28-13:18:54.416 a003 Level-0 table #8: 96126 bytes OK
+2024/07/28-13:18:54.426 a003 Delete type=0 #4
+2024/07/28-13:18:54.427 a003 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/07/28-13:18:54.427 a003 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x09\x01 \x03\x00\x00\x00\x00\x00\x00\xf0?\x00\x04\x02\x01\x17\x00s\x00e\x00r\x00v\x00i\x00c\x00e\x00:\x00t\x00o\x00p\x00b\x00a\x00r\x00:\x00f\x00a\x00l\x00l\x00b\x00a\x00c\x00k\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 920 : 1
+2024/07/28-13:18:54.427 a003 Compacting 1@1 + 1@2 files
+2024/07/28-13:18:54.433 a003 Generated table #9@1: 230 keys, 56875 bytes
+2024/07/28-13:18:54.433 a003 Compacted 1@1 + 1@2 files => 56875 bytes
+2024/07/28-13:18:54.436 a003 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/07/28-13:18:54.437 a003 Delete type=2 #5
+2024/07/28-13:18:54.437 a003 Delete type=2 #8
+2024/07/28-13:18:54.438 a003 Manual compaction at level-1 from '\x00\x09\x01 \x03\x00\x00\x00\x00\x00\x00\xf0?\x00\x04\x02\x01\x17\x00s\x00e\x00r\x00v\x00i\x00c\x00e\x00:\x00t\x00o\x00p\x00b\x00a\x00r\x00:\x00f\x00a\x00l\x00l\x00b\x00a\x00c\x00k\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 920 : 1 .. (end); will stop at (end)

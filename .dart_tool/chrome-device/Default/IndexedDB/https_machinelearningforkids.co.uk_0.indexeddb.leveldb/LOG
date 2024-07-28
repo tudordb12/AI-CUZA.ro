@@ -1,0 +1,18 @@
+2024/07/28-19:29:53.632 a003 Creating DB /private/var/folders/3n/jh7zpn291gg_53gvk8zh9s3r0000gn/T/flutter_tools.9AZl8B/flutter_tools_chrome_device.C7Eqv4/Default/IndexedDB/https_machinelearningforkids.co.uk_0.indexeddb.leveldb since it was missing.
+2024/07/28-19:29:53.640 a003 Reusing MANIFEST /private/var/folders/3n/jh7zpn291gg_53gvk8zh9s3r0000gn/T/flutter_tools.9AZl8B/flutter_tools_chrome_device.C7Eqv4/Default/IndexedDB/https_machinelearningforkids.co.uk_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/28-19:29:53.654 a307 Level-0 table #5: started
+2024/07/28-19:29:53.658 a307 Level-0 table #5: 1451 bytes OK
+2024/07/28-19:29:53.663 a307 Delete type=0 #3
+2024/07/28-19:29:53.664 a307 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/07/28-19:29:55.666 a003 Level-0 table #7: started
+2024/07/28-19:29:55.670 a003 Level-0 table #7: 256 bytes OK
+2024/07/28-19:29:55.678 a003 Delete type=0 #4
+2024/07/28-19:29:55.679 a003 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/07/28-19:29:55.679 a003 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x002\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 92 : 0
+2024/07/28-19:29:55.679 a003 Compacting 1@1 + 1@2 files
+2024/07/28-19:29:55.682 a003 Generated table #8@1: 7 keys, 264 bytes
+2024/07/28-19:29:55.682 a003 Compacted 1@1 + 1@2 files => 264 bytes
+2024/07/28-19:29:55.685 a003 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/07/28-19:29:55.686 a003 Delete type=2 #7
+2024/07/28-19:29:55.686 a003 Delete type=2 #5
+2024/07/28-19:29:55.687 a003 Manual compaction at level-1 from '\x00\x00\x00\x002\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 92 : 0 .. (end); will stop at (end)
