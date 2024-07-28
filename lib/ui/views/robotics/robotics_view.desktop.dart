@@ -391,7 +391,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                       Expanded(
                         child: SingleChildScrollView(
                           child: Container(
-                            height: 1700,
+                            height: 1800,
                             decoration: BoxDecoration(
                               color: Color.fromARGB(84, 52, 51, 51),
                               borderRadius: BorderRadius.circular(0),
@@ -412,7 +412,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                       ),
                                       image: DecorationImage(
                                         image: NetworkImage(
-                                            'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fdepositphotos_243120806-stock-photo-programmer-working-software-development-coding.webp?alt=media&token=a29b66c3-5a41-415e-9163-241ec7004549'),
+                                            'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?cs=srgb&dl=pexels-agk42-2599244.jpg&fm=jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -509,11 +509,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                     child: Icon(
                                                         Icons.computer,
                                                         size: 150,
-                                                        color: Color.fromARGB(
-                                                                  255,
-                                                                  255,
-                                                                  196,
-                                                                  0)),
+                                                        color: Colors.white),
                                                   ),
                                                 ),
                                               ),
@@ -559,7 +555,11 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                         Icons
                                                             .settings_input_composite_outlined,
                                                         size: 150,
-                                                        color: Colors.white),
+                                                        color: Color.fromARGB(
+                                                                  255,
+                                                                  255,
+                                                                  196,
+                                                                  0)),
                                                   ),
                                                 ),
                                               ),
@@ -587,7 +587,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                           
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(20),
-                                            color: Color.fromARGB(219, 234, 0, 86)
+                                            color: Color.fromARGB(219, 234, 0, 43)
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(20.0),
@@ -599,11 +599,18 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                         height: 400,
                                                         width: 400,
                                                         decoration: BoxDecoration(
-                                                          image: DecorationImage(
-                                                              image: NetworkImage(
-                                                            'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/code%2Fimage.png?alt=media&token=af68a0af-c564-4c8a-abe9-686f14fcb3ac',
-                                                          )),
-                                                        )),
+                                                          
+                                                        ),
+                                                                            child: ClipRRect(
+                                                  borderRadius: BorderRadius.circular(20),
+                                                  child: Image.asset(
+                                                    'lib/assets/start.png',
+                                                  
+                                                    fit: BoxFit.fitWidth,
+                                                  ),
+                                                ),
+                                                        ),
+                                                        
                                                     SizedBox(
                                                       width: 50,
                                                     ),
@@ -632,7 +639,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                     Container(
                                                                       width: 450,
                                                                       child: Text(
-                                                                        'Programarea unei interfețe și a caracteristicilor funcționale este esențială pentru proiectele informatice, transformând ideile în experiențe utilizabile și captivante. De exemplu, în aplicațiile mobile, interfața intuitivă facilitează navigarea, în timp ce funcții precum recunoașterea vocală, analiza datelor în timp real și controlul prin gesturi aduc inovație și eficiență. Alte exemple includ aplicațiile de prezență care folosesc scanarea QR pentru acces rapid, platformele de social media care integrează chatbots pentru asistență instantanee și jocurile care oferă realitate augmentată pentru o experiență imersivă. Aceste elemente fac proiectele nu doar funcționale, ci și atrăgătoare și utile pentru utilizatori.',
+                                                                        'Robotica este un domeniu fascinant al ingineriei care combină electronică, informatică și mecanică pentru a crea mașini inteligente capabile să efectueze diverse sarcini. Aceste "roboți" pot varia de la brațe industriale precise la drone zburătoare sau roboți umanoizi care imită mișcările umane. Prin dezvoltarea robotilor, se explorează noi metode de automatizare și eficientizare a proceselor în diverse industrii, inclusiv medicină, explorare spațială și agricultură. Robotica nu doar că îmbunătățește viețile oamenilor, dar deschide și calea către inovații tehnologice surprinzătoare.',
                                                                         style: ktsBodyLarge
                                                                             .copyWith(
                                                                           fontWeight:
@@ -691,9 +698,9 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                                       begin:
                                                                                           Alignment.topCenter,
                                                                                       colors: [
-                                                                                        Color.fromARGB(255, 224, 60, 5),
-                                                                                        Color.fromARGB(255, 207, 29, 1),
-                                                                                        Color.fromARGB(255, 211, 14, 67)
+                                                                                        Color.fromARGB(255, 255, 170, 0),
+                                                                                        Color.fromARGB(255, 255, 170, 0),
+                                                                                        Color.fromARGB(255, 255, 140, 0)
                                                                                       ]),
                                                                                   borderRadius:
                                                                                       BorderRadius.circular(8),
@@ -710,7 +717,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                                         Container(
                                                                                           width: 400,
                                                                                           child: const Text(
-                                                                                                                                                                        'Cel mai important însă, e faptul că Robotica depinde de programare, nu doar pentru conectarea acesteia la anumite interfațe, dar și funcțiile robotului ce sunt pot fi de asemenea prezente în proiecte software.',
+                                                                                                                                                                        'Robotica este interconectată cu designul și programarea prin crearea de structuri funcționale și eficiente, implementarea de algoritmi pentru control și interacțiune, și optimizarea performanței. Designul se ocupă de aspectul fizic și ergonomic al robotului, asigurându-se că acesta poate efectua sarcini specifice. Programarea dezvoltă software-ul necesar pentru ca robotul să execute mișcări precise și să răspundă la stimuli din mediu, integrând senzori și actuatori pentru funcționalitate completă.',
                                                                                                                                                                         style: TextStyle(
                                                                                             color:
                                                                                                 Colors.white,
@@ -745,7 +752,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                   children: [
                                                     Container(
                                                       width: 770,
-                                                      child: Text('Instrumente pentru Design De Interfață', style: TextStyle(fontSize: 25),)),
+                                                      child: Text('Instrumente Digitale De Robotică', style: TextStyle(fontSize: 25),)),
                                                   ],
                                                 ),
                                                  SizedBox(height: 20,),
@@ -754,7 +761,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                     InkWell(
                                                       onTap: () async {
                                                   const url =
-                                                      'https://www.thunkable.com';
+                                                      'https://www.arduino.cc/en/software';
                                                   if (await canLaunch(url)) {
                                                     await launch(url);
                                                   } else {
@@ -782,12 +789,12 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                           .circular(360),
                                                                   image: DecorationImage(
                                                                       image: NetworkImage(
-                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/code%2Fimages.png?alt=media&token=6ec9b1c1-81b0-401e-a9a1-61949adfb83c',
+                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Farduino-logo-1.png?alt=media&token=1109bb8f-5941-47f5-ac6b-2124081fcd4d',
                                                                   )),
                                                                 )),
                                                                 SizedBox(height: 5,),
                                                              Text(
-                                                          'T H U N K A B L E', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
+                                                          'A R D U I N O  I D E', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
                                                         ),
                                                         SizedBox(height: 10,),
                                                         Row(
@@ -801,71 +808,6 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                 Color.fromARGB(255, 199, 5, 63),
                                                                 Color.fromARGB(255, 230, 13, 71),
                                                                 Color.fromARGB(255, 254, 13, 105),
-                                                              ]),
-                                                                borderRadius: BorderRadius.circular(360),
-                                                              ),
-                                                              child: Center(child: Text('9+', style: TextStyle(fontSize: 20),)),
-                                                            ),
-                                                            SizedBox(width: 10,),
-                                                          ],
-                                                        )
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    InkWell(
-                                                       onTap: () async {
-                                                  const url =
-                                                      'https://flutterflow.io';
-                                                  if (await canLaunch(url)) {
-                                                    await launch(url);
-                                                  } else {
-                                                    throw 'Could not launch $url';
-                                                  }
-                                                },
-                                                      child: Container(
-                                                      
-                                                         height: 200,
-                                                                width: 150,
-                                                                decoration: BoxDecoration(
-                                                                color: Colors.white,
-                                                                borderRadius: BorderRadius.circular(20)
-                                                                ),
-                                                        child: Column(
-                                                      
-                                                          children: [
-                                                            SizedBox(height: 10,),
-                                                            Container(
-                                                                height: 100,
-                                                                width: 100,
-                                                                decoration: BoxDecoration(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(360),
-                                                                  image: DecorationImage(
-                                                                      image: NetworkImage(
-                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/code%2Fflutterflow_logo.jpg?alt=media&token=9c1b2c9b-ca9e-4078-801d-6ea48c7785d8',
-                                                                  )),
-                                                                )),
-                                                                SizedBox(height: 5,),
-                                                             Text(
-                                                          'F L U T T E R F L O W', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
-                                                        ),
-                                                        SizedBox(height: 10,),
-                                                        Row(
-                                                          mainAxisAlignment: MainAxisAlignment.end,
-                                                          children: [
-                                                            Container(
-                                                              width: 50,
-                                                              height: 50,
-                                                              decoration: BoxDecoration(
-                                                                gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-                                                                Color.fromARGB(255, 199, 31, 5),
-                                                                Color.fromARGB(255, 230, 67, 13),
-                                                                Color.fromARGB(255, 254, 165, 13),
                                                               ]),
                                                                 borderRadius: BorderRadius.circular(360),
                                                               ),
@@ -884,7 +826,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                     InkWell(
                                                        onTap: () async {
                                                   const url =
-                                                      'https://www.figma.com';
+                                                      'https://www.microsoft.com/en-us/makecode';
                                                   if (await canLaunch(url)) {
                                                     await launch(url);
                                                   } else {
@@ -912,7 +854,74 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                           .circular(360),
                                                                   image: DecorationImage(
                                                                       image: NetworkImage(
-                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/code%2F1578556490672.jpg?alt=media&token=4a1e0afc-5011-4903-9698-bc5076b30ce4',
+                                                                    'https://blog.generationrobots.com/wp-content/uploads/2020/04/carte-microbit.jpg',
+                                                                  ),
+                                                                  fit: BoxFit.cover
+                                                                  ),
+                                                                )),
+                                                                SizedBox(height: 5,),
+                                                             Text(
+                                                          'M A K E C O D E', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
+                                                        ),
+                                                        SizedBox(height: 10,),
+                                                        Row(
+                                                          mainAxisAlignment: MainAxisAlignment.end,
+                                                          children: [
+                                                            Container(
+                                                              width: 50,
+                                                              height: 50,
+                                                              decoration: BoxDecoration(
+                                                                gradient: LinearGradient(begin: Alignment.topCenter, colors: [
+                                                                Color.fromARGB(255, 199, 31, 5),
+                                                                Color.fromARGB(255, 230, 67, 13),
+                                                                Color.fromARGB(255, 254, 165, 13),
+                                                              ]),
+                                                                borderRadius: BorderRadius.circular(360),
+                                                              ),
+                                                              child: Center(child: Text('9+', style: TextStyle(fontSize: 20),)),
+                                                            ),
+                                                            SizedBox(width: 10,),
+                                                          ],
+                                                        )
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 10,
+                                                    ),
+                                                    InkWell(
+                                                       onTap: () async {
+                                                  const url =
+                                                      'https://www.tinkercad.com/circuits';
+                                                  if (await canLaunch(url)) {
+                                                    await launch(url);
+                                                  } else {
+                                                    throw 'Could not launch $url';
+                                                  }
+                                                },
+                                                      child: Container(
+                                                      
+                                                         height: 200,
+                                                                width: 150,
+                                                                decoration: BoxDecoration(
+                                                                color: Colors.white,
+                                                                borderRadius: BorderRadius.circular(20)
+                                                                ),
+                                                        child: Column(
+                                                      
+                                                          children: [
+                                                            SizedBox(height: 10,),
+                                                            Container(
+                                                                height: 100,
+                                                                width: 100,
+                                                                decoration: BoxDecoration(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(360),
+                                                                  image: DecorationImage(
+                                                                      image: NetworkImage(
+                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fimages.jpg?alt=media&token=88aeae2e-6e8f-4f68-ae1d-592ba27c4810',
                                                                     
                                                                   ),
                                                                   fit: BoxFit.cover
@@ -921,7 +930,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                 )),
                                                                 SizedBox(height: 5,),
                                                              Text(
-                                                          'F I G M A', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
+                                                          'C I R C U I T S', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
                                                         ),
                                                         SizedBox(height: 10,),
                                                         Row(
@@ -932,13 +941,13 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                   height: 50,
                                                                   decoration: BoxDecoration(
                                                                     gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-                                                                    Color.fromARGB(255, 5, 125, 199),
-                                                                    Color.fromARGB(255, 34, 41, 186),
-                                                                    Color.fromARGB(255, 125, 13, 254),
+                                                                    Color.fromARGB(255, 199, 5, 63),
+                                                                Color.fromARGB(255, 230, 13, 71),
+                                                                Color.fromARGB(255, 254, 13, 105),
                                                                   ]),
                                                                     borderRadius: BorderRadius.circular(360),
                                                                   ),
-                                                                  child: Center(child: Text('13+', style: TextStyle(fontSize: 20),)),
+                                                                  child: Center(child: Text('11+', style: TextStyle(fontSize: 20),)),
                                                                 ),
                                                             SizedBox(width: 10,),
                                                           ],
@@ -958,7 +967,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                   children: [
                                                     Container(
                                                       width: 770,
-                                                      child: Text('Limbaje de Programare', style: TextStyle(fontSize: 25),)),
+                                                      child: Text('Câteva Tipuri De Roboți', style: TextStyle(fontSize: 25),)),
                                                   ],
                                                 ),
                                                  SizedBox(height: 20,),
@@ -966,13 +975,8 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                   children: [
                                                     InkWell(
                                                       onTap: () async {
-                                                  const url =
-                                                      'https://scratch.mit.edu';
-                                                  if (await canLaunch(url)) {
-                                                    await launch(url);
-                                                  } else {
-                                                    throw 'Could not launch $url';
-                                                  }
+                                                  
+                                                 
                                                 },
                                                       child: Container(
                                                       
@@ -995,13 +999,13 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                           .circular(360),
                                                                   image: DecorationImage(
                                                                       image: NetworkImage(
-                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fscratch_placeholder.webp?alt=media&token=7dcd1a4d-a20c-48ad-adac-16ac736d991d',
+                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/images%2F1716562039604.jpg?alt=media&token=7c175442-5e33-4a64-9562-a95c0d070e53',
                                                                   ),
                                                                   fit: BoxFit.cover),
                                                                 )),
                                                                 SizedBox(height: 5,),
                                                              Text(
-                                                          'S C R A T C H', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
+                                                          'O T T O', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
                                                         ),
                                                         SizedBox(height: 10,),
                                                         Row(
@@ -1032,13 +1036,8 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                     ),
                                                     InkWell(
                                                        onTap: () async {
-                                                  const url =
-                                                      'https://visualstudio.microsoft.com';
-                                                  if (await canLaunch(url)) {
-                                                    await launch(url);
-                                                  } else {
-                                                    throw 'Could not launch $url';
-                                                  }
+                                                 
+                                                 
                                                 },
                                                       child: Container(
                                                       
@@ -1061,12 +1060,12 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                           .circular(360),
                                                                   image: DecorationImage(
                                                                       image: NetworkImage(
-                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2FC_Sharp_Logo_2023.svg.png?alt=media&token=df541fc9-f8da-4721-b7d2-5b628886a5cc',
+                                                                    'https://www.hiwonder.com/cdn/shop/products/TonyPi2.jpg?v=1630308476',
                                                                   )),
                                                                 )),
                                                                 SizedBox(height: 5,),
                                                              Text(
-                                                          'C  S H A R P', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
+                                                          'T O N I  P I', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
                                                         ),
                                                         SizedBox(height: 10,),
                                                         Row(
@@ -1097,13 +1096,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                     ),
                                                     InkWell(
                                                        onTap: () async {
-                                                  const url =
-                                                      'https://www.w3schools.com/html/';
-                                                  if (await canLaunch(url)) {
-                                                    await launch(url);
-                                                  } else {
-                                                    throw 'Could not launch $url';
-                                                  }
+                                                  
                                                 },
                                                       child: Container(
                                                       
@@ -1126,7 +1119,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                           .circular(360),
                                                                   image: DecorationImage(
                                                                       image: NetworkImage(
-                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2FHTML5_logo_and_wordmark.svg.png?alt=media&token=62765f71-2ebf-4959-8bfc-0cef46d356a0',
+                                                                    'https://sphero.com/cdn/shop/products/microbitProductDetail_ActivityObstacles_800x.jpg?v=1627579359',
                                                                     
                                                                   ),
                                                                   fit: BoxFit.cover
@@ -1135,7 +1128,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                 )),
                                                                 SizedBox(height: 5,),
                                                              Text(
-                                                          'H T M L', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
+                                                          'M I C R O B I T', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
                                                         ),
                                                         SizedBox(height: 10,),
                                                         Row(
@@ -1166,13 +1159,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                     ),
                                                     InkWell(
                                                        onTap: () async {
-                                                  const url =
-                                                      'https://www.python.org';
-                                                  if (await canLaunch(url)) {
-                                                    await launch(url);
-                                                  } else {
-                                                    throw 'Could not launch $url';
-                                                  }
+                                                  
                                                 },
                                                       child: Container(
                                                       
@@ -1195,12 +1182,12 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                           .circular(360),
                                                                   image: DecorationImage(
                                                                       image: NetworkImage(
-                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fpython-programming-language.webp?alt=media&token=2c51b760-14a3-4996-9e4a-b406179c2602',
+                                                                    'https://ro.farnell.com/productimages/large/en_GB/3051885-40.jpg',
                                                                   )),
                                                                 )),
                                                                 SizedBox(height: 5,),
                                                              Text(
-                                                                                                                     'P Y T H O N', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
+                                                                                                                     'R A S P B E R R Y  P I', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
                                                                                                                    ),
                                                         SizedBox(height: 10,),
                                                         Column(
@@ -1237,13 +1224,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                     ),
                                                     InkWell(
                                                       onTap: () async {
-                                                  const url =
-                                                      'https://flutter.dev';
-                                                  if (await canLaunch(url)) {
-                                                    await launch(url);
-                                                  } else {
-                                                    throw 'Could not launch $url';
-                                                  }
+                                                 
                                                 },
                                                       child: Container(
                                                       
@@ -1266,14 +1247,14 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                                                           .circular(360),
                                                                   image: DecorationImage(
                                                                       image: NetworkImage(
-                                                                    'https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/design%2Fflutter5786-1.jpg?alt=media&token=7162cfab-0e48-47c8-a923-050ce8ee1103',
+                                                                    'https://ro.mouser.com/images/arduino/lrg/A000066_t.jpg',
                                                                   ),
                                                                   fit: BoxFit.cover
                                                                   ),
                                                                 )),
                                                                 SizedBox(height: 5,),
                                                              Text(
-                                                          'F L U T T E R', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
+                                                          'A R D U I N O', style: TextStyle(color: const Color.fromARGB(255, 63, 63, 63)),
                                                         ),
                                                         SizedBox(height: 10,),
                                                         Row(
