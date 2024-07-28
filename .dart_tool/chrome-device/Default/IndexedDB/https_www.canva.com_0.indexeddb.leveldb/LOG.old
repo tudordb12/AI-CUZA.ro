@@ -1,0 +1,6 @@
+2024/07/28-01:57:03.011 a607 Creating DB /private/var/folders/3n/jh7zpn291gg_53gvk8zh9s3r0000gn/T/flutter_tools.uXK3Nm/flutter_tools_chrome_device.caWF8G/Default/IndexedDB/https_www.canva.com_0.indexeddb.leveldb since it was missing.
+2024/07/28-01:57:03.021 a607 Reusing MANIFEST /private/var/folders/3n/jh7zpn291gg_53gvk8zh9s3r0000gn/T/flutter_tools.uXK3Nm/flutter_tools_chrome_device.caWF8G/Default/IndexedDB/https_www.canva.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/28-01:57:06.447 a103 Level-0 table #5: started
+2024/07/28-01:57:06.450 a103 Level-0 table #5: 15789 bytes OK
+2024/07/28-01:57:06.457 a103 Delete type=0 #3
+2024/07/28-01:57:06.457 a103 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

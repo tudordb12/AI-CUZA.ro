@@ -126,7 +126,7 @@ class AicoachViewModel extends BaseViewModel {
     final initialMessage = ChatMessage(
       user: _gptCurrentUser,
       createdAt: DateTime.now(),
-      text: 'Salut, Jill Kendall! Cum te pot ajuta?',
+      text: 'Salut! Cum te pot ajuta?',
     );
     addMessage(initialMessage);
   }
