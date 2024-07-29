@@ -56,10 +56,10 @@ Aplicația este construită utilizând următorul stack tehnologic:
 - Firebase Authentification
 - Firebase Firestore
 - Firebase Storage
-
-
-[![My Skills](https://skillicons.dev/icons?i=dart,html,js,firebase,git,)](https://skillicons.dev)
 - OPEN AI - Chat Gpt Turbo 3.5.1
+  
+[![My Skills](https://skillicons.dev/icons?i=dart,html,js,firebase,git,)](https://skillicons.dev)
+
 
 ###  🗃 Dart Packages
  
