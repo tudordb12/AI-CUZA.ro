@@ -102,7 +102,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToHomeView();
+                                   viewModel.navigateToHomeView();
                                 },
                                 child: Text(
                                   'Acasă',
@@ -111,20 +111,10 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                 ),
                               ),
                               SizedBox(width: 30),
+                              
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToInfoView();
-                                },
-                                child: Text(
-                                  'Creează-ți propriul CUZA',
-                                  style: ktsBodyRegular.copyWith(
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                              SizedBox(width: 30),
-                              InkWell(
-                                onTap: () {
-                                  // viewModel.navigateToDownloadsView();
+                                   viewModel.navigateToDownloadsView();
                                 },
                                 child: Text(
                                   'Descărcări',
@@ -135,7 +125,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToAuthView();
+                                   viewModel.navigateToAuthView();
                                 },
                                 child: Text(
                                   'Contul Meu',
@@ -146,7 +136,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.signUserOut();
+                                   viewModel.signUserOut();
                                 },
                                 child: Text(
                                   'Logout',
@@ -301,7 +291,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                       SizedBox(width: 5),
                                       _buildHoverContainer(
                                           viewModel, 2, 'P O S T Ă R I', () {
-                                        // Action for TEST1 container
+                                        viewModel.navigateToPostsView();
                                       }),
                                       Spacer(flex: 2),
                                     ],
@@ -317,9 +307,9 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                       ),
                                       SizedBox(width: 5),
                                       _buildHoverContainer(
-                                          viewModel, 3, 'Î N T R E B Ă R I',
+                                          viewModel, 3, 'D E S C O P E R Ă',
                                           () {
-                                        // Action for TEST1 container
+                                        viewModel.navigateToLearnView();
                                       }),
                                       Spacer(flex: 2),
                                     ],

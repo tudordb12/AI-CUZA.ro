@@ -58,6 +58,53 @@ class LoginViewModel extends BaseViewModel {
     await _routerService.replaceWith(const InfoViewRoute());
   }
 
+
+
+  Future<void> navigateToProfileView() async {
+    await _routerService.replaceWith(const ProfileViewRoute());
+  }
+
+  Future<void> navigateToAICOACH() async {
+    await _routerService.replaceWith(const AicoachViewRoute());
+  }
+
+   Future<void> navigateToDesign() async {
+    await _routerService.replaceWith(const DesignViewRoute());
+  }
+
+   Future<void> navigateToCode() async {
+    await _routerService.replaceWith(const CodeViewRoute());
+  }
+
+   Future<void> navigateToRobotics() async {
+    await _routerService.replaceWith(const RoboticsViewRoute());
+  }
+   
+
+  Future<void> navigateToLearnView() async {
+    await _routerService.replaceWith(const LearnViewRoute());
+  }
+
+  Future<void> navigateToDesignView() async {
+    await _routerService.replaceWith(const DesignViewRoute());
+  }
+
+  Future<void> navigateToCodeView() async {
+    await _routerService.replaceWith(const CodeViewRoute());
+  }
+
+  Future<void> navigateToRoboticsView() async {
+    await _routerService.replaceWith(const RoboticsViewRoute());
+  }
+
+  Future<void> navigateToPostsView() async {
+    await _routerService.replaceWith(const PostspageViewRoute());
+  }
+
+  Future<void> navigateToAICOACHView() async {
+    await _routerService.replaceWith(const AicoachViewRoute());
+  }
+
   void signUserIn() async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(

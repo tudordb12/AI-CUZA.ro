@@ -108,7 +108,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToHomeView();
+                                   viewModel.navigateToHomeView();
                                 },
                                 child: Text(
                                   'Acasă',
@@ -116,17 +116,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                       fontWeight: FontWeight.w500),
                                 ),
                               ),
-                              SizedBox(width: 30),
-                              InkWell(
-                                onTap: () {
-                                  // viewModel.navigateToInfoView();
-                                },
-                                child: Text(
-                                  'Creează-ți propriul CUZA',
-                                  style: ktsBodyRegular.copyWith(
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
+                              
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
@@ -141,7 +131,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToAuthView();
+                                  viewModel.navigateToAuthView();
                                 },
                                 child: Text(
                                   'Contul Meu',
@@ -152,7 +142,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.signUserOut();
+                                   viewModel.signUserOut();
                                 },
                                 child: Text(
                                   'Logout',
@@ -307,7 +297,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                       SizedBox(width: 5),
                                       _buildHoverContainer(
                                           viewModel, 2, 'P O S T Ă R I', () {
-                                        // Action for TEST1 container
+                                        viewModel.navigateToPostsView();
                                       }),
                                       Spacer(flex: 2),
                                     ],
@@ -325,7 +315,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                       _buildHoverContainer(
                                           viewModel, 3, 'D E S C O P E R Ă',
                                           () {
-                                        // Action for TEST1 container
+                                        viewModel.navigateToLearnView();
                                       }),
                                       Spacer(flex: 2),
                                     ],
@@ -483,93 +473,103 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                             SizedBox(
                                               width: 20,
                                             ),
-                                            Column(
-                                              children: [
-                                                Container(
-                                                  height: 250,
-                                                  width: 250,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              360),
-                                                      color: Color.fromARGB(
-                                                          86, 255, 255, 255)),
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            15.0),
-                                                    child: Container(
-                                                      alignment:
-                                                          Alignment.center,
-                                                      decoration: BoxDecoration(
+                                            GestureDetector(
+                                               onTap: (){
+                                                    viewModel.navigateToCode();
+                                                  },
+                                              child: Column(
+                                                children: [
+                                                  Container(
+                                                    height: 250,
+                                                    width: 250,
+                                                    decoration: BoxDecoration(
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(360),
+                                                            BorderRadius.circular(
+                                                                360),
+                                                        color: Color.fromARGB(
+                                                            86, 255, 255, 255)),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              15.0),
+                                                      child: Container(
+                                                        alignment:
+                                                            Alignment.center,
+                                                        decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(360),
+                                                        ),
+                                                        child: Icon(
+                                                            Icons.computer,
+                                                            size: 150,
+                                                            color: Colors.white),
                                                       ),
-                                                      child: Icon(
-                                                          Icons.computer,
-                                                          size: 150,
-                                                          color: Colors.white),
                                                     ),
                                                   ),
-                                                ),
-                                                SizedBox(
-                                                  height: 20,
-                                                ),
-                                                Text(
-                                                  'P R O G R A M A R E',
-                                                  style: TextStyle(
-                                                      fontSize: 25,
-                                                      fontWeight:
-                                                          FontWeight.w100),
-                                                )
-                                              ],
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  Text(
+                                                    'P R O G R A M A R E',
+                                                    style: TextStyle(
+                                                        fontSize: 25,
+                                                        fontWeight:
+                                                            FontWeight.w100),
+                                                  )
+                                                ],
+                                              ),
                                             ),
                                             SizedBox(
                                               width: 20,
                                             ),
-                                            Column(
-                                              children: [
-                                                Container(
-                                                  height: 250,
-                                                  width: 250,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              360),
-                                                      color: Color.fromARGB(
-                                                          86, 255, 255, 255)),
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            15.0),
-                                                    child: Container(
-                                                      alignment:
-                                                          Alignment.center,
-                                                      decoration: BoxDecoration(
+                                            GestureDetector(
+                                              onTap: (){
+                                                viewModel.navigateToRoboticsView();
+                                              },
+                                              child: Column(
+                                                children: [
+                                                  Container(
+                                                    height: 250,
+                                                    width: 250,
+                                                    decoration: BoxDecoration(
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(360),
+                                                            BorderRadius.circular(
+                                                                360),
+                                                        color: Color.fromARGB(
+                                                            86, 255, 255, 255)),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              15.0),
+                                                      child: Container(
+                                                        alignment:
+                                                            Alignment.center,
+                                                        decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(360),
+                                                        ),
+                                                        child: Icon(
+                                                            Icons
+                                                                .settings_input_composite_outlined,
+                                                            size: 150,
+                                                            color: Colors.white),
                                                       ),
-                                                      child: Icon(
-                                                          Icons
-                                                              .settings_input_composite_outlined,
-                                                          size: 150,
-                                                          color: Colors.white),
                                                     ),
                                                   ),
-                                                ),
-                                                SizedBox(
-                                                  height: 20,
-                                                ),
-                                                Text(
-                                                  'R O B O T I C Ă',
-                                                  style: TextStyle(
-                                                      fontSize: 25,
-                                                      fontWeight:
-                                                          FontWeight.w100),
-                                                )
-                                              ],
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  Text(
+                                                    'R O B O T I C Ă',
+                                                    style: TextStyle(
+                                                        fontSize: 25,
+                                                        fontWeight:
+                                                            FontWeight.w100),
+                                                  )
+                                                ],
+                                              ),
                                             ),
                                           ],
                                         ),

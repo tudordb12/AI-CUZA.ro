@@ -3079,6 +3079,7 @@ file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/code/code_view.desktop.d
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/code/code_view.mobile.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/code/code_view.tablet.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/code/code_viewmodel.dart
+file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/code/register_web_webview.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/design/design_view.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/design/design_view.desktop.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/design/design_view.mobile.dart
@@ -3116,6 +3117,7 @@ file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/postspage/comments.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/postspage/comments_button.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/postspage/follow_button.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/postspage/like_button.dart
+file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/postspage/like_button_mobile.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/postspage/mobile_menu.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/postspage/postspage_view.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/postspage/postspage_view.desktop.dart
@@ -3133,6 +3135,7 @@ file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/profile/profile_view.mob
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/profile/profile_view.tablet.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/profile/profile_viewmodel.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/profile/wall_ppost.dart
+file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/robotics/register_web_webview.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/robotics/robotics_view.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/robotics/robotics_view.desktop.dart
 file:///Users/tudor/Downloads/aicuzaro%205/lib/ui/views/robotics/robotics_view.mobile.dart

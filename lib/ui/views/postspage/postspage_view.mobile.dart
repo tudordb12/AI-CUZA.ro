@@ -93,7 +93,7 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                           ),
                           InkWell(
                             onTap: () {
-                              //viewModel.navigateToInfoView();
+                              viewModel.navigateToInfoView();
                             },
                             child: Text(
                               'Creează-ți propriul CUZA',
@@ -106,7 +106,7 @@ class PostspageViewMobile extends ViewModelWidget<PostspageViewModel> {
                           ),
                           InkWell(
                             onTap: () {
-                              //viewModel.navigateToDownloadsView();
+                              viewModel.navigateToDownloadsView();
                             },
                             child: Text(
                               'Descărcări',

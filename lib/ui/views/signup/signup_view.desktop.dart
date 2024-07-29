@@ -61,19 +61,7 @@ class SignupViewDesktop extends ViewModelWidget<SignupViewModel> {
                                       fontWeight: FontWeight.w500),
                                 ),
                               ),
-                              SizedBox(
-                                width: 30,
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  viewModel.navigateToInfoView();
-                                },
-                                child: Text(
-                                  'Creează-ți propriul CUZA',
-                                  style: ktsBodyRegular.copyWith(
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
+                             
                               SizedBox(
                                 width: 30,
                               ),
@@ -107,7 +95,7 @@ class SignupViewDesktop extends ViewModelWidget<SignupViewModel> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             GradientText(
-                              'REGISTER',
+                              'SIGN UP',
                               style: TextStyle(
                                   fontSize: 40, fontWeight: FontWeight.bold),
                               colors: const [

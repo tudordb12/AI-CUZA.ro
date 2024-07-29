@@ -37,6 +37,72 @@ class SignupViewMobile extends ViewModelWidget<SignupViewModel> {
           ),
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  children: [
+                    InkWell(
+                      child: Text(
+                        'AI.CUZA',
+                        style:
+                            ktsBodyLarge.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          viewModel.navigateToHomeView();
+                        },
+                        child: Text(
+                          'Acasă',
+                          style: ktsBodyRegular.copyWith(
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                     
+                      SizedBox(
+                        width: 30,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          viewModel.navigateToDownloadsView();
+                        },
+                        child: Text(
+                          'Descărcări',
+                          style: ktsBodyRegular.copyWith(
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          viewModel.navigateToAuthView();
+                        },
+                        child: Text(
+                          'Contul Meu',
+                          style: ktsBodyRegular.copyWith(
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Column(
               children: [
                 SizedBox(
                   width: kdDesktopMaxContentWidth,

@@ -84,25 +84,13 @@ class LearnViewMobile extends ViewModelWidget<LearnViewModel> {
                                 fontWeight: FontWeight.w500),
                           ),
                         ),
+                        
                         SizedBox(
                           width: 30,
                         ),
                         InkWell(
                           onTap: () {
-                            //viewModel.navigateToInfoView();
-                          },
-                          child: Text(
-                            'Creează-ți propriul CUZA',
-                            style: ktsBodyRegular.copyWith(
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 30,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            //  viewModel.navigateToDownloadsView();
+                              viewModel.navigateToDownloadsView();
                           },
                           child: Text(
                             'Descărcări',
@@ -218,7 +206,9 @@ class LearnViewMobile extends ViewModelWidget<LearnViewModel> {
                                 ))),
                         Container(
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  viewModel.navigateToPostsView();
+                                },
                                 icon: Icon(
                                   Icons.batch_prediction_rounded,
                                   color: Colors.white70,
@@ -227,7 +217,7 @@ class LearnViewMobile extends ViewModelWidget<LearnViewModel> {
                         Container(
                             child: IconButton(
                                 onPressed: () {
-                                  // viewModel.navigateToLearnView();
+                                   viewModel.navigateToLearnView();
                                 },
                                 icon: Icon(
                                   Icons.question_mark,

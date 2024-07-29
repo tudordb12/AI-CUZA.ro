@@ -77,6 +77,53 @@ class PostspageViewModel extends BaseViewModel {
     await _routerService.replaceWith(const AicoachViewRoute());
   }
 
+
+
+   Future<void> navigateToDesign() async {
+    await _routerService.replaceWith(const DesignViewRoute());
+  }
+
+   Future<void> navigateToCode() async {
+    await _routerService.replaceWith(const CodeViewRoute());
+  }
+
+   Future<void> navigateToRobotics() async {
+    await _routerService.replaceWith(const RoboticsViewRoute());
+  }
+   Future<void> navigateToLoginView() async {
+    await _routerService.replaceWith(const LoginViewRoute());
+  }
+
+  
+  Future<void> navigateToDownloadsView() async {
+    await _routerService.replaceWith(const DownloadsViewRoute());
+  }
+
+  Future<void> navigateToInfoView() async {
+    await _routerService.replaceWith(const InfoViewRoute());
+  }
+
+
+  Future<void> navigateToDesignView() async {
+    await _routerService.replaceWith(const DesignViewRoute());
+  }
+
+  Future<void> navigateToCodeView() async {
+    await _routerService.replaceWith(const CodeViewRoute());
+  }
+
+  Future<void> navigateToRoboticsView() async {
+    await _routerService.replaceWith(const RoboticsViewRoute());
+  }
+
+  Future<void> navigateToPostsView() async {
+    await _routerService.replaceWith(const PostspageViewRoute());
+  }
+
+  Future<void> navigateToAICOACHView() async {
+    await _routerService.replaceWith(const AicoachViewRoute());
+  }
+
   void signUserOut() {
     FirebaseAuth.instance.signOut();
     navigateToAuthView();

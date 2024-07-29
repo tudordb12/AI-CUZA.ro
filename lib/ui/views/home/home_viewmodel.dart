@@ -32,6 +32,36 @@ class HomeViewModel extends BaseViewModel {
     await _routerService.replaceWith(const HomeViewRoute());
   }
 
+  Future<void> navigateToLearnView() async {
+    await _routerService.replaceWith(const LearnViewRoute());
+  }
+
+  Future<void> navigateToDesignView() async {
+    await _routerService.replaceWith(const DesignViewRoute());
+  }
+
+  Future<void> navigateToCodeView() async {
+    await _routerService.replaceWith(const CodeViewRoute());
+  }
+
+  Future<void> navigateToRoboticsView() async {
+    await _routerService.replaceWith(const RoboticsViewRoute());
+  }
+
+  Future<void> navigateToPostsView() async {
+    await _routerService.replaceWith(const PostspageViewRoute());
+  }
+
+  Future<void> navigateToAICOACHView() async {
+    await _routerService.replaceWith(const AicoachViewRoute());
+  }
+
+  Future<void> navigateToProfileView() async {
+    await _routerService.replaceWith(const ProfileViewRoute());
+  }
+
+  
+
   String get counterLabel => 'Counter is: $_counter';
 
   int _counter = 0;
