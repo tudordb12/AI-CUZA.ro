@@ -88,14 +88,18 @@ Aplicația este construită utilizând următorul stack tehnologic:
 
 
 
-### 👨‍💻Tehnici de programare
+### 👨‍💻 Tehnici de programare
 Am folosit mai mulți algoritmi pentru a optimiza aplicația, inclusiv:
-- Programarea sincronă pentru sarcini precum sortarea listelor și crearea claselor.
+- Programarea orientată pe obiect precum crearea claselor ce sunt responsabile de ViewRoutes și View urile ce conțin Scaffold-ul fiecărei pagini a platformei.
 - Programarea asincronă pentru interacțiunea cu baza de date, permițând codului să aștepte răspunsuri de la baza de date.
 
+### 💪🔒 Securitate
+Am folosit mai mulți algoritmi pentru a optimiza aplicația, inclusiv:
+- 📃🌐 Un SSL Certificate valid atașat domeniul ai-cuza.ro, ce adaugă un strat de securitate ce criptează traficul informațiilor de conectare ale utilizatorilor, ale postărilor și preferințelor acestora.
+- 🔥👤 Utilizarea Firebase Auth pentru stocarea criptată online a datelor de logare ale utilizatorilor platformei.
+- 🔑🔒 Protecția API Key urilor de OpenAI, ce se accesează prin intermediul unei baze de date securizate.
 
 ### 🖌User Interface
-Aplicația a avut inițial o versiune v1.0, care, deși funcțională, avea deficiențe de UX raportate de utilizatori. Am folosit feedback-ul pentru a îmbunătăți paleta de culori și experiența utilizatorilor, adăugând caracteristici precum bottom bar și drawer, utilizabile prin widget-uri intuitive.
 
 ### Arhitectura MVVM
 Proiectul AI-CUZA.ro folosește arhitectura MVVM (Model-View-ViewModel) pentru un cod organizat și ușor de întreținut. Modelul gestionează datele și regulile aplicative, ViewModel-ul le expune pentru a fi utilizate de interfață, iar View-ul afișează informațiile utilizatorilor. Pentru a accelera dezvoltarea și a asigura consistența, folosim stacked CLI, un tool robust pentru generarea și gestionarea structurii MVVM.

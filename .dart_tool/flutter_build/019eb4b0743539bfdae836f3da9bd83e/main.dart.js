@@ -9450,7 +9450,7 @@ aow:function aow(){},
 aou:function aou(){},
 yh:function yh(a){this.a=a},
 anF:function anF(a){this.a=a},
-anG:function anG(){},
+anG:function anG(a){this.a=a},
 anH:function anH(a){this.a=a},
 anP:function anP(a){this.a=a},
 anQ:function anQ(){},
@@ -52819,7 +52819,7 @@ r=t.O
 q=A.a([A.f(255,21,20,23),A.f(255,35,33,37),A.f(255,45,41,55)],r)
 p=A.f(255,0,0,0)
 o=t.p
-p=A.e(b3,new A.K(B.as,A.z(A.a([new A.K(B.v,A.z(A.a([A.T(!1,!0,A.q("AI.CUZA",b3,b3,b3,b3,A.Z().$1$fontSize(20).a4(B.F),b3,b3,b3),b3,!0,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3),A.b(b3,b3,30),A.T(!1,!0,A.q("Acas\u0103",b3,b3,b3,b3,A.Z().$1$fontSize(15).a4(B.x),b3,b3,b3),b3,!0,b3,b3,b3,b3,b3,b3,b3,b3,b3,new A.anF(c0),b3,b3,b3,b3),A.b(b3,b3,30),A.T(!1,!0,A.q("Desc\u0103rc\u0103ri",b3,b3,b3,b3,A.Z().$1$fontSize(15).a4(B.x),b3,b3,b3),b3,!0,b3,b3,b3,b3,b3,b3,b3,b3,b3,new A.anG(),b3,b3,b3,b3),A.b(b3,b3,30),A.T(!1,!0,A.q("Contul Meu",b3,b3,b3,b3,A.Z().$1$fontSize(15).a4(B.x),b3,b3,b3),b3,!0,b3,b3,b3,b3,b3,b3,b3,b3,b3,new A.anH(c0),b3,b3,b3,b3),A.b(b3,b3,30),A.T(!1,!0,A.q("Logout",b3,b3,b3,b3,A.D(b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,20,b3,b3,B.F,b3,b3,!0,b3,b3,b3,b3,b3,b3,b3,b3),B.ba,b3,b3),b3,!0,b3,b3,b3,b3,b3,b3,b3,b3,b3,new A.anP(c0),b3,b3,b3,b3)],o),B.d,B.h,B.c,b3),b3),B.am],o),B.d,B.h,B.c,b3),b3),B.b,p,b3,b3,b3,100,b3,b3,b3,b3,1/0)
+p=A.e(b3,new A.K(B.as,A.z(A.a([new A.K(B.v,A.z(A.a([A.T(!1,!0,A.q("AI.CUZA",b3,b3,b3,b3,A.Z().$1$fontSize(20).a4(B.F),b3,b3,b3),b3,!0,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3),A.b(b3,b3,30),A.T(!1,!0,A.q("Acas\u0103",b3,b3,b3,b3,A.Z().$1$fontSize(15).a4(B.x),b3,b3,b3),b3,!0,b3,b3,b3,b3,b3,b3,b3,b3,b3,new A.anF(c0),b3,b3,b3,b3),A.b(b3,b3,30),A.T(!1,!0,A.q("Desc\u0103rc\u0103ri",b3,b3,b3,b3,A.Z().$1$fontSize(15).a4(B.x),b3,b3,b3),b3,!0,b3,b3,b3,b3,b3,b3,b3,b3,b3,new A.anG(c0),b3,b3,b3,b3),A.b(b3,b3,30),A.T(!1,!0,A.q("Contul Meu",b3,b3,b3,b3,A.Z().$1$fontSize(15).a4(B.x),b3,b3,b3),b3,!0,b3,b3,b3,b3,b3,b3,b3,b3,b3,new A.anH(c0),b3,b3,b3,b3),A.b(b3,b3,30),A.T(!1,!0,A.q("Logout",b3,b3,b3,b3,A.D(b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,b3,20,b3,b3,B.F,b3,b3,!0,b3,b3,b3,b3,b3,b3,b3,b3),B.ba,b3,b3),b3,!0,b3,b3,b3,b3,b3,b3,b3,b3,b3,new A.anP(c0),b3,b3,b3,b3)],o),B.d,B.h,B.c,b3),b3),B.am],o),B.d,B.h,B.c,b3),b3),B.b,p,b3,b3,b3,100,b3,b3,b3,b3,1/0)
 n=A.f(255,59,56,75)
 m=$.A
 b8=(m==null?$.A=$.a9():m).J(0,b4)
@@ -52943,7 +52943,7 @@ A.anF.prototype={
 $0(){this.a.aI()},
 $S:0}
 A.anG.prototype={
-$0(){},
+$0(){this.a.b2()},
 $S:0}
 A.anH.prototype={
 $0(){this.a.aw()},

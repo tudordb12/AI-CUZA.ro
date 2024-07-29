@@ -120,7 +120,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToDownloadsView();
+                                   viewModel.navigateToDownloadsView();
                                 },
                                 child: Text(
                                   'Descărcări',
