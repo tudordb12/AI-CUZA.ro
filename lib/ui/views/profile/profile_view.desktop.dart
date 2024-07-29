@@ -812,7 +812,7 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
                                   ),
                                   Positioned(
                                       top: 200,
-                                      left: 500,
+                                      right: 0,
                                       child: Container(
                                         height: 1000,
                                         width: 700,

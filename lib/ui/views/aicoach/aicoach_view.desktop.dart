@@ -82,21 +82,11 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                       fontWeight: FontWeight.w500),
                                 ),
                               ),
+                              
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToInfoView();
-                                },
-                                child: Text(
-                                  'Creează-ți propriul CUZA',
-                                  style: ktsBodyRegular.copyWith(
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                              SizedBox(width: 30),
-                              InkWell(
-                                onTap: () {
-                                  // viewModel.navigateToDownloadsView();
+                                   viewModel.navigateToDownloadsView();
                                 },
                                 child: Text(
                                   'Descărcări',
@@ -107,7 +97,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToAuthView();
+                                   viewModel.navigateToAuthView();
                                 },
                                 child: Text(
                                   'Contul Meu',
@@ -118,7 +108,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.signUserOut();
+                                   viewModel.signUserOut();
                                 },
                                 child: Text(
                                   'Logout',
@@ -209,25 +199,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                         );
                                       },
                                     ),
-                                    /*Container(
-                                      height: 200,
-                                      width: 200,
-                                     /* child: Icon(
-                                        Icons.person,
-                                        color: Colors.white70,
-                                        size: 100.0,
-                                      ),*/
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(360),
-                                            color: Colors.orange,
-                                          ),
-                                        ),
-                                      ),
-                                    ),*/
+                                   
                                     SizedBox(
                                       height: 20,
                                     ),
@@ -267,12 +239,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                         );
                                       },
                                     ),
-                                    /* Text(
-                                      user.email!,
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w100),
-                                    ),*/
+                                    
                                     SizedBox(
                                       height: 0,
                                     ),
@@ -302,7 +269,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                         _buildHoverContainer(
                                             viewModel, 1, '     A C A S Ă     ',
                                             () {
-                                          // Action for TEST1 container
+                                          viewModel.navigateToHomeView();
                                         }),
                                         Spacer(
                                           flex: 2,
@@ -327,7 +294,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                         ),
                                         _buildHoverContainer(
                                             viewModel, 2, 'P O S T Ă R I', () {
-                                          // viewModel.navigateToPostsView();
+                                           viewModel.navigateToPostsView();
                                         }),
                                         Spacer(
                                           flex: 2,
@@ -351,9 +318,9 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                           width: 5,
                                         ),
                                         _buildHoverContainer(
-                                            viewModel, 3, 'Î N T R E B Ă R I',
+                                            viewModel, 3, 'D E S C O P E R Ă',
                                             () {
-                                          // Action for TEST1 container
+                                          viewModel.navigateToLearnView();
                                         }),
                                         Spacer(
                                           flex: 2,
@@ -378,7 +345,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                         ),
                                         _buildHoverContainer(
                                             viewModel, 4, 'A I  C O A C H', () {
-                                          // Action for TEST1 container
+                                          viewModel.navigateToAICOACH();
                                         }),
                                         Spacer(
                                           flex: 2,
@@ -403,7 +370,7 @@ class AicoachViewDesktop extends ViewModelWidget<AicoachViewModel> {
                                         ),
                                         _buildHoverContainer(viewModel, 5,
                                             'P R O F I L U L   M E U', () {
-                                          // Action for TEST1 container
+                                          viewModel.navigateToProfileView();
                                         }),
                                         Spacer(
                                           flex: 2,

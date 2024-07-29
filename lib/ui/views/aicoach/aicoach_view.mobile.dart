@@ -88,7 +88,7 @@ class AicoachViewMobile extends ViewModelWidget<AicoachViewModel> {
                             children: [
                               InkWell(
                                 onTap: () {
-                                 // viewModel.navigateToHomeView();
+                                  viewModel.navigateToHomeView();
                                 },
                                 child: Text(
                                   'Acasă',
@@ -99,22 +99,13 @@ class AicoachViewMobile extends ViewModelWidget<AicoachViewModel> {
                               SizedBox(
                                 width: 30,
                               ),
-                              InkWell(
-                                onTap: () {
-                                  //viewModel.navigateToInfoView();
-                                },
-                                child: Text(
-                                  'Creează-ți propriul CUZA',
-                                  style: ktsBodyRegular.copyWith(
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
+                              
                               SizedBox(
                                 width: 30,
                               ),
                               InkWell(
                                 onTap: () {
-                                  //  viewModel.navigateToDownloadsView();
+                                   viewModel.navigateToDownloadsView();
                                 },
                                 child: Text(
                                   'Descărcări',
@@ -209,7 +200,7 @@ class AicoachViewMobile extends ViewModelWidget<AicoachViewModel> {
                           Container(
                               child: IconButton(
                                   onPressed: () {
-                                   // viewModel.navigateToHomeView();
+                                    viewModel.navigateToHomeView();
                                   },
                                   icon: Icon(
                                     Icons.home,
@@ -218,7 +209,9 @@ class AicoachViewMobile extends ViewModelWidget<AicoachViewModel> {
                                   ))),
                           Container(
                               child: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    viewModel.navigateToPostsView();
+                                  },
                                   icon: Icon(
                                     Icons.batch_prediction_rounded,
                                     color: Colors.white70,
@@ -227,7 +220,7 @@ class AicoachViewMobile extends ViewModelWidget<AicoachViewModel> {
                           Container(
                               child: IconButton(
                                   onPressed: () {
-                                    // viewModel.navigateToLearnView();
+                                     viewModel.navigateToLearnView();
                                   },
                                   icon: Icon(
                                     Icons.question_mark,
@@ -237,7 +230,7 @@ class AicoachViewMobile extends ViewModelWidget<AicoachViewModel> {
                           Container(
                               child: IconButton(
                                   onPressed: () {
-                                    //viewModel.navigateToAICOACH();
+                                    viewModel.navigateToAICOACH();
                                   },
                                   icon: Icon(
                                     Icons.alternate_email_sharp,
@@ -247,7 +240,7 @@ class AicoachViewMobile extends ViewModelWidget<AicoachViewModel> {
                           Container(
                               child: IconButton(
                                   onPressed: () {
-                                   // viewModel.navigateToProfileView();
+                                    viewModel.navigateToProfileView();
                                   },
                                   icon: Icon(
                                     Icons.person_pin_rounded,

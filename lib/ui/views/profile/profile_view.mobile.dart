@@ -120,19 +120,7 @@ class ProfileViewMobile extends ViewModelWidget<ProfileViewModel> {
                                   fontWeight: FontWeight.w500),
                             ),
                           ),
-                          SizedBox(
-                            width: 30,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              //viewModel.navigateToInfoView();
-                            },
-                            child: Text(
-                              'Creează-ți propriul CUZA',
-                              style: ktsBodyRegular.copyWith(
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          ),
+                          
                           SizedBox(
                             width: 30,
                           ),
@@ -244,7 +232,9 @@ class ProfileViewMobile extends ViewModelWidget<ProfileViewModel> {
                             ))),
                     Container(
                         child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              viewModel.navigateToPostsView();
+                            },
                             icon: Icon(
                               Icons.batch_prediction_rounded,
                               color: Colors.white70,
