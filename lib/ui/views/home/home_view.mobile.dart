@@ -483,7 +483,7 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: const Text(
-                    'Sign Up',
+                    'Join Us',
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
@@ -621,7 +621,7 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: const Text(
-                    'Sign Up',
+                    'Join Us',
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,

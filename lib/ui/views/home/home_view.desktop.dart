@@ -26,6 +26,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                SizedBox(height: 50,),
                 SizedBox(
                   width: kdDesktopMaxContentWidth,
                   height: 600,
@@ -559,7 +560,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                         borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: const Text(
-                                        'Sign Up',
+                                        'Join Us',
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w700,
@@ -728,7 +729,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                         borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: const Text(
-                                        'Sign Up',
+                                        'Join Us',
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w700,
