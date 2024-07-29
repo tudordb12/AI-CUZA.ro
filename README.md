@@ -1,4 +1,4 @@
-<img width="400px" src="https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/readme%2Flogo.png?alt=media&token=2c7c83f3-23df-4b4b-906b-6628bedf6f95" />
+<img width="600px" src="https://firebasestorage.googleapis.com/v0/b/ai-cuza-12bf2.appspot.com/o/readme%2Flogo.png?alt=media&token=2c7c83f3-23df-4b4b-906b-6628bedf6f95" />
 
 ## AI-CUZA.ro
 ![GitHub license](https://img.shields.io/badge/license-MIT-green)
