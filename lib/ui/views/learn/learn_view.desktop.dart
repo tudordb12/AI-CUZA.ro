@@ -669,50 +669,13 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                                               Row(
                                                                 children: [
                                                                   // Input Field
-                                                                  Container(
-                                                                    child:
-                                                                        TextField(
-                                                                      decoration:
-                                                                          InputDecoration
-                                                                              .collapsed(
-                                                                        hintText:
-                                                                            'Introduceți Adresa de Email',
-                                                                        hintStyle:
-                                                                            TextStyle(
-                                                                          color:
-                                                                              Color(0xff989898),
-                                                                        ),
-                                                                        filled:
-                                                                            true,
-                                                                        fillColor:
-                                                                            Color(0xFF232323),
-                                                                      ),
-                                                                    ),
-                                                                    width:
-                                                                        kdDesktopMaxContentWidth *
-                                                                            0.3,
-                                                                    padding: const EdgeInsets
-                                                                        .symmetric(
-                                                                        horizontal:
-                                                                            20,
-                                                                        vertical:
-                                                                            20),
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: const Color(
-                                                                          0xFF232323),
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              8),
-                                                                    ),
-                                                                  ),
-
+                                                                 
                                                                   horizontalSpaceSmall,
 
                                                                   // Notify Button
                                                                   InkWell(
                                                                     onTap: () {
-                                                                      // viewModel.navigateToLoginView();
+                                                                       viewModel.navigateToDesignView();
                                                                     },
                                                                     child:
                                                                         Container(
@@ -965,47 +928,14 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                                                   Row(
                                                                     children: [
                                                                       // Input Field
-                                                                      Container(
-                                                                        child:
-                                                                            TextField(
-                                                                          decoration:
-                                                                              InputDecoration.collapsed(
-                                                                            hintText:
-                                                                                'Introduceți Adresa de Email',
-                                                                            hintStyle:
-                                                                                TextStyle(
-                                                                              color: Color(0xff989898),
-                                                                            ),
-                                                                            filled:
-                                                                                true,
-                                                                            fillColor:
-                                                                                Color(0xFF232323),
-                                                                          ),
-                                                                        ),
-                                                                        width: kdDesktopMaxContentWidth *
-                                                                            0.3,
-                                                                        padding: const EdgeInsets
-                                                                            .symmetric(
-                                                                            horizontal:
-                                                                                20,
-                                                                            vertical:
-                                                                                20),
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              const Color(0xFF232323),
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8),
-                                                                        ),
-                                                                      ),
-
+                                                                      
                                                                       horizontalSpaceSmall,
 
                                                                       // Notify Button
                                                                       InkWell(
                                                                         onTap:
                                                                             () {
-                                                                          // viewModel.navigateToLoginView();
+                                                                           viewModel.navigateToCodeView();
                                                                         },
                                                                         child:
                                                                             Container(
@@ -1270,41 +1200,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                                                 Row(
                                                                   children: [
                                                                     // Input Field
-                                                                    Container(
-                                                                      child:
-                                                                          TextField(
-                                                                        decoration:
-                                                                            InputDecoration.collapsed(
-                                                                          hintText:
-                                                                              'Introduceți Adresa de Email',
-                                                                          hintStyle:
-                                                                              TextStyle(
-                                                                            color:
-                                                                                Color(0xff989898),
-                                                                          ),
-                                                                          filled:
-                                                                              true,
-                                                                          fillColor:
-                                                                              Color(0xFF232323),
-                                                                        ),
-                                                                      ),
-                                                                      width:
-                                                                          kdDesktopMaxContentWidth *
-                                                                              0.3,
-                                                                      padding: const EdgeInsets
-                                                                          .symmetric(
-                                                                          horizontal:
-                                                                              20,
-                                                                          vertical:
-                                                                              20),
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: const Color(
-                                                                            0xFF232323),
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8),
-                                                                      ),
-                                                                    ),
+                                                                    
 
                                                                     horizontalSpaceSmall,
 
@@ -1312,7 +1208,7 @@ class LearnViewDesktop extends ViewModelWidget<LearnViewModel> {
                                                                     InkWell(
                                                                       onTap:
                                                                           () {
-                                                                        // viewModel.navigateToLoginView();
+                                                                         viewModel.navigateToRoboticsView();
                                                                       },
                                                                       child:
                                                                           Container(

@@ -116,17 +116,7 @@ class DesignViewDesktop extends ViewModelWidget<DesignViewModel> {
                                       fontWeight: FontWeight.w500),
                                 ),
                               ),
-                              SizedBox(width: 30),
-                              InkWell(
-                                onTap: () {
-                                   viewModel.navigateToInfoView();
-                                },
-                                child: Text(
-                                  'Creează-ți propriul CUZA',
-                                  style: ktsBodyRegular.copyWith(
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
+                              
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {

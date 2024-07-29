@@ -35,6 +35,8 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
       List<Map<String, dynamic>> followingUsers = [];
 
       // Fetch the current user's following list
+      try {
+      // Fetch the current user's following list
       DocumentSnapshot followingDoc = await FirebaseFirestore.instance
           .collection('following')
           .doc(currentUserEmail)
@@ -45,22 +47,31 @@ class ProfileViewDesktop extends ViewModelWidget<ProfileViewModel> {
 
         // Fetch the corresponding user details from the usernames collection
         for (String email in followingEmails) {
-          DocumentSnapshot userDoc = await FirebaseFirestore.instance
-              .collection('usernames')
-              .doc(email)
-              .get();
+          try {
+            DocumentSnapshot userDoc = await FirebaseFirestore.instance
+                .collection('usernames')
+                .doc(email)
+                .get();
 
-          if (userDoc.exists) {
-            final userData = userDoc.data();
-            if (userData != null && userData is Map<String, dynamic>) {
-              followingUsers.add(userData);
+            if (userDoc.exists) {
+              final userData = userDoc.data();
+              if (userData != null && userData is Map<String, dynamic>) {
+                followingUsers.add(userData);
+              }
             }
+          } catch (e) {
+            // Handle errors that occur during fetching a single user's data
+            print('Error fetching data for user $email: $e');
           }
         }
       }
-
-      return followingUsers;
+    } catch (e) {
+      // Handle errors that occur during fetching the following list
+      print('Error fetching following list: $e');
     }
+
+    return followingUsers;
+  }
 
     return Scaffold(
       backgroundColor: kcBackgroundColor,

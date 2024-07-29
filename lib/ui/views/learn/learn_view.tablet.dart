@@ -489,7 +489,7 @@ class LearnViewTablet extends ViewModelWidget<LearnViewModel> {
                                                         // Notify Button
                                                         InkWell(
                                                           onTap: () {
-                                                            // viewModel.navigateToLoginView();
+                                                             viewModel.navigateToDesignView();
                                                           },
                                                           child: Container(
                                                             padding: const EdgeInsets
@@ -719,7 +719,7 @@ class LearnViewTablet extends ViewModelWidget<LearnViewModel> {
                                                       // Notify Button
                                                       InkWell(
                                                         onTap: () {
-                                                          // viewModel.navigateToLoginView();
+                                                           viewModel.navigateToCodeView();
                                                         },
                                                         child: Container(
                                                           padding: const EdgeInsets
@@ -957,7 +957,7 @@ class LearnViewTablet extends ViewModelWidget<LearnViewModel> {
                                                       // Notify Button
                                                       InkWell(
                                                         onTap: () {
-                                                          // viewModel.navigateToLoginView();
+                                                           viewModel.navigateToRoboticsView();
                                                         },
                                                         child: Container(
                                                           padding: const EdgeInsets
