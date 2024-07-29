@@ -111,7 +111,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToHomeView();
+                                   viewModel.navigateToHomeView();
                                 },
                                 child: Text(
                                   'Acasă',
@@ -120,20 +120,10 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                 ),
                               ),
                               SizedBox(width: 30),
+                            
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToInfoView();
-                                },
-                                child: Text(
-                                  'Creează-ți propriul CUZA',
-                                  style: ktsBodyRegular.copyWith(
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                              SizedBox(width: 30),
-                              InkWell(
-                                onTap: () {
-                                  // viewModel.navigateToDownloadsView();
+                                   viewModel.navigateToDownloadsView();
                                 },
                                 child: Text(
                                   'Descărcări',
@@ -144,7 +134,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.navigateToAuthView();
+                                   viewModel.navigateToAuthView();
                                 },
                                 child: Text(
                                   'Contul Meu',
@@ -155,7 +145,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                               SizedBox(width: 30),
                               InkWell(
                                 onTap: () {
-                                  // viewModel.signUserOut();
+                                   viewModel.signUserOut();
                                 },
                                 child: Text(
                                   'Logout',
@@ -309,7 +299,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                     SizedBox(width: 5),
                                     _buildHoverContainer(
                                         viewModel, 2, 'P O S T Ă R I', () {
-                                      // Action for TEST1 container
+                                      viewModel.navigateToPostsView();
                                     }),
                                     Spacer(flex: 2),
                                   ],
@@ -327,7 +317,7 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                     _buildHoverContainer(
                                         viewModel, 3, 'D E S C O P E R Ă',
                                         () {
-                                      // Action for TEST1 container
+                                      viewModel.navigateToLearnView();
                                     }),
                                     Spacer(flex: 2),
                                   ],
@@ -432,9 +422,9 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                           Column(
                                             children: [
                                               GestureDetector(
-                                                onTap: () =>
-                                                    viewModel.scrollToSection(
-                                                        section1Key),
+                                                onTap: (){
+                                                  viewModel.navigateToDesignView();
+                                                },
                                                 child: Container(
                                                   height: 250,
                                                   width: 250,
@@ -483,97 +473,107 @@ class RoboticsViewDesktop extends ViewModelWidget<RoboticsViewModel> {
                                           SizedBox(
                                             width: 20,
                                           ),
-                                          Column(
-                                            children: [
-                                              Container(
-                                                height: 250,
-                                                width: 250,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            360),
-                                                    color: Color.fromARGB(
-                                                        86, 255, 255, 255)),
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(
-                                                          15.0),
-                                                  child: Container(
-                                                    alignment:
-                                                        Alignment.center,
-                                                    decoration: BoxDecoration(
+                                          GestureDetector(
+                                            onTap: (){
+                                                  viewModel.navigateToCodeView();
+                                                },
+                                            child: Column(
+                                              children: [
+                                                Container(
+                                                  height: 250,
+                                                  width: 250,
+                                                  decoration: BoxDecoration(
                                                       borderRadius:
-                                                          BorderRadius
-                                                              .circular(360),
+                                                          BorderRadius.circular(
+                                                              360),
+                                                      color: Color.fromARGB(
+                                                          86, 255, 255, 255)),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            15.0),
+                                                    child: Container(
+                                                      alignment:
+                                                          Alignment.center,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(360),
+                                                      ),
+                                                      child: Icon(
+                                                          Icons.computer,
+                                                          size: 150,
+                                                          color: Colors.white),
                                                     ),
-                                                    child: Icon(
-                                                        Icons.computer,
-                                                        size: 150,
-                                                        color: Colors.white),
                                                   ),
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                height: 20,
-                                              ),
-                                              Text(
-                                                'P R O G R A M A R E',
-                                                style: TextStyle(
-                                                    fontSize: 25,
-                                                    fontWeight:
-                                                        FontWeight.w100),
-                                              )
-                                            ],
+                                                SizedBox(
+                                                  height: 20,
+                                                ),
+                                                Text(
+                                                  'P R O G R A M A R E',
+                                                  style: TextStyle(
+                                                      fontSize: 25,
+                                                      fontWeight:
+                                                          FontWeight.w100),
+                                                )
+                                              ],
+                                            ),
                                           ),
                                           SizedBox(
                                             width: 20,
                                           ),
-                                          Column(
-                                            children: [
-                                              Container(
-                                                height: 250,
-                                                width: 250,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            360),
-                                                    color: Color.fromARGB(
-                                                        86, 255, 255, 255)),
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(
-                                                          15.0),
-                                                  child: Container(
-                                                    alignment:
-                                                        Alignment.center,
-                                                    decoration: BoxDecoration(
+                                          GestureDetector(
+                                            onTap: (){
+                                                  viewModel.navigateToRoboticsView();
+                                                },
+                                            child: Column(
+                                              children: [
+                                                Container(
+                                                  height: 250,
+                                                  width: 250,
+                                                  decoration: BoxDecoration(
                                                       borderRadius:
-                                                          BorderRadius
-                                                              .circular(360),
+                                                          BorderRadius.circular(
+                                                              360),
+                                                      color: Color.fromARGB(
+                                                          86, 255, 255, 255)),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            15.0),
+                                                    child: Container(
+                                                      alignment:
+                                                          Alignment.center,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(360),
+                                                      ),
+                                                      child: Icon(
+                                                          Icons
+                                                              .settings_input_composite_outlined,
+                                                          size: 150,
+                                                          color: Color.fromARGB(
+                                                                    255,
+                                                                    255,
+                                                                    196,
+                                                                    0)),
                                                     ),
-                                                    child: Icon(
-                                                        Icons
-                                                            .settings_input_composite_outlined,
-                                                        size: 150,
-                                                        color: Color.fromARGB(
-                                                                  255,
-                                                                  255,
-                                                                  196,
-                                                                  0)),
                                                   ),
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                height: 20,
-                                              ),
-                                              Text(
-                                                'R O B O T I C Ă',
-                                                style: TextStyle(
-                                                    fontSize: 25,
-                                                    fontWeight:
-                                                        FontWeight.w100),
-                                              )
-                                            ],
+                                                SizedBox(
+                                                  height: 20,
+                                                ),
+                                                Text(
+                                                  'R O B O T I C Ă',
+                                                  style: TextStyle(
+                                                      fontSize: 25,
+                                                      fontWeight:
+                                                          FontWeight.w100),
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),

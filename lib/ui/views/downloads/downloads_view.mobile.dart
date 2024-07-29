@@ -63,19 +63,7 @@ class DownloadsViewMobile extends ViewModelWidget<DownloadsViewModel> {
                       SizedBox(
                         width: 30,
                       ),
-                      InkWell(
-                        onTap: () {
-                          viewModel.navigateToInfoView();
-                        },
-                        child: Text(
-                          'Creează-ți propriul CUZA',
-                          style: ktsBodyRegular.copyWith(
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
+                     
                       InkWell(
                         onTap: () {
                           viewModel.navigateToDownloadsView();
@@ -105,7 +93,7 @@ class DownloadsViewMobile extends ViewModelWidget<DownloadsViewModel> {
               ],
             ),
             verticalSpaceLarge,
-            // HomeTitle(),
+         
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -125,19 +113,7 @@ class DownloadsViewMobile extends ViewModelWidget<DownloadsViewModel> {
                     ),
                   ),
                 ),
-                /* FadeInUp(
-                duration: Duration(milliseconds: 1000),
-                child: Center(
-                  child: GradientText(
-                    'ROBOTICA',
-                    style: ktsTitleText.copyWith(fontSize: 60),
-                    colors: const [
-                      Color.fromARGB(255, 255, 183, 0),
-                      Color.fromARGB(255, 223, 2, 43)
-                    ],
-                  ),
-                ),
-              ),*/
+                
                 Center(
                   child: FadeInUp(
                     duration: Duration(milliseconds: 1500),

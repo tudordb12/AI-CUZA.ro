@@ -73,19 +73,7 @@ class DownloadsViewDesktop extends ViewModelWidget<DownloadsViewModel> {
                                 SizedBox(
                                   width: 30,
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    viewModel.navigateToInfoView();
-                                  },
-                                  child: Text(
-                                    'Creează-ți propriul CUZA',
-                                    style: ktsBodyRegular.copyWith(
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 30,
-                                ),
+                               
                                 InkWell(
                                   onTap: () {
                                     viewModel.navigateToDownloadsView();
