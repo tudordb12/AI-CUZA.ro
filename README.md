@@ -6,7 +6,7 @@
 ## ⚠️ ATENȚIE: 
 EinSaftOfficial este un cont creat de mine acum 3 ani pe care il folosesc pentru commit și push uri, prin VS Code in repository urile mele. Puteti verifica readme ul recuperatorului de sensuri.
 ### Tabel de conținut:
-1. 🌐 [Informații generale](#informații-generale)
+1. 🌐 [Informații general](#informații-generale)
 2. 🌐 [Ghid de instalare și utilizare](#ghid-de-instalare-și-utilizare)
 3. 🌐 [Arhitectura aplicației](#arhitectura-aplicației)
 4. 🌐 [Justificarea tehnologiilor alese](#justificarea-tehnologiilor-alese)
