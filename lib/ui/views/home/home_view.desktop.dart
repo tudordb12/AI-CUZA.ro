@@ -480,7 +480,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                               Container(
                                 width: 580,
                                 child: Text(
-                                        'Într-un singur loc. Acces direct la o grămadă de instrumente online și Desktop utile în Design, Programare, Robotică dar și STEM, structurate pe categorii.',
+                                        'Într-un singur loc. Acces direct la o grămadă de resurse educaționale, instrumente online și Desktop utile în Design, Programare, Robotică dar și STEM, structurate pe categorii.',
                                         style: ktsBodyLarge.copyWith(
                                             fontWeight: FontWeight.w600),
                                       ),
