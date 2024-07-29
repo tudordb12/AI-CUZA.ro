@@ -24,7 +24,7 @@ Această secțiune nu este doar un spațiu de expunere, ci și un loc unde comun
 ## 2.🔧Ghid de instalare și utilizare
 
 ### 🖥 ️🌎 Accesarea online
-Pentru accesarea platformei online, puteți folosi orice browser web major: Google Chrome, Microsoft Edge, Opera, Firefox, etc.), și accesați adresa https://ai-cuza.ro, însă este recomandată utilizarea Google Chrome pentru o experiență optimă.
+Pentru accesarea platformei online, puteți folosi orice browser web major: Google Chrome, Microsoft Edge, Opera, Firefox, etc., și accesați adresa https://ai-cuza.ro, însă este recomandată utilizarea Google Chrome pentru o experiență optimă.
 ### 👨‍💻 🛠️ Construirea aplicatiei
 Alternativ, pentru a construi aplicația trebuie să aveți [Flutter 3.16 (cea mai recentă versiune compatibilă)](https://docs.flutter.dev/release/archive) și [Google Chrome (cea mai recentă versiune compatibilă)](https://www.google.com/chrome/) instalate pe sistem.
 ```
